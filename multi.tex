@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+%  \usepackage{evan}
+\usepackage{mathtools}
+\usepackage{sagetex}
+\usepackage{amsfonts}
+%\usepackage{sectsty}
+% \usepackage{graphicx}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{ex}{Example}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{Multi Notes}
+\author{Atticus Kuhn}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% Optional TOC
+% \tableofcontents
+% \pagebreak
+
+%--Paper--
+
+\section{Jan 11. 2023}
+\subsection{Syllabus}
+Learning opportunity is a waste of time.
+Teach your parents stuff, YHPL is not happy (it is meaningless).
+Each knowledge check is worth more (20\%).
+\subsection{Overview of 1D}
+We are about to complete calculus.
+You want to take real analysis or complex analysis after 1D.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c|c}
+    Class & Topic \\
+    1A & single variable derivatives \\
+    1b & single variable integrals \\
+    1C & multi-variable derivatives \\
+    1D & multi-variable integra;s \\
+    \end{tabular}
+  \end{table}
+
+
+
+\subsubsection{Topics Covered in 1D}
+Topics covered in 1D:
+\begin{enumerate}
+  \item work
+\item line integral = work done by force
+  \item vector fields
+\item flux integral = rate of flow thru a thin net
+  \item Chapter 20: Green's Theorem, curl, divergenence
+    \item That's the end
+\end{enumerate}
+If we meet YHPL, she will bake us a cake.
+\subsection{Review from 1C}
+\subsubsection{review of quartic surfaces}
+Review quadric surfaces
+\begin{table}[h]
+  \centering
+  \begin{tabular}{||c c||}
+    eqn & name \\
+    $z = x^2 - y^ 2$ & Hyperbolic paraboloid \\
+    $ z = y^2$ & Parabolic cylinder \\
+    $z = \sqrt{4-x^2-y^2}$ & half-hemisphere of a sphere\\
+    $z = \sqrt{x^2+y^2}$ & elleptic cone \\
+    $ z = x^2 + y^2 $ & elliptic paraboloid \\
+    $ z  =1 - \sqrt{x^2 + y^2 } $ & elliptic cone \\
+    $ z = 6-3x-2y$ & plane \\
+    $ z = 6-2y$ & plane thru $(37.0.6)$ and normal vector is $\vec{n} = \langle 0 ,2 ,1 \rangle$ \\
+    $z = 4-x^2-y^2$ &  Elliptic Paraboloid\\
+   \end{tabular}
+  \end{table}
+Review table that YHPL posted on quartic surfaces.
+\subsubsection{review of integrals}
+Recall that the definition of integral is
+\[\int_I f(x) \, dx = \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x_i\]
+where $f(x_i^*)$ is the height of the $i^{th}$ rectangle and $\Delta x_i$ is the width of the
+$i^{th}$ rectangle. We are summing up areas on many small rectangles. Note that area can be
+negative if the function goes below the x-axis (called signed area).
+Note that all the $\Delta x$s do not all have to be the same width.
+
+\begin{thm}
+  Average
+$avg = \frac{1}{|I|} \int_I f(x) \, dx$
+\end{thm}
+\subsection{Multi-Variable integration}
+Given that $z = f(x,y)$, we find the area by splitting the region into rectangles under the
+curve. We split the x-axis and we split the y-axis. We integrate over a region $R$.
+Adding up the volume of all the little rectangular prisms approximates the volume of
+our original curve.
+
+\begin{defn}
+  The definition of a \textbf{multi-variable} integral is
+  \[\iint_R f(x,y) \,dx \,dy = \int_R f(x,y) dA = \lim_{n\to \infty} \lim_{n \to \infty} \sum_{i=1}^n \sum_{j=1}^m f(x_i^*, y_j^*) \Delta x_i \Delta y_j\]
+\end{defn}
+In a double integral, you have to integral twice.
+\subsubsection{numerical approximation in multiple variables}
+Let's use this table as an example of a function
+
+\begin{table}
+  \centering
+  \begin{tabular}{c c c c c}
+    x y &1 &4& 7 &10\\
+    4 & 5 & 6 & 9 & 37 \\
+    2 & 11 & 14 & 7 & 12 \\
+    0 & 16 & 21 & 0 & 15
+  \end{tabular}
+\end{table}
+Let $R = [1,10] \times [[0,4]]$.
+\[\int_R f dA \approx (14 + 6 + 9 + 37 + 12 + 7)\cdot3\cdot 2\]
+
+Example: Let $z = e^{-(x^2+y^2)}$. If you sample the function using the bottom left approximation,
+then this is an overestimate because the rest of the rectangle with have higher $z$-values.
+
+Given a contour map, we can approximate an integral. Divide up the graph and pick a point
+from each division to represent the whole.
+\subsection{Summary of surfaces}
+\begin{sageblock}
+var('x y z')
+\end{sageblock}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c }
+    Name & Equation & Graph \\
+    Ellipsoid  & $\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^22} = 1$ &  \sageplot[height=3cm]{implicit_plot3d(x^2/2+y^2/3  + z^2/4 == 1 , (x,-2, 2), (y, -2, 2), (z, -2, 2)),frame=False} \\
+    Cone & $\frac{x^2}{a^2} + \frac{y^2}{b^2} = \frac{z^2}{c^2}$ &   \sageplot[height=3cm]{implicit_plot3d(x^2/2+y^2/3 == z^2/4 , (x,-2, 2), (y, -2, 2), (z, -2, 2),frame=False)} \\
+    Elliptic Paraboloid & $\frac{x^2}{a^2} + \frac{y^2}{b^2} = \frac{z}{c}$&   \sageplot[height=3cm]{implicit_plot3d(x^2/2+y^2/3 == z/4 , (x,-2, 2), (y, -2, 2), (z, -2, 2),frame=False)} \\
+    Hyperboloid of One Sheet & $\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$ &   \sageplot[height=3cm]{implicit_plot3d(x^2/2+y^2/3 - z^2/4==1 , (x,-2, 2), (y, -2, 2), (z, -2, 2),frame=False)} \\
+    Hyperboloid of Two Sheets & $\frac{x^2}{a^2} - \frac{y^2}{b^2} = \frac{z}{c}$ &   \sageplot[height=3cm]{implicit_plot3d(x^2/2+y^2/3 == z/4 , (x,-2, 2), (y, -2, 2), (z, -2, 2),frame=False)} \\
+    Hyperbolic Paraboloid & $-\frac{x^2}{a^2} - \frac{y^2}{b^2} + \frac{z^2}{c^2}$=1 &   \sageplot[height=3cm]{implicit_plot3d(-x^2/2-y^2/3 + z^2/4==1 , (x,-2, 2), (y, -2, 2), (z, -2, 2),frame=False)} \\
+    \end{tabular}
+  \end{table}
+\section{January 12, 2023}
+no class due to doctor's appointment
+\section{January 15, 2023}
+No class due to MLK day
+\section{January 18, 2023}
+If we are integrating over a non-rectangular region, the inner bounds must depend on the outer bounds.
+\subsection{Integrating non-rectangular regions}
+Example:
+
+A strange region may be given by a triangle an semi-cirle
+
+\[\int_{x=-1}^{x=0} \int_{y=1}^{y=x+2} f dydx + \int_{x=0}^{x=\sqrt{3}} \int_{y=2}^{y=\sqrt{4-x^2}} f dy dx\]
+But we could also do as y
+
+\[\int_{y=1}^{y=2} \int_{x=-1}^{x=y-2} f dx dy + \int_{y=1}^{y=2} \int_{x=0}^{x=\sqrt{4-y^2}} f dx dy\]
+Note that it could be (no need to split)
+\[\int_{x=1}^{x=2} \int_{y=1}^{y=\sqrt{4-x^2}} f dx dy\]
+Excercise:
+Given the integral
+\[\int_{-1}^0 \int_1^{4-x} f dy dx\]
+reverse the order of the integrals
+\[\int_{y=1}^{y=4} \int_{x=-1}^{x=0} f dx dy  + \int_{y=4}^{y=5} \int_{x=-1}^{x=4-y} f dx dy\]
+
+\subsection{Application of Double Integrals}
+We use double integrals to find volume.
+\begin{ex}
+Exercise: given this weird parabola, find volume.
+\sageplot[height=5cm]{implicit_plot3d(z == 25 - x^2 - y^2, (x, -3, 3), (y, -3, 3), (z, 16, 25))}
+\[s_1: z= 25 - x^2 - y^2, s_2: z = 16\]
+
+To find volume
+\[\int_{x=-3}^{x=3} \int_{y=-\sqrt{9-x^2}}^{y=\sqrt{9-x^2}} 9 - x^2-y^2 dy dx\]
+Pro =-Tip: always project orthoganlly onto the xy plane
+\end{ex}
+
+Another example
+\begin{ex}
+Given the mass-density of
+\[s(x,y) = \sqrt{x^2+y^2}\]
+the mass of a triangle is given by
+\[\int_{x=0}^{x=2} \int_{y=0}^{y=4-2x} s(x,y) dy dx\]
+\end{ex}
+\begin{ex}
+Example:
+Given a city with the shape of a semi-circle. Find the average distance
+from the city to the ocean.
+
+YHPL strongly recommends reading ahead.
+\sageplot[height=5cm]{plot(sqrt(9-x^2), (x, -3, 3)) + plot(0, (x, -3, 3))}
+
+The average distance from the city to the ocean is given by
+\[\frac{\int_{x=-3}^{x=3} \int_{y=0}^{y=\sqrt{9-x^2}} y \, dy dx}{\int_{x=-3}^{x=3} \int_{y=0}^{y=\sqrt{9-x^2}} 1 \, dy dx}\]
+
+To get the average distance to the ocean, we get the total distance and
+then divide by the total area.
+\end{ex}
+
+\begin{ex}
+Without computation, find the sign of
+\[\int_R (y^3-y) dA\]
+and
+\[\int_R e^yx dA\]
+where
+the region $R$
+is
+\sageplot[height=5cm]{plot(-sqrt(1-x^2), (x, -1, 1))}?
+
+Solution:
+Remember the definition. The first integral will be negative because
+$y < 0 \implies y^3 > y \implies y^3 - y > 0$.
+The second integral will be 0, because the negative $x$ perfectly cancels out the positive $x$.
+
+\end{ex}
+
+\begin{ex}
+ What is the sign of
+ \[\int_R cos(x) dA\]
+ where $R$ is the same region as above?
+ Solution: It is positive because $\cos{x} > 0$ for $-1 < x < 1$. Cosine only becomes 0 at $\pi/2 \approx 1.5$.
+\end{ex}
+
+
+\subsection{Triple Integral}
+\begin{defn}
+  Given a funciton $w = f(x,y,z)$ and a region $W \subset \mathbb{R}^3$
+  \[\iiint_w f(x,y,z) dV\]
+\end{defn}
+There are $3! = 6$ different ways to integrate a triple integral. Where the inner integrals can depend on
+the outer integrals.
+
+\begin{ex}
+  Redo the parabola volume question using a triple integral.
+  \[\int_{x=-3}^{x=3} \int_{y=-\sqrt{9-x^2}}^{y=\sqrt{9-x^2}} \int_{z=16}^{z=25-x^2-y^2} 1 \, dz dy dx\]
+\end{ex}
+
+
+\section{January 19, 2023}
+\subsection{Review}
+Review of what we learned last week
+\begin{enumerate}
+  \item find volume by integrating over 1
+  \item determine sign of integral by using sign of integrand over region
+  \item You can swap the order of integration (either $dx dy$ or $dy dx$), and sometimes
+    one order of integration will be easier than the other
+  \item When approximating a double integral, you pick a point from each region to approximate the
+    entire region. From a contour map, you can choose the sample point and then multiply that
+    by the area of the region.
+  \item you can find average function value by taking double integral over region and
+    then divide by the area of that region.
+\end{enumerate}
+\begin{ex}
+  Here's an application problem:
+  Estimate the average snowfall in Colorado based on this map. Sample based on the midpoint of each rectangular region.
+  \[\frac{1}{16}(16+16+19+13+8+28+18+13+2+24+17+11+0+16+8+7) = \frac{27}{2}\]
+\end{ex}
+\subsection{16.4 -- Polar Coordinates}
+In polar coordinates, $(r, \theta)$, a point is represented by its distance from the origin, $r$, and the angle it makes with the positive $x$-axis, $\theta$.
+
+\subsubsection{Polar--Rectangular Conversions}
+\[x = r\cos \theta\]
+\[y=r\sin\theta\]
+\[x^2+y^2=r^2\]
+\[\theta = \arctan \frac{y}{x}\]
+\[\Delta A \approx r \Delta \theta \Delta r\]
+\[dA = r\, d\theta dr = r \, dr d\theta\]
+\[\int_R f dA = \int_\alpha^\beta\int_a^b f(r\cos\theta, r\sin \theta) drd\theta\]
+
+\end{document}
