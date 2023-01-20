@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  19 JAN 2023 17:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  19 JAN 2023 18:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -268,20 +268,20 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (./multi.aux)
 \openout1 = `multi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 \c@lstlisting=\count293
 
 (/nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final
@@ -313,14 +313,14 @@ e
 \ST@sf=\write4
 \openout4 = `multi.sagetex.sage'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
 
 
 (/nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final
 /share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
 
 
 (/nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final
@@ -342,37 +342,37 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: sage-plots-for-multi.tex/plot-0.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-0.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-0.png  used on input lin
-e 136.
+e 137.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 <sage-plots-for-multi.tex/plot-1.png, id=22, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-1.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-1.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-1.png  used on input lin
-e 137.
+e 138.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 <sage-plots-for-multi.tex/plot-2.png, id=23, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-2.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-2.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-2.png  used on input lin
-e 138.
+e 139.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 <sage-plots-for-multi.tex/plot-3.png, id=24, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-3.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-3.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-3.png  used on input lin
-e 139.
+e 140.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 <sage-plots-for-multi.tex/plot-4.png, id=25, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-4.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-4.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-4.png  used on input lin
-e 140.
+e 141.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 <sage-plots-for-multi.tex/plot-5.png, id=26, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-5.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-5.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-5.png  used on input lin
-e 141.
+e 142.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
 
 
@@ -383,34 +383,59 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: sage-plots-for-multi.tex/plot-6.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-6.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-6.png  used on input lin
-e 171.
+e 172.
 (pdftex.def)             Requested size: 142.26239pt x 142.26378pt.
  [4 <./sage-plots-for-multi.tex/plot-6.png (PNG copy)>]
 <sage-plots-for-multi.tex/plot-7.pdf, id=37, 454.78679pt x 338.37286pt>
 File: sage-plots-for-multi.tex/plot-7.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-7.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-7.pdf  used on input lin
-e 192.
+e 193.
 (pdftex.def)             Requested size: 191.21039pt x 142.26378pt.
-<sage-plots-for-multi.tex/plot-8.pdf, id=38, 452.72893pt x 338.65666pt>
+<sage-plots-for-multi.tex/plot-8.pdf, id=38, 452.72893pt x 338.66104pt>
 File: sage-plots-for-multi.tex/plot-8.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-8.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-8.pdf  used on input lin
-e 209.
-(pdftex.def)             Requested size: 190.1863pt x 142.26378pt.
+e 210.
+(pdftex.def)             Requested size: 190.17938pt x 142.26378pt.
  [5 <./sage-plots-for-multi.tex/plot-7.pdf> <./sage-plots-for-multi.tex/plot-8.
 pdf>] [6]
+<sage-plots-for-multi.tex/plot-9.pdf, id=72, 196.0097pt x 338.37286pt>
+File: sage-plots-for-multi.tex/plot-9.pdf Graphic file (type pdf)
+<use sage-plots-for-multi.tex/plot-9.pdf>
+Package pdftex.def Info: sage-plots-for-multi.tex/plot-9.pdf  used on input lin
+e 278.
+(pdftex.def)             Requested size: 82.41023pt x 142.26378pt.
+<sage-plots-for-multi.tex/plot-10.pdf, id=73, 346.59033pt x 338.37286pt>
+File: sage-plots-for-multi.tex/plot-10.pdf Graphic file (type pdf)
+<use sage-plots-for-multi.tex/plot-10.pdf>
+Package pdftex.def Info: sage-plots-for-multi.tex/plot-10.pdf  used on input li
+ne 286.
+(pdftex.def)             Requested size: 145.7203pt x 142.26378pt.
+
+Overfull \hbox (46.31242pt too wide) in paragraph at lines 284--287
+[]\OT1/cmr/m/it/10.95 If you want $\OML/cmm/m/it/10.95 r$ \OT1/cmr/m/it/10.95 t
+o be the outer, then it's a bit harder We split it into 2 re-gions  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
+
+ []
+
+[7 <./sage-plots-for-multi.tex/plot-9.pdf> <./sage-plots-for-multi.tex/plot-10.
+pdf>]
 *********************************************************************
-[7] [8 <./sage-plots-for-multi.tex/plot-0.png (PNG copy)> <./sage-plots-for-mul
+[8] [9 <./sage-plots-for-multi.tex/plot-0.png (PNG copy)> <./sage-plots-for-mul
 ti.tex/plot-1.png (PNG copy)> <./sage-plots-for-multi.tex/plot-2.png (PNG copy)
 > <./sage-plots-for-multi.tex/plot-3.png (PNG copy)> <./sage-plots-for-multi.te
 x/plot-4.png (PNG copy)> <./sage-plots-for-multi.tex/plot-5.png (PNG copy)>]
 (./multi.aux) ) 
 Here is how much of TeX's memory you used:
- 5396 strings out of 479392
- 90296 string characters out of 5849273
- 392754 words of memory out of 5000000
- 23359 multiletter control sequences out of 15000+600000
+ 5410 strings out of 479392
+ 90853 string characters out of 5849273
+ 393754 words of memory out of 5000000
+ 23371 multiletter control sequences out of 15000+600000
  477844 words of font info for 60 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  70i,12n,76p,285b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -442,10 +467,10 @@ m-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></nix/store/
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb></nix/store/75adgcxqamh0v7cvfax3ivy0
 hj4f8g8q-texlive-combined-medium-2021-final/share/texmf/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on multi.pdf (8 pages, 368719 bytes).
+Output written on multi.pdf (9 pages, 379807 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 174 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

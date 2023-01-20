@@ -3,6 +3,7 @@
 \usepackage{mathtools}
 \usepackage{sagetex}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 %\usepackage{sectsty}
 % \usepackage{graphicx}
 \newtheorem{thm}{Theorem}
@@ -259,6 +260,35 @@ Review of what we learned last week
 \subsection{16.4 -- Polar Coordinates}
 In polar coordinates, $(r, \theta)$, a point is represented by its distance from the origin, $r$, and the angle it makes with the positive $x$-axis, $\theta$.
 
+
+\begin{ex}
+Let's revisit the problem of the average distance from the city to the ocean that we did
+last week.
+The same integral becomes
+\begin{align*}
+\int_{\theta = 0}^{\theta = \pi} \int_{r=0}^{r=3} r^2 \sin(\theta) dr d\theta \\
+&= \int_0^\pi \sin \theta d\theta \cdot \int_0^3 r^2 dr\\
+&= (\cos \pi - \cos 0)(\frac{27}{3})\\
+&= -18
+\end{align*}
+\end{ex}
+
+\begin{ex}
+  Another example: We plot over the region
+  \sageplot[height=5cm]{polygon([[0,0], [0, 2], [1,2]], color='red')}
+  \begin{align*}
+    \int_{x=0}^{x=1}\int_{y=2x}^{y=2} x dy dx \\
+    &= \int_{\theta = \arctan 2}^{\theta = \pi/2} \int_{r=0}^{r=2/\sin \theta} r^2 \cos \theta dr d\theta\\
+  \end{align*}
+
+  If you want $r$ to be the outer, then it's a bit harder
+  We split it into 2 regions
+  \sageplot[height=5cm]{polygon([[0,0], [0, 2], [1,2]], color='red') + plot(sqrt(4-x^2), (x, 0, 2))}
+  \begin{align*}
+    \int_{r=0}^{r=2} \int_{\theta = \arctan 2}^{\theta = \pi/2} r^2 \cos \theta d\theta dr
+    + \int_{r=2}^{r=\sqrt{5}} \int_{\theta = \arctan 2}^{\theta = \arcsin 2/r} r^2 \cos \theta d\theta dr
+  \end{align*}
+\end{ex}
 \subsubsection{Polar--Rectangular Conversions}
 \[x = r\cos \theta\]
 \[y=r\sin\theta\]
