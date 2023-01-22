@@ -64,4 +64,9 @@ try:
  _st_.plot(10, format='notprovided', _p_=polygon([[0,0], [0, 2], [1,2]], color='red') + plot(sqrt(4-x^2), (x, 0, 2)))
 except:
  _st_.goboom(286)
+try:
+ _st_.current_tex_line = 306
+ _st_.plot(11, format='notprovided', _p_=region_plot(y<=sqrt(5-x^2), (x, 0, 1), (y, 1,3)))
+except:
+ _st_.goboom(306)
 _st_.endofdoc()

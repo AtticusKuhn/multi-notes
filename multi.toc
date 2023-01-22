@@ -18,3 +18,4 @@
 \contentsline {subsection}{\numberline {5.1}Review}{6}{}%
 \contentsline {subsection}{\numberline {5.2}16.4 -- Polar Coordinates}{7}{}%
 \contentsline {subsubsection}{\numberline {5.2.1}Polar--Rectangular Conversions}{8}{}%
+\contentsline {section}{\numberline {6}Chapter 16 Knowledge Check Practice}{8}{}%
