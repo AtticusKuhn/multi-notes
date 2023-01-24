@@ -69,4 +69,29 @@ try:
  _st_.plot(11, format='notprovided', _p_=region_plot(y<=sqrt(5-x^2), (x, 0, 1), (y, 1,3)))
 except:
  _st_.goboom(306)
+try:
+ _st_.current_tex_line = 325
+ _st_.plot(12, format='notprovided', _p_=implicit_plot3d(z==5-x^2-y^2, (x,-2,2 ), (y, -2,2), (z, 1, 5), region=(lambda x,y,z: z >=1)))
+except:
+ _st_.goboom(325)
+try:
+ _st_.current_tex_line = 327
+ _st_.plot(13, format='notprovided', _p_=implicit_plot(x^2+y^2==4, (x, -2, 2), (y, -2, 2)))
+except:
+ _st_.goboom(327)
+try:
+ _st_.current_tex_line = 333
+ _st_.plot(14, format='notprovided', _p_=region_plot(y<=4-x, (x, -1, 0), (y, 1, 5)))
+except:
+ _st_.goboom(333)
+try:
+ _st_.current_tex_line = 339
+ _st_.plot(15, format='notprovided', _p_=region_plot(y<=4, (x, -1, 2), (y, -3, 4)))
+except:
+ _st_.goboom(339)
+try:
+ _st_.current_tex_line = 348
+ _st_.plot(16, format='notprovided', _p_=region_plot(y<=2, (x, -1, 0), (y, 0, 2)) + region_plot(y<=sqrt(4-x^2), (x, 0, 2), (y, 0,2)))
+except:
+ _st_.goboom(348)
 _st_.endofdoc()

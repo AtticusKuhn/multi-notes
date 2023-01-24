@@ -309,13 +309,106 @@ The same integral becomes
     \item What is the practical meaning of the double integral\\
       Solution: the total mass of the region $R$.
     \item Write the double integral of the form $dxdy$. Do not evaluate.\\
-      Solution: \[\int_{y=1}^{y=\sqrt{5}} \int_{x=0}^{x=\sqrt{5-x^2}} \sqrt{x^2+y^2} \, dx dy\]
+      Solution: \[\int_{y=1}^{y=2} \int_{x=0}^{x=1} \sqrt{x^2+y^2} \, dx dy + \int_{y=2}^{y=\sqrt{5}} \int_{x=0}^{x=\sqrt{5-y^2}} \sqrt{x^2+y^2} \, dx dy\]
     \item Write the double integral of the form $dydx$. Do not evaluate.\\
       Solution: \[\int_{x=0}^{x=1} \int_{y=1}^{y=\sqrt{5-x^2}} \sqrt{x^2+y^2} \, dy dx\]
     \item Write the double integral of the form $drd\theta$. Do not evaluate.\\
       Solution: \[\int_{\theta=\pi/4}^{\theta=\arctan(2)} \int_{r=\sec\theta}^{r=\csc\theta} r^2 dr d\theta + \int_{\theta=\arctan 2}^{\theta=\pi/2} \int_{r=\sec\theta}^{r=\sqrt{5}} r^2 dr d\theta\]
       \item Write the double integral; of the form $d\theta dr$. Do not evaluate.\\
         Solution: \[\int_{r=1}^{r=\sqrt{2}} \int_{\theta=\arccos(1/r)}^{\theta=\pi/2} r^2 d\theta dr + \int_{r=\sqrt{2}}^{r=\sqrt{5}} \int_{\theta=\arcsin(1/r)}^{\theta=\pi/2} r^2 d\theta dr\]
+      \item Set up an integral to express the average mass density of $r$\\
+        Solution: \[\frac{\int_{x=0}^{x=1} \int_{y=1}^{y=\sqrt{5-x^2}} \sqrt{x^2+y^2} \, dy dx}{\int_{x=0}^{x=1} \int_{y=1}^{y=\sqrt{5-x^2}} 1 \, dy dx}\]
   \end{enumerate}
+  \item A solid region $W$ is bounded above by $z=5-x^2-y^2$ and below by $z=1$.
+    \begin{enumerate}
+      \item Sketch $W$ in $R^3$, and the projection of $W$ onto the $xy$-plane  \\
+        Solution: \sageplot[height=5cm]{implicit_plot3d(z==5-x^2-y^2, (x,-2,2 ), (y, -2,2), (z, 1, 5), region=(lambda x,y,z: z >=1))}
+        and
+        \sageplot[height=5cm]{implicit_plot(x^2+y^2==4, (x, -2, 2), (y, -2, 2))}
+    \end{enumerate}
+  \item Reverse the order of the integral
+    \[\int_{x=-1}^{x=0} \int_{y=1}^{y=4-x} f(x,y) dy dx\]\\
+    Solution:
+    The first step is always to draw a picture of the region.
+    \sageplot[height=5cm]{region_plot(y<=4-x, (x, -1, 0), (y, 1, 5))}
+    \[\int_{y=1}^{y=4} \int_{x=-1}^{x=0} f(x,y) dx dy + \int_{y=4}^{y=5} \int_{x=-1}^{x=4-y} f(x,y) dx dy\]
 \end{enumerate}
+\section{January 23, 2023}
+\begin{ex}
+  Consider the region
+  \sageplot[height=7cm]{region_plot(y<=4, (x, -1, 2), (y, -3, 4))}
+  The limits of the integral
+  \[\int_{x=-1}^{x=2} \int_{y=-3}^{y=4} f dy dx\]
+  are constant because we are using CARTESIAN coordinates.
+  But, by contrast, consider
+  a semicircle. This will have constant limits of integration in POLAR coordaintes
+\end{ex}
+\begin{ex}
+  Consider the region
+  \sageplot[height=7cm]{region_plot(y<=2, (x, -1, 0), (y, 0, 2)) + region_plot(y<=sqrt(4-x^2), (x, 0, 2), (y, 0,2))}
+  Do 4 different orders of integration
+  First, $dydx$
+  \[\int_{x=-1}^{x=0} \int_{y=0}^{y=2}x  \, dydx + \int_{x=0}^{x=2} \int_{y=0}^{y=\sqrt{4-x^2}} x dy dx\]
+  Next $dx dy$
+  \[\int_{y=0}^{y=2} \int_{x=-1}^{x=\sqrt{4-y^2}} x \,dx dy\]
+  Next $dr d\theta$
+  \[\int_{\theta = 0}^{\theta = \pi/2} \int_{r=0}^{r=2} r^2 \cos \theta dr d\theta +
+  \int_{\theta = \pi/2}^{\theta = \pi/2 + \arctan(1/2)} \int_{r=0}^{r=2\csc \theta} r^2\cos\theta dr d\theta +
+  \int_{\theta = \pi/2 + \arctan(1/2)}^{\theta = \pi} \int_{r=0}^{r=-\sec\theta} r^2\cos \theta dr d\theta \]
+  Finally $d\theta dr$
+  \[
+  \int_{r=0}^{r=1} \int_{\theta = 0}^{\theta = \pi} r^2 \cos \theta d\theta dr
+  + \int_{r=1}^{r=2} \int_{\theta=0}^{\theta = \arccos(-1/r)} r^2\cos\theta d\theta dr
+  + \int_{r=2}^{r=\sqrt{5}} \int_{\theta=\arcsin(2/r)}^{\theta=\arccos(-1/r)} r^2\cos\theta d\theta dr.\]
+\end{ex}
+By the way, our first knowledge check on chapter 16  is on 01/26
+\begin{ex}
+  Imagine a circular dinner plate with radius 10cm where the mass density of the dinner plate is given by
+  \[\delta(x,y) = \sqrt{x^2+y^2}\]
+  use polar coordinates to find the total mass of the plate.\\
+  Solution:
+\begin{align*}
+  \int_{\theta  = 0 } ^ {\theta = 2\pi} \int_{r=0}^{r=10} r^2 dr d\theta \\
+  &= \int_{\theta = 0}^{\theta = 2\pi} 1000/3 d\theta \\
+  &= 2\pi*1000/3 = \frac{2000\pi}{3}
+\end{align*}
+\end{ex}
+\begin{ex}
+  What is
+  \[\int_{-\infty}^{\infty} e^{-x^2} dx?\]
+  Solution:
+  Let
+  \[I = \int_{-\infty}^{\infty} e^{-x^2}dx\]
+  Then
+\begin{align*}
+  I^2 &= \int_{-\infty}^{\infty} e^{-x^2}dx\int_{-\infty}^{\infty} e^{-y^2}dy \\
+  &= \int_{x=-\infty}^{x=\infty} \int_{y=-\infty}^{y=\infty} e^{-(x^2+y^2)} dy dx \\
+  &= \int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=\infty} e^{-r^2}r dr d\theta\\
+  &= \pi
+  \end{align*}
+So $I=\sqrt{\pi}$
+\end{ex}
+\subsection{16.5 - Cylindrical and Spherical Coordinates}
+
+\subsubsection{Cylindrical Coordinates}
+Cylindrical coordinates are like polar coordinates in 3D. It uses 1 angle and 2 lengths.
+They are described by $(r, \theta, z)$
+The conversion is
+Rectangular to cylindrical:
+\[(x,y,z) \to (\sqrt{x^2+y^2}, \arctan(y/x), z)\]
+cylindrical to rectangular:
+\[(r,\theta, z) \to (r\cos \theta, r\sin \theta, z)\]
+The reason they are called cylindrical coordiantes is because if you are trying to integrate a cylinder, the bounds of integration
+are constant
+\subsubsection{Spherical Coordaintes}
+Spherical Coordinates use 2 angles and 1 length. The coordinates are of the form $(\rho, \theta, \phi)$
+The conversions are
+\begin{align*}
+  \rho^2 = x^2+y^2+z^2\\
+  x = \rho\sin\phi\cos\theta\\
+  y=\rho\sin\phi\sin\theta\\
+  z = \rho\cos\phi\\
+  r=  \rho\sin\phi\\
+  \phi = \arccos(\frac{z}{\sqrt{x^2+y^2+z^2}})
+\end{align*}
 \end{document}
