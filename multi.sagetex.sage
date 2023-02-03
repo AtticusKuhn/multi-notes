@@ -94,4 +94,77 @@ try:
  _st_.plot(16, format='notprovided', _p_=region_plot(y<=2, (x, -1, 0), (y, 0, 2)) + region_plot(y<=sqrt(4-x^2), (x, 0, 2), (y, 0,2)))
 except:
  _st_.goboom(348)
+try:
+ _st_.current_tex_line = 418
+ _st_.plot(17, format='notprovided', _p_=implicit_plot3d(z^2 == x^2+y^2, (x, -2, 2), (y, -2, 2), (z, 0, 2)))
+except:
+ _st_.goboom(418)
+try:
+ _st_.current_tex_line = 435
+ _st_.plot(18, format='notprovided', _p_= plot3d(x^2+y^2, (x,-1, 1), (y, -1, 1)) + implicit_plot3d(x^2 + y^2 ==1, (x, -1,1), (y, -1,1), (z, 1, 2)) + plot3d(2, (x, -1,1), (y, -1, 1)))
+except:
+ _st_.goboom(435)
+try:
+ _st_.current_tex_line = 446
+ _st_.plot(19, format='notprovided', _p_=region_plot(y >= x^2, (x, -1, 1), (y, 0, 1)) + region_plot(y<=2, (x, -1, 1), (y, 1, 2)))
+except:
+ _st_.goboom(446)
+try:
+ _st_.current_tex_line = 451
+ _st_.plot(20, format='notprovided', _p_=plot3d(1-sqrt(x^2+y^2), (x, -1, 1), (y, -1, 1)) + plot3d(-1+x^2+y^2, (x, -1, 1), (y, -1, 1)))
+except:
+ _st_.goboom(451)
+try:
+ _st_.current_tex_line = 464
+ _st_.plot(21, format='notprovided', _p_=region_plot([y<sqrt(9-x^2), y > 1], (x, 1, 2), (y, 1, 3)))
+except:
+ _st_.goboom(464)
+try:
+ _st_.current_tex_line = 521
+ _st_.plot(22, format='notprovided', _p_=parametric_plot((2*cos(x), 2*sin(x)), (x, 0, pi)))
+except:
+ _st_.goboom(521)
+try:
+ _st_.current_tex_line = 545
+ _st_.plot(23, format='notprovided', _p_=plot_vector_field((x + y, 2*x - y), (x, -3, 3), (y, -3, 3)))
+except:
+ _st_.goboom(545)
+try:
+ _st_.current_tex_line = 551
+ _st_.plot(24, format='notprovided', _p_=plot_vector_field((x,y), (x, -3, 3), (y, -3, 3)))
+except:
+ _st_.goboom(551)
+try:
+ _st_.current_tex_line = 552
+ _st_.plot(25, format='notprovided', _p_=plot_vector_field((-y, x), (x, -3, 3), (y, -3, 3)))
+except:
+ _st_.goboom(552)
+_st_.current_tex_line = 583
+_st_.blockbegin()
+try:
+ # I am going to do this later
+ print('hello world')
+except:
+ _st_.goboom(586)
+_st_.blockend()
+try:
+ _st_.current_tex_line = 593
+ _st_.plot(26, format='notprovided', _p_=plot_vector_field((2*y, 1), (x, -3, 3), (y, -3, 3)))
+except:
+ _st_.goboom(593)
+try:
+ _st_.current_tex_line = 638
+ _st_.plot(27, format='notprovided', _p_=plot_vector_field((2, 4*y), (x, 0, 10), (y, 0, 10)) + streamline_plot((2, 4*y), (x, 0, 10), (y, 0, 10), start_points=[[3,5]]))
+except:
+ _st_.goboom(638)
+try:
+ _st_.current_tex_line = 660
+ _st_.plot(28, format='notprovided', _p_=plot(2*x+2, (x, -1, 0)) + plot(sqrt(4-x^2), (x, 0, 2)) + plot_vector_field((x+y, x), (x, -1, 2), (y, 0, 2)))
+except:
+ _st_.goboom(660)
+try:
+ _st_.current_tex_line = 675
+ _st_.plot(29, format='notprovided', _p_=plot(x^2, (x, -1, 2)) + plot_vector_field((2, x), (x, -1, 2), (y, 0, 4)))
+except:
+ _st_.goboom(675)
 _st_.endofdoc()

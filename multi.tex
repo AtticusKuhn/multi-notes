@@ -404,11 +404,284 @@ are constant
 Spherical Coordinates use 2 angles and 1 length. The coordinates are of the form $(\rho, \theta, \phi)$
 The conversions are
 \begin{align*}
-  \rho^2 = x^2+y^2+z^2\\
-  x = \rho\sin\phi\cos\theta\\
-  y=\rho\sin\phi\sin\theta\\
-  z = \rho\cos\phi\\
-  r=  \rho\sin\phi\\
-  \phi = \arccos(\frac{z}{\sqrt{x^2+y^2+z^2}})
+  \rho^2 &= x^2+y^2+z^2\\
+  x &= \rho\sin\phi\cos\theta\\
+  y &=\rho\sin\phi\sin\theta\\
+  z &= \rho\cos\phi\\
+  r &=  \rho\sin\phi\\
+  \phi &= \arccos(\frac{z}{\sqrt{x^2+y^2+z^2}}) \\
+  dV &= \rho^2 \sin\phi d\rho d\phi d\theta
 \end{align*}
+\section{January 25, 2023}
+\begin{ex}
+  Find the volume of this cone using all integration methods.
+  \sageplot[height=10cm]{implicit_plot3d(z^2 == x^2+y^2, (x, -2, 2), (y, -2, 2), (z, 0, 2))}\\
+  Solution:
+  Note that the equation for this cone is $x^2+y^2 = z^2$
+  \[\int_{x=-2}^{x=2}, \int_{y=-\sqrt{4-x^2}}^{y=\sqrt{4-x^2}} 2-\sqrt{x^2+y^2} dy dx\]
+  \[\int_{\theta=0}^{\theta = 2\pi} \int_{r=0}^{r=2} r(2-r) dr d\theta\]
+  \[\int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=2}\int_{z=r}^{z=2} r dz dr d\theta\]
+  \[\int_{x=-2}^{x=2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} \int_{z=\sqrt{x^2+y^2}}^{z=2} 1 dz dy dx\]
+  \[\int_{\theta = 0}^{\theta = 2\pi} \int_{\phi =0 }^{\phi = \pi/4} \int_{\rho = 0}^{\rho = 2\csc\phi} \rho^2 \sin\phi d\rho d\phi d\theta\]
+
+\end{ex}
+
+\begin{ex}
+  Consider the 3d solid which is a dome on the bottom and  a
+  cylinder on the top.
+  \sageplot[height=10cm]{
+    plot3d(x^2+y^2, (x,-1, 1), (y, -1, 1))
+    + implicit_plot3d(x^2 + y^2 ==1, (x, -1,1), (y, -1,1), (z, 1, 2))
+    + plot3d(2, (x, -1,1), (y, -1, 1))}
+  Find the mass given that the mass density for a point is given by the
+  distance from $z=2$.
+  \[\int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=2} \int_{z=r }^{z = 2} (2-z)r dz dr d\theta\]
+\begin{align*}
+  &\int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 0} ^{\phi = \arctan 1/2} \int_{\rho = 0}^{\rho = 2\sec\phi} \rho^2 \sin\phi d\rho d\phi d\theta\\
+  &+\int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 2\csc\theta} ^{\phi = \pi/2} \int_{\rho =0 }^{\rho = \csc\phi}(2-\rho\sin\phi) \rho^2 \sin\phi d\rho d\phi d\theta\\
+  &+\int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = \arctan 1} ^{\phi = \pi/2} \int_{\rho = 0}^{\rho = \cos\phi/\sin^2\phi} (2-\rho\sin\phi)\rho^2 \sin\phi d\rho d\phi d\theta\\
+\end{align*}
+  \[\int_{x=-1}^{x=1} \int_{y= -\sqrt{4-x^2}}^{y=\sqrt{4-x^2}} \int_{z=x^2+y^2}^{z=2} 2-z dz dy dx\]
+  The spherical integral seems complicated, so you should break up the shape.
+  \sageplot[height=7cm]{region_plot(y >= x^2, (x, -1, 1), (y, 0, 1)) + region_plot(y<=2, (x, -1, 1), (y, 1, 2))}
+\end{ex}
+\begin{ex}
+  Write an integral for $f$
+  for the region
+  \sageplot[height=8cm]{plot3d(1-sqrt(x^2+y^2), (x, -1, 1), (y, -1, 1)) + plot3d(-1+x^2+y^2, (x, -1, 1), (y, -1, 1))}
+  which is bounded by $z = 1-\sqrt{x^2+y^2}$ and $z = -1+x^2+y^2$
+  \[\int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=1} \int_{z= r^2-1}^{1-r} fr \, dz dr d\theta \]
+  \[\int_{x=-1}^{x=1} \int_{y=-\sqrt{1-x^2}}^{y=\sqrt{1-x^2}} \int_{z=-1+x^2+y^2}^{1-\sqrt{x^2+y^2}} f\, dz dy dx\]
+  Remember that $z=1-\sqrt{x^2+y^2} \implies \rho = \frac{1}{\cos\phi + \sin\phi}$
+  \[\int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 3\pi/4}^{\phi=\pi} \int_{\rho = 0}^{\rho = }\]
+\end{ex}
+\section{Knowledge Check Solutions}
+Consider the double integral
+\[\int_{1}^{2} \int_{1}^{\sqrt{9-x^{2}}} \delta(x,y) dA\]
+where $\delta(x,y)$ is the distance from the y-axis
+\begin{enumerate}
+  \item Sketch $R$ \\
+        \sageplot[height=7cm]{region_plot([y<sqrt(9-x^2), y > 1], (x, 1, 2), (y, 1, 3))}
+  \item find $\delta(x,y)$ \\
+        Solution: $\delta(x,y) = x$
+  \item What is the practical meaning of the integral?\\
+        Solution: The total mass
+  \item dydx
+        \[\int_{1}^{2}\int_{1}^{\sqrt{9-x^{2}}} x dy dx\]
+  \item dx dy
+    \[\int_{1}^{\sqrt{5}} \int_{1}^{2} x dx dy + \int_{\sqrt{5}}^{\sqrt{8}} \int_{1}^{\sqrt(9-y^{2})} x dx dy \]
+  \item $dr d\theta$
+        \[\int_{\arctan(1/2)}^{\arctan(1/1)} \int_{1/\sin\theta}^{2/\cos\theta} r^{2}\cos\theta dr d\theta + \int_{\arctan(1)}^{\arctan(\sqrt{5}/2)} \int_{1/\cos\theta}^{2/\cos\theta} r^{2}\cos\theta dr d\theta
+        + \int_{\arctan(\sqrt{5}/2)}^{\arctan(\sqrt{5})} \int_{1/\cos\theta}^{3} r^{2}\cos\theta drd\theta\]
+
+  \item $d\theta dr$
+        \[\int_{\sqrt{2}}^{\sqrt{5}} \int_{{\arcsin(1/r)}}^{\arccos(1/r)} r^{2}\cos\theta d\theta dr + \int_{\sqrt{5}}^{3} \int_{\arccos(2/r)}^{\arccos(1/r)} r^{2} \cos\theta d\theta dr\]
+  \item Let $W$ be the solid defined by $z \le 8-x^{2}-y^{2}$, $x^{2 } + y^{2} \le 4, z \ge -3$. Sketch $W$.
+  \item dydx \\
+        Solution: \[\int_{-2}^{2} \int_{\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} (11-x^{2}-y^{2})\]
+  \item $drd\theta$ \\
+        Solution: \[\int_{0}^{2\pi} \int_{0}^{2} r(11-r^{2}) drd\theta\]
+  \item dzdydx \\
+        Solution: \[\int_{-2}^{2}\int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} \int_{-3}^{8-x^{2}-y^{2}} 1 dz dy dx\]
+  \item $dzdrd\theta$ \\
+        Solution: \[ \int_{0}^{2\pi} \int_{0}^{2} \int_{-3}^{8-r^{2}} r dzdrd\theta\]
+  \item $d\rho d\phi d\theta$ \\
+        Solution :
+\begin{align*}
+        &\int_{0}^{2\pi} \int_{0}^{\arctan(2/4)} \int_{0}^{\frac{-\cos\phi + \sqrt{\cos^{2}  \phi + 32\sin^{2}}}{2\sin^{2} \phi}} \rho^{2} \sin\phi d\rho d\phi d\theta\\
+        &+ \int_{0}^{2\pi} \int_{\arctan(2/4)}^{\pi - \arctan(2/3)} \int_{{0}}^{2/\sin\phi} \rho^{2} \sin\phi d\rho d\phi d\theta\\
+  &+ \int_{0}^{2\pi} + \int_{\pi-\arctan(2/3)}^{\pi} \int_{0}^{-3/\cos\phi} \rho^{2} \sin\phi d\rho d\phi d\theta\\
+    \end{align*}
+  \item Use cylindrical coordiantes to compute the total mass if the mass density is the distance from the origin \\
+        Solution \[\int_{0}^{2\pi} \int_{0}^{2} \int_{-3}^{8-x^{2}-y^{2}} r (r^{2} + z^{2}) dz dr d\theta\]
+\end{enumerate}
+\section{January 30, 2023 - Vector Fields}
+\begin{ex}
+Remember  that you can parameterize the graph of a circle by
+\[\vec{r}(t) = \langle a\cos t, a \sin t \rangle , 0 \le t \le 2\pi`\]
+If we add the angular frequency $\omega$, we get a more generalized form
+\[\vec{r}(t) = \langle a\cos \omega t, a \sin \omega t \rangle , 0 \le t \le \frac{2\pi}{\omega}`\]
+And the speed of this particle is $a \omega$
+
+Remeber that $\vec{v} = \frac{d\vec{r}}{dt}$,
+so
+\[\vec{v}(t) = \langle -a\omega \sin(\omega t), - a \omega \cos (\omega t) \rangle\]
+so $\|\vec{v}\| = a \omega$
+
+Let's take the derivative again to get
+\[\vec{a}(t)  = \langle -a \omega^{2} \cos(\omega t), -a \omega^{2} \sin(\omega t) \rangle\]
+
+Note that $\vec{r}$ is always perpendicular to $\vec{v}$ because
+$\vec{r} \cdot \vec{v} = 0$. Also note that $\vec{a}  = -\omega^{2} \vec{r}$.
+
+Don't overgeneralize: $\vec{v}$ is not always perpendicular to $\vec{r}$, but it is perpendicular in circular motion.
+\end{ex}
+\begin{ex}
+  Consider the following graph
+  \sageplot[height=6cm]{parametric_plot((2*cos(x), 2*sin(x)), (x, 0, pi))}
+  Which is traced out by a particle over 5 seconds. Find the location of the particle at time $t$.\\
+  Solution: The equation of the particle is
+  \[\vec{r}(t) = \langle 2 \cos(-\pi t/5), 2 \sin (-\pi t/5) \rangle\]
+  You can also paramtetrize $(r, \theta)$ by $t$.
+  \[r = 2, \qquad\theta = \pi - \pi t/5\]
+\end{ex}
+
+\begin{ex}
+  A particle moves in a circle of radius $2$ at $5 m/s$. Find the equation of the particle. \\
+  Solution:
+  \[\vec{r} = \langle 2 \sin (5 t /2) , 2 -\cos (5t / 2)\rangle,  0 \le t \le \pi / 5 \]
+
+\end{ex}
+\begin{defn}
+  A \textbf{vector field} is a function from $\mathbb{R}^{n} \to \mathbb{R}^{n}$. It takes in a vector and spits out a vector.  For example,
+  \[F(x,y) = \langle x + y, x - y \rangle\]
+\end{defn}
+From now on, everything is about vector fields.
+
+The way to sketch a vector field in $\mathbb{R}^{2}$ is to draw a little arrow at each point representing the output vector.
+\begin{ex}
+  For example, here is a sketch of
+$F(x,y) = \langle x + y, 2x - y \rangle$\\
+\sageplot[height=5cm]{plot_vector_field((x + y, 2*x  - y), (x, -3, 3), (y, -3, 3))}
+\end{ex}
+
+\begin{ex}
+  sketch $F(x,y) = \langle x, y \rangle$ and $F(x,y)  = \langle -y, x \rangle$?
+  Solution:\\
+\sageplot[height=5cm]{plot_vector_field((x,y), (x, -3, 3), (y, -3, 3))}\\
+\sageplot[height=5cm]{plot_vector_field((-y, x), (x, -3, 3), (y, -3, 3))}\\
+\end{ex}
+\section{Februrary 1 2023}
+\subsection{17.3 - Flow Line}
+\begin{defn}
+  The \textbf{flow line} is
+  how a particle in a vector field would ``flow'' (imagine the vector field is a force exerted on the particle).
+  A path $\sigma(t) : \mathbb{R} \to \mathbb{R}^{n}$ is a flow-line in a vector field $\vec{F}(x) : \mathbb{R}^{n} \to \mathbb{R}^{n} $ iff
+  \[\sigma'(t) = \vec{F}(\sigma(t))\]
+\end{defn}
+
+Let's review parametric functions
+\begin{ex}
+  Find the flow line defined by $\vec{r}(t)$
+  if the vector field is $\vec{F} = \langle 1,3 \rangle$ and  $\vec{r}(0) = \langle 2, 4 \rangle$\\
+  Solution:
+  \[\vec{r}(t) = \langle 2 + t, 4 + 3t \rangle \]
+\end{ex}
+\begin{ex}
+  Find the flow line of $\vec{r}(t)$ if
+  the vector field is $\vec{F}(x,y) = \langle y, 2y \rangle$
+  and $\vec{r}(1) = \langle 3,4 \rangle$\\
+  Solution:
+  \begin{align*}
+    r' &= F \circ r \\
+    \langle x', y' \rangle &= \langle y, 2y \rangle \\
+\vec{r}(t) &= \langle 2 \, e^{\left(2 \, t\right)} + 1, 4 \, e^{\left(2 \, t\right)}
+\rangle
+  \end{align*}
+\end{ex}
+Note that you can find flow lines in sage using
+\begin{sageblock}
+# I am going to do this later
+print('hello world')
+\end{sageblock}
+
+\begin{ex}
+  Find the flowline if the field is $\vec{F}(x,y) = \langle 2y, 1 \rangle$
+  and $\vec{r}(0) = \langle 3, 4 \rangle$ \\
+  Solution:\\
+  Note that a sketch can help you find the solution\\
+\sageplot[height=5cm]{plot_vector_field((2*y, 1), (x, -3, 3), (y, -3, 3))}\\
+  \begin{align*}
+    x' = 2y &, y' = 1, x(0) = 3, y(0) = 4 \\
+    y &= t +  4\\
+    x &= t^{2}  + 8t +  3\\
+    \vec{r}(t) &= \langle t^{2} + 3, t  + 4\rangle
+  \end{align*}
+\end{ex}
+\begin{ex}
+  Consider the vector field $\vec{F}(x,y) = \langle y, x \rangle$ and $\vec{r}(t) = \langle 3, 4 \rangle$
+  Solution: \\
+  \[x\left(t\right) = -\frac{1}{2} \, e^{\left(-t\right)} + \frac{7}{2} \, e^{t}, y\left(t\right) = \frac{1}{2} \, e^{\left(-t\right)} + \frac{7}{2} \, e^{t}
+\]
+\end{ex}
+\subsection{17.4 -- Euler's Method}
+If we cannot find an exact solution, we can do a numerical approximation using Euler's Method (approximate differential equations with a tangent line).
+The main idea is that
+\[f(a + \Delta x) \approx f(a) + \Delta x f'(a)\]
+\section{Chapter 17 Practice Knowledge Check}
+\begin{enumerate}
+  \item A particle moves in the direciton of $\langle 4,3 \rangle $ along a straight line at a constant speed of 10 and is located at $(1,2)$ and $(a, 0)$ when $t=k$
+        and $t=5$ respectively. Find $\vec{r}$
+        Solution: \[\vec{r}(t) = \langle -31 + 8t, -22 + 6t \rangle\]
+  \item A particle is located at $(0, -4)$ and moves along a full circlular path clockwise centered at the origin at a cosntant
+        speed of $\pi$. Find the particle's veclocity at $t=2$\\
+        Solution: \[4\pi\]
+        (note that this question was dumb and $\pi$ referred to )
+  \item let $\vec{F}(x,y) = \langle 2, 4y \rangle$ be ocean current. An ice berg is at $(3,5)$ at $t=0$.
+        \begin{enumerate}
+          \item Use Euler's Method with two steps to approximate the location of the iceberg at t=1. \\
+                Solution:
+                \begin{align*}
+                    r(0) &= \langle 3, 5\rangle \\
+                  r(1/2) &\approx \langle 3, r \rangle + 1/2 \rangle 2, 4 * 5 \rangle = \langle 4, 15 \rangle \\
+                  r(1) &\approx \langle 4, 15 \rangle + 1/2 \langle 2, 4*15 \rangle = \langle \rangle
+                  \end{align*}
+          \item Find the exact location of the iceberg in the ocean current at $t=1$\\
+                Solution:
+                \begin{align*}
+                  x' = 2&, y' = 4y \\
+                  x = 2t + 3&, y = 5e^{4t} \\
+                  r(1) &= \langle 5, 5e^{4} \rangle
+                \end{align*}
+          \item Sketch the vector field and draw the flow line starting at $(3,5)$ on the vector field \\
+                Solution:
+                \sageplot[height=7cm]{plot_vector_field((2, 4*y), (x, 0, 10), (y, 0, 10)) + streamline_plot((2, 4*y), (x, 0, 10), (y, 0, 10), start_points=[[3,5]])}
+        \end{enumerate}
+\end{enumerate}
+\section{February 2 2023}
+\subsection{18 -- Line Integral}
+A line integral can be motivated by considering work from physics. In physics, $W = \vec{F} \cdot \Delta\vec{ x}$.
+\begin{defn}
+  Given a vector field $\vec{F} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ and a curve $C$ parametrized by the parametric equation
+  $\vec{r}(t) : \mathbb{R} \to \mathbb{R}^{n}$, then the work done by the field along the curve is given by the \textbf{line integral}
+  \[\int_{C} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \vec{F}(\vec{r}(t)) \cdot \vec{r} '(t) dt\]
+\end{defn}
+\begin{ex}
+  Given the vector field $\vec{F} = \langle 3, 4 \rangle$ and the path $C$ which is a line from
+  $(0, 0)$ to $(0, 5)$, find the work done. \\
+  Solution:
+  Let $\vec{r}(t) = \langle 0, t \rangle, 0 \le t \le 5$.
+  \[\int_{C} \vec{F} \cdot d\vec{r} = \int_{0}^{5} \langle 3, 4\rangle \cdot \langle 0, 1 \rangle dt
+   = 20\]
+\end{ex}
+\begin{ex}
+  Find the work done by the vector field $\vec{F}(x,y) = \langle x+ y, x \rangle$
+  along the curve\\
+  \sageplot[height=5cm]{plot(2*x+2, (x, -1, 0)) + plot(sqrt(4-x^2), (x, 0, 2)) + plot_vector_field((x+y, x), (x, -1, 2), (y, 0, 2))}\\
+  solution: \\
+  let $r_{1}(t) = \langle t,  2t + 2 \rangle, -1 \le t \le 0$
+  and $r_{2}(t) = \langle 2\sin t, 2\cos t \rangle, 0 \le t \le \pi/2 $
+  Then
+\begin{align*}
+  \int_{-1}^{0} \langle 3t + 2, t \rangle \cdot \langle 1, 2 \rangle dt
+  + \int_{0}^{\pi/2} \langle 2 \sin t + 2 \cos t, 2 \sin t \rangle \cdot \langle 2 \cos t, -2 \sin t \rangle dt\\
+  \int_{-1}^{0} 5t + 2 dt + \int_{0}^{2} 4 \sin t \cos t + 4 \cos^{2} t - 4 \sin^{2} t dt \\
+  -(\frac{5}{2} + 2) + (1 + 1 ) = \frac{3}{2}
+\end{align*}
+
+\end{ex}
+\begin{ex}
+  Given the vector field $\vec{F}(x,y) = \langle 2 , x \rangle$ and the curve $C$ which is a parabola given below\\
+  \sageplot[height=5cm]{plot(x^2, (x, -1, 2)) + plot_vector_field((2, x), (x, -1, 2), (y, 0, 4))}\\
+  Solution: \\
+  Let $\vec{r}(t) = \langle t, t^{2} \rangle, -1 \le t \le 2$
+  then
+  \begin{align*}
+    \int_{-1}^{2} \langle 2, t \rangle \cdot \langle 1, 2t \rangle dt \\
+    &= 12
+  \end{align*}
+\end{ex}
+
+\section{Februrary 6 2023}
+YHPL has a meeting. Maybe no class.
 \end{document}
