@@ -167,4 +167,34 @@ try:
  _st_.plot(29, format='notprovided', _p_=plot(x^2, (x, -1, 2)) + plot_vector_field((2, x), (x, -1, 2), (y, 0, 4)))
 except:
  _st_.goboom(675)
+try:
+ _st_.current_tex_line = 750
+ _st_.plot(30, format='notprovided', _p_=parametric_plot((x, 0), (x, -1, 0), thickness=5) + parametric_plot((0, x), (x, 0, 1), thickness=5) + plot_vector_field((y^2, 2*x*y+1), (x, -1, 0), (y, 0, 1)))
+except:
+ _st_.goboom(750)
+try:
+ _st_.current_tex_line = 807
+ _st_.plot(31, format='notprovided', _p_=plot_vector_field((2*x*y + y^2, x^2*y + x), (x, -5, 5), (y, -5, 5)))
+except:
+ _st_.goboom(807)
+try:
+ _st_.current_tex_line = 839
+ _st_.plot(32, format='notprovided', _p_=plot_vector_field((-y/sqrt(x^2+y^2), x/sqrt(x^2+y^2)), (x, -3, 3), (y, -3, 3)) + parametric_plot((2*sin(x), 2*cos(x)), (x, 0, 2*pi)))
+except:
+ _st_.goboom(839)
+try:
+ _st_.current_tex_line = 876
+ _st_.plot(33, format='notprovided', _p_=plot_vector_field((2*y, -2*x), (x, -3, 3), (y, -3, 3)) + parametric_plot((0, x), (x, -3, 3)) + parametric_plot((3*cos(x),3*sin(x)), (x, -pi/2, pi/2)))
+except:
+ _st_.goboom(876)
+try:
+ _st_.current_tex_line = 908
+ _st_.plot(34, format='notprovided', _p_=plot_vector_field((x*y+1, x), (x, 0, 2), (y, 0, 3)) + parametric_plot((x, 3-3/2*x), (x, 0, 2)))
+except:
+ _st_.goboom(908)
+try:
+ _st_.current_tex_line = 942
+ _st_.plot(35, format='notprovided', _p_=region_plot(y <= sin(x), (x, 0, pi), (y, 0, 1)))
+except:
+ _st_.goboom(942)
 _st_.endofdoc()

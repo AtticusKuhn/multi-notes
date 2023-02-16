@@ -85,11 +85,11 @@ Review quadric surfaces
 Review table that YHPL posted on quartic surfaces.
 \subsubsection{review of integrals}
 Recall that the definition of integral is
-\[\int_I f(x) \, dx = \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x_i\]
-where $f(x_i^*)$ is the height of the $i^{th}$ rectangle and $\Delta x_i$ is the width of the
+\[\int_I f(x) \, dx = \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) partialta x_i\]
+where $f(x_i^*)$ is the height of the $i^{th}$ rectangle and $partialta x_i$ is the width of the
 $i^{th}$ rectangle. We are summing up areas on many small rectangles. Note that area can be
 negative if the function goes below the x-axis (called signed area).
-Note that all the $\Delta x$s do not all have to be the same width.
+Note that all the $partialta x$s do not all have to be the same width.
 
 \begin{thm}
   Average
@@ -103,7 +103,7 @@ our original curve.
 
 \begin{defn}
   The definition of a \textbf{multi-variable} integral is
-  \[\iint_R f(x,y) \,dx \,dy = \int_R f(x,y) dA = \lim_{n\to \infty} \lim_{n \to \infty} \sum_{i=1}^n \sum_{j=1}^m f(x_i^*, y_j^*) \Delta x_i \Delta y_j\]
+  \[\iint_R f(x,y) \,dx \,dy = \int_R f(x,y) dA = \lim_{n\to \infty} \lim_{n \to \infty} \sum_{i=1}^n \sum_{j=1}^m f(x_i^*, y_j^*) partialta x_i partialta y_j\]
 \end{defn}
 In a double integral, you have to integral twice.
 \subsubsection{numerical approximation in multiple variables}
@@ -294,18 +294,18 @@ The same integral becomes
 \[y=r\sin\theta\]
 \[x^2+y^2=r^2\]
 \[\theta = \arctan \frac{y}{x}\]
-\[\Delta A \approx r \Delta \theta \Delta r\]
+\[partialta A \approx r partialta \theta partialta r\]
 \[dA = r\, d\theta dr = r \, dr d\theta\]
 \[\int_R f dA = \int_\alpha^\beta\int_a^b f(r\cos\theta, r\sin \theta) drd\theta\]
 \section{Chapter 16 Knowledge Check Practice}
 \begin{enumerate}
-  \item  Consider the double integral $\int_R \delta(x,y) dA$ where $\delta(x,y)$ is the distance from $(x,y)$ to $(0,0)$ and $R$ is the region bounded by the y-axis, the line $y=1$, the line $x=1$ and the semi-cirle $y=\sqrt{5-x^2}$
+  \item  Consider the double integral $\int_R partialta(x,y) dA$ where $partialta(x,y)$ is the distance from $(x,y)$ to $(0,0)$ and $R$ is the region bounded by the y-axis, the line $y=1$, the line $x=1$ and the semi-cirle $y=\sqrt{5-x^2}$
     \renewcommand{\theenumi}{\Alph{enumi}}
   \begin{enumerate}
     \item Draw $R$\\
       Solution: \sageplot[height=5cm]{region_plot(y<=sqrt(5-x^2), (x, 0, 1), (y, 1,3))}
-    \item find $\delta(x,y)$.\\
-      Solution: $\delta(x,y) = \sqrt{x^2+y^2}$
+    \item find $partialta(x,y)$.\\
+      Solution: $partialta(x,y) = \sqrt{x^2+y^2}$
     \item What is the practical meaning of the double integral\\
       Solution: the total mass of the region $R$.
     \item Write the double integral of the form $dxdy$. Do not evaluate.\\
@@ -364,7 +364,7 @@ The same integral becomes
 By the way, our first knowledge check on chapter 16  is on 01/26
 \begin{ex}
   Imagine a circular dinner plate with radius 10cm where the mass density of the dinner plate is given by
-  \[\delta(x,y) = \sqrt{x^2+y^2}\]
+  \[partialta(x,y) = \sqrt{x^2+y^2}\]
   use polar coordinates to find the total mass of the plate.\\
   Solution:
 \begin{align*}
@@ -457,13 +457,13 @@ The conversions are
 \end{ex}
 \section{Knowledge Check Solutions}
 Consider the double integral
-\[\int_{1}^{2} \int_{1}^{\sqrt{9-x^{2}}} \delta(x,y) dA\]
-where $\delta(x,y)$ is the distance from the y-axis
+\[\int_{1}^{2} \int_{1}^{\sqrt{9-x^{2}}} partialta(x,y) dA\]
+where $partialta(x,y)$ is the distance from the y-axis
 \begin{enumerate}
   \item Sketch $R$ \\
         \sageplot[height=7cm]{region_plot([y<sqrt(9-x^2), y > 1], (x, 1, 2), (y, 1, 3))}
-  \item find $\delta(x,y)$ \\
-        Solution: $\delta(x,y) = x$
+  \item find $partialta(x,y)$ \\
+        Solution: $partialta(x,y) = x$
   \item What is the practical meaning of the integral?\\
         Solution: The total mass
   \item dydx
@@ -607,7 +607,7 @@ print('hello world')
 \subsection{17.4 -- Euler's Method}
 If we cannot find an exact solution, we can do a numerical approximation using Euler's Method (approximate differential equations with a tangent line).
 The main idea is that
-\[f(a + \Delta x) \approx f(a) + \Delta x f'(a)\]
+\[f(a + partialta x) \approx f(a) + partialta x f'(a)\]
 \section{Chapter 17 Practice Knowledge Check}
 \begin{enumerate}
   \item A particle moves in the direciton of $\langle 4,3 \rangle $ along a straight line at a constant speed of 10 and is located at $(1,2)$ and $(a, 0)$ when $t=k$
@@ -640,7 +640,7 @@ The main idea is that
 \end{enumerate}
 \section{February 2 2023}
 \subsection{18 -- Line Integral}
-A line integral can be motivated by considering work from physics. In physics, $W = \vec{F} \cdot \Delta\vec{ x}$.
+A line integral can be motivated by considering work from physics. In physics, $W = \vec{F} \cdot partialta\vec{ x}$.
 \begin{defn}
   Given a vector field $\vec{F} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ and a curve $C$ parametrized by the parametric equation
   $\vec{r}(t) : \mathbb{R} \to \mathbb{R}^{n}$, then the work done by the field along the curve is given by the \textbf{line integral}
@@ -683,5 +683,412 @@ A line integral can be motivated by considering work from physics. In physics, $
 \end{ex}
 
 \section{Februrary 6 2023}
-YHPL has a meeting. Maybe no class.
+Today we are going to talk about line integrals.
+\subsection{Gradient Field}
+How do we determine if a given vector field is a gradient vector field?
+
+First assume that
+\begin{defn}
+  We say that $\vec{F}$ is a gradient vector field iff
+\[\exists \vec{F}, \vec{F} = \nabla f\]
+\end{defn}
+\begin{ex}
+  Let $\vec{F} = \langle 2xy+1, x^2+3y \rangle$. Is $\vec{F}$ a gradient field?
+  Set up the partial equations.
+  \[\frac{\partial f}{\partial x} = 2xy+1 \qquad \frac{\partial f}{\partial y} = x^2+3y\]
+  Integrate both sides to get
+  \[f(x,y) = x^2y + x + c(y), \qquad f(x,y) = x^2y + \frac{3}{2}y^2 + c(x)\]
+  Derivate the first wrt to $y$ to get
+  \[f_y = x^2 + c_y(y) \implies c = 37y + c_2\]
+  Then substitute that back in to get
+  \[f(x,y) = x^2y + x + 37y + c_2\]
+  so we may conclude that $f$ is a gradient field.
+\end{ex}
+
+\begin{ex}
+  is $\vec{F} = \langle x,y\rangle$ a gradient field?
+  Yes,,
+  \[\vec{F} = \nabla (\frac{1}{2}x^2 + \frac{1}{2}y^2 + C)\]
+\end{ex}
+\begin{ex}
+  Is $\vec{F} = \langle -y, x \rangle$ a gradient field??
+
+  Assume there is such and $f$ so that
+  \[f_x = -y \qquad f_y = x\]
+  Integrate to get
+  \[f = xy + c(x) \qquad f = -xy + c(y)\]
+  Then partially differentiate to get
+  \[f_x = y  + c'(x) = -y\]
+  but this is a contradiction because
+  \[y \neq -y\]
+  so we conclude that $\vec{F}$ is not a vector field.
+\end{ex}
+
+\begin{thm}
+  \textbf{Fundamental Theorem of Calculus for Line Integrals}: Given a vector field
+  $\vec{F} : \mathbb{R}^n \to \mathbb{R}^n$ which is a gradient vector field (which means
+  that $\vec{F} = \nabla f$) and
+  given that $C$ is an oriented curve in $\mathbb{R}^n$
+  from $p$ to $q$, then
+  \[\int_C \vec{F} \cdot d\vec{r} = f(q) - f(p)\]
+\end{thm}
+
+You should think of this theorem as the analog of the fundamental theorem of
+calculus from single variable.
+
+\begin{ex}
+  Let $\vec{F} = \langle y^2 , 2xy+1 \rangle  $.
+
+  Find the potential function
+  \[f_x = y^2 \qquad f_y = 2xy+1\]
+  so \[f = xy^2 + c(y) \implies f_y = 2xt + c'(y)\]
+  This means \[c'(y) = 1 \implies c(y)  =y\]
+  So
+  \[\vec{F} = \nabla (xy^2 + y)\]
+
+  Now find the line integral over the curve
+  \sageplot[height=5cm]{parametric_plot((x, 0), (x, -1, 0), thickness=5) + parametric_plot((0, x), (x, 0, 1), thickness=5) + plot_vector_field((y^2, 2*x*y+1), (x, -1, 0), (y, 0, 1))}
+We use the FTC from before to find that it is
+\[1 - (-1 \cdot 0^2 -0)  = 1\]
+\end{ex}
+Note that you have to pay attention to the orientation of the curve.
+\begin{defn}
+  A vector field $\vec{F}$ is called \textbf{path independent} (physicst
+  would call it \textbf{conservative}) iff
+  for all curve $C_1$ and $C_2$
+  \[\int_{C_1} \vec{F} \cdot d \vec{r} = \int_{c_2} \vec{F} \cdot d \vec{r}\]
+  when $c_1$ and $c_2$ have the same end-points.
+\end{defn}
+In other words, for a path independent vector field, the work done by the
+vector field does not depend on the path taken.
+
+\begin{defn}
+  Given a vector field $\vec{F}$ and a closed curve $C$, the
+  \textbf{circulation} of $\vec{F}$ along $C$ is
+  \[\oint \vec{F} \cdot d \vec{r}\]
+  which is just a line integral where we end up back where we started.
+\end{defn}
+
+Note that for a conservative vector field, the circulation is always $0$.
+
+\begin{defn}
+  we call a vector field $\vec{F}$ \textbf{circulation free} iff
+  \[\oint_c \vec{F} \cdot d\vec{r} = 0\]
+  for all closed curves $c$
+\end{defn}
+
+
+Here is a big theorem
+
+\begin{thm}
+  The following statements are all equivalent
+  \begin{enumerate}
+    \item $\vec{F}$ is a gradient field
+    \item $\vec{F}$ is a path independent
+    \item $\vec{F}$ is circulation free
+  \end{enumerate}
+\end{thm}
+So if you prove one of these statements, you've proved them all,
+\subsection{Curl}
+\begin{defn}
+  Given a vector field $\vec{F}$ and a point $(x,y)$, we defined
+  the \textbf{curl} of $\vec{F}$ at $(x,y)$ to be
+  \[\nabla \times \vec{F} (x,y) = \begin{vmatrix}  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} \\ P & Q \end{vmatrix}= \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\]
+  The physical interpretation is that the curl measures if you
+  placed a windmill at $(x,y)$, the curl measures the how much the
+  vector field will turn the windmill. If the curl is positive,
+  the rotation is counter-clockwise. If the curl is negative, the
+  rotation is clockwise.
+\end{defn}
+Another name for the curl is the \textbf{circulation density}.
+\begin{ex}
+  Let $\vec{F} = \langle 2xy + y^2, x^2 + x \rangle$.
+  Find the curl of $\vec{F}$.\\
+  \sageplot[height=6cm]{plot_vector_field((2*x*y + y^2, x^2*y + x), (x, -5, 5), (y, -5, 5))}\\
+  The curl is
+  \[\nabla \times \vec{F} = 1 -2x-2y + 2xy\]
+\end{ex}
+
+\begin{thm}
+  \[\vec{F} \text{ is a gradient field } \implies \nabla \times \vec{F} = 0\]
+  \[\nabla \times \vec{F} \neq 0 \implies  \vec{F} \text{ is not a gradient field}\]
+\end{thm}
+
+Don't misuse the theorem. The inverse of the theorem doesn't hold.
+If the curl is $0$, we cannot conclude that the vector field is a
+gradient field.
+Consider the counter-example
+\[\vec{F} = \langle \frac{-y}{\sqrt{x^2+y^2}}, \frac{x}{\sqrt{x^2+ y^2}} \rangle\]
+Now find the curl
+YHPL claims that the curl is $0$, but I disagree. The field is
+not conservative
+
+Here is a useful theorem to compute a line integral.
+\begin{thm}\label{thm:constant_vec_f}
+  If $\|\vec{F}\|$ is constant along $C$ and $\vec{F}$ is
+  tangent to $C$ everywhere in the same direction, then
+  \[\int_C \vec{F} \cdot d \vec{r} = \|\vec{F} \|\]
+\end{thm}
+
+
+\begin{ex}
+  To use the previous theoerm, consider the vector field
+  \[\vec{F} = \langle \frac{-y}{\sqrt{x^2+y^2}}, \frac{x}{\sqrt{x^2+y^2}}\]
+  $\|F\| = 1$, and $\vec{F}$ is tangent to any circle centered at $(0,0)$.
+  So, for example\\
+  \sageplot[height=6cm]{plot_vector_field((-y/sqrt(x^2+y^2), x/sqrt(x^2+y^2)), (x, -3, 3), (y, -3, 3)) + parametric_plot((2*sin(x), 2*cos(x)), (x, 0, 2*pi))}\\
+  Then
+  \[\oint_C \vec{F} \cdot d \vec{r} = 2\pi\]
+\end{ex}
+
+How to find out if $\vec{F}$ is a gradient field.
+\begin{enumerate}
+  \item Find $\nabla \times \vec{F}$. If the curl is not $0$, then
+    $\vec{F}$ is not a vector field. If the curl is $0$, then inconclusive
+  \item Solve the differential equations to try and find a potential
+    function
+
+\end{enumerate}
+
+\begin{thm}
+  \textbf{Curl Test}:
+  If $\nabla \times \vec{F} = 0 $ and the domain of $\vec{F}$ has no holes
+  then
+  $\vec{F}$ is a gradient vector field
+\end{thm}
+\section{Feb 8 2023}
+
+Note that you cannot use the Curl Test to conclude that a given vector field is not a gradient field. The implication
+goes one way. If you are applying the curl test, the conclusion is always ``the field is a gradient field''
+
+
+\begin{thm}
+  \textbf{Green's Theorem}:
+  Let $\vec{F}$ be a smooth vector field
+  Let $C$ be a smooth, closed, simple, counter-clockwise curve, and let $R$ be the region enclosed by $C$. Then
+  \[\oint_{C} \vec{F} \cdot d\vec{r} = \iint_{R} \nabla \times \vec{F} dA\]
+\end{thm}
+
+The proof for Green's Theorem is that the right side of the equality counts up all the little circulations inside a region, and the
+left side of the equality counts up the total circulation along the boundry of the region.
+\begin{ex}
+  Let $\vec{F} = \langle 2y, -2x \rangle$ and let $C$ be the closed curve.\\
+  \sageplot[height=5cm]{plot_vector_field((2*y, -2*x), (x, -3, 3), (y, -3, 3)) + parametric_plot((0, x), (x, -3, 3)) + parametric_plot((3*cos(x),3*sin(x)), (x, -pi/2, pi/2))}\\
+  Compute
+  \[\oint_{C} \vec{F} \cdot d \vec{r}\]
+  Solution: \\
+  We can solve this integral in 3 different ways.
+  \begin{enumerate}
+  \item Using Green's Theorem
+\begin{align*}
+  \iint_{R} \nabla \times \vec{F} dA\\
+  &= -\int_{\theta = \pi/2}^{\theta=\pi/2} \int_{r=0}^{r=3} (-4) r dr \\
+  &= 18\pi
+\end{align*}
+Remeber to multiply by $-1$ because this curve is oriented clockwise
+
+\item Using parametrization:
+Let
+\[r(t) = (0, t), -3 \le t \le 3, r(t) = (3\cos(t), 3\sin(t)), -\pi/2 \le t \le \pi/2\]
+\begin{align*}
+  &\int_{t=0}^{t=3} F(r(t)) \cdot r'(t) dt + \int_{t=-\pi/2}^{t=\pi/2} F(r(t)) \cdot r'(t) dt \\
+  &= \int_{t=0}^{t=3} \langle 2t, 0 \rangle \cdot \langle 0, 1 \rangle dt + \int_{t=-\pi/2}^{t=\pi/2} \langle -6\sin(t) , 6\cos(t) \rangle \cdot \langle -3\sin(t), 3\cos(t) \rangle  dt \\
+  &= \int_{t=0}^{t=3} 0 dt + \int_{t=-\pi/2}^{\pi/2} 18 dt \\
+  &= 18\pi
+\end{align*}
+\item Geometric intuition:
+By theorem \ref{thm:constant_vec_f}, it's just the path length, which is $3\pi$. $\vec{F}$ is perpendicular to $C$ on the vertical
+seciton and $\vec{F}$ is parallel to $C$ on the circular section.
+          \end{enumerate}
+\end{ex}
+
+Sometimes we can even use Greens Theorem if the curve $C$ is not closed by drawing in a new line.
+\begin{ex}
+  Let $\vec{F} = \langle xy + 1, x \rangle$ and let $C$ be the curve \\
+  \sageplot[height=7cm]{plot_vector_field((x*y+1, x), (x, 0, 2), (y, 0, 3)) + parametric_plot((x, 3-3/2*x), (x, 0, 2))}\\
+  Solution: \\
+  First, by direct computation:
+  Let
+  \[r(t) = \langle t, 3- 3/2 t\rangle, 0 \le t \le 2\]
+  \begin{align*}
+    &\int_{t=0}^{t = 2} \langle 3t - 3/2 t^{2} - 1, t\rangle \cdot \langle 1, -3/2 \rangle dt \\
+    &= -(3-4+2) = -1
+  \end{align*}
+  Now by Greens Theorem
+  Draw in the other bases of the triangle.
+  Let
+  \begin{align*}
+    &r_{1}(t) = \langle t, 0, \rangle , 0 \le t \le 3 \\
+    &r_{2}(t) = \langle 0, t \rangle, 0 \le t \le 2
+  \end{align*}
+  Then, Green's Theorem gives
+  \begin{align*}
+    \oint_{C - C_{2} + C_{1}} \vec{F} \cdot d\vec{r} \\
+    &= \int_{x=0}^{x=2} \int_{y=0}^{y=3-3/2x} (1-x) dy dx \\
+    &= -1
+  \end{align*}
+  Now we compute the line integrals of $C_{1}$ and $C_{2}$ to subtract them out of the closed curve. We get
+  \begin{align*}
+    &\int_{C_{1}} \vec{F} \cdot d \vec{r} = \int_{t=0}^{t=2} \langle 1, t \rangle \cdot \langle 1, 0 \rangle dt = 0 \\
+    &\int_{C_{2}} \vec{F} \cdot d \vec{r} \ int_{t=0}^{t=3} \langle 1, 0 \rangle \cdot \langle 0, 1 \rangle dt   = 0 \\
+  \end{align*}
+  The orientation/sign of curves matters
+\end{ex}
+
+We can find the area of any region if we have a function whose curl is $1$. For example
+$\nabla \times \langle 0, x \rangle = 1$.
+\begin{ex}
+  Find the area of the region\\
+  \sageplot[height=7cm]{region_plot(y <= sin(x), (x, 0, pi), (y, 0, 1))} \\
+  Solution:
+  By Green's Theorem
+  \begin{align*}
+    \int_{R} \nabla \times \vec{F} dA = \oint_{C_{1}+c_{2}} \langle 0, x \rangle \cdot d \vec{r}\\
+    &= \int_{0}^{\pi} \langle 0, t, \rangle \cdot \langle 1, 0 \langle dt + \int_{0}^{\pi} \langle 0, t \rangle \cdot \langle 1 , \cos t \rangle dt
+  \end{align*}
+\end{ex}
+\section{Feb 9 2023}
+No Class today due to 12 hour meeting.
+\section{Feb 13 2023}
+\begin{ex}
+  Let $\vec{F}(x,y) = e^{xy}(y\cos(x) - \sin(x))\vec{i} + xe^{xy}\cos(x) \vec{j}$. $C_{2}$ is the half unit circle centered at $(1,0)$
+  in the first quadrant, traced clockwise from $(0,0)$ to $(2,0)$. $C_{2}$ is the line from $(0,0)$ to $(2,0)$
+  \begin{enumerate}
+    \item use the curl test to determine if $\vec{F}$ is a gradient field. \\
+          Solution \\
+          The curl test has 2 conditions. First
+          \[\nabla \times \vec{F} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0\].
+          Next the domain condition.
+          The domain has no holes.
+          By the curl test, $\vec{F}$ is a gradient field
+    \item Find the potential function of $\vec{f}$
+          Solution: \\
+          Set up some differential equations.
+          \[f_{x} = e^{xy})(y\cos(x) - \sin(x)) \qquad f_{y} = xe^{xy}\cos(x)\]
+          So
+          \[f = \cos(x) e^{xy} + K(x) \]
+          \[f_{x} = -y\sin(x)e^{xy} + K'(x)\]
+          so
+          \[f = e^{xy}\cos(x)\]
+    \item Set up the line integral $\int_{C_{1}} \vec{F} \cdot d \vec{r}$ using
+          parametrization, do not evaluate. \\
+          Solution: \\
+          Let
+          \[\vec{r}(t) = \langle 1 -\cos(t), \sin(t)  \rangle, 0 \le t \le \pi\]
+          \[\int_{t=0}^{t=\pi} \vec{F}(\vec{r}(t)) \vec{r}'(t) dt\]
+    \item Use the fundamental theorem of line integrals to evaluate $\int_{C_{1}} \vec{F} \cdot d\vec{r}$\\
+          This theorem says we just eval at the beginning and the end
+          \[\int_{C_{1}} \vec{F} \cdot d \vec{r} = f(2,0) - f(0,0) = \cos(2) - 1\]
+    \item evaluate $\int_{C_{2}} \vec{F} \cdot d\vec{r}$ using a parametrisation.\\
+          Let
+          \[r(t) = \langle t, 0 \rangle 0 \le t \le 2\].
+          \[r'(t) = \langle 1, 0 \rangle 0 \le t \le 2\]
+          \[\int_{t=0}^{t=2} \langle -\sin(t),t\cos(t) \rangle \cdot \langle 1, 0\rangle dt\]
+    \item is $\vec{F}$ conservative? \\
+          Yes $\vec{F}$ is conservative because $\vec{F}$ is a gradient vector field.
+    \end{enumerate}
+  \end{ex}
+  We already did the chapter 17 KC sample.
+  \begin{ex}
+    Let $C$ be the curve from $(-1,0)$ to $(1, 0)$ on the curve $y=  1-x^{2}$.
+    Let $\vec{F} = \langle 2, e^{y^{2022}} + x^{2} + 3$. Use Greens Theorem to
+    find the work done by $\vec{F}$ on $C$. \\
+    Solution: \\
+    We need to close the curve in order to apply Greens Theorem.
+    Note that $\nabla \times \vec{F} = 2x$
+    \[\oint_{C_{2}-C_{1}} \vec{F} \cdot d\vec{r} = \iint 2x dA  \]
+    The area integral is
+    \[\int_{x=-1}^{x=1} \int_{y=0}^{y=1-x^{2}} 2x dy dx = \int_{-1}^{1} 2x(1-x^{2}) dx = 0\]
+    \[\int_{C_{1}} \vec{F} \cdot d\vec{r} =\int_{C_{1}} \vec{F} \cdot d\vec{r} \]
+    Let $\vec{r}(t) = \langle t, 0 \rangle -1 \le t \le 1$
+    \[\int_{t=-1}^{t=1} \langle 2, t^{2} + 4 \rangle \cdot \langle 1, 0 \rangle dt = 2 \]
+  \end{ex}
+
+  \begin{ex}
+    Let $\vec{F} = \langle 2 , e^{y^{2023}} + x^{2} + 3 \rangle $
+    Let $C$ be the clockwise region bounded by $y=1$, $x=0$, $y=x$.
+    Find the clockwise circulation of the vector field around the boundry.
+    \[\int_{0}\]
+  \end{ex}
+
+
+
+  Here we did some problems out of the textbook, and I couldn't type
+  them up because they didn't give the equation.
+  \subsection{Chapter 19 - flu}
+  Chapter 19 is about flux.
+  flux is the rate of flow of a vector field through a surface $S$. It is
+  written $\int_{S} \vec{F} \cdot d\vec{A}$, where $\vec{A}$ is vector normal
+  to $A$ whose length is equal to the area of $A$.
+\section{Chapter 18 Knowledge Check Solutions}
+\begin{enumerate}
+  \item Consider $F(x,y) = \langle y + 1, x \rangle$ and $G(x,y) = \langle \frac{-y}{\sqrt{x^{2}+y^{2}}}        , \frac{x}{\sqrt{x^{2}+y^{2}}}$
+        \begin{enumerate}
+          \item Does the curl test apply to $F$?\\
+                Solution: \\
+                Yes, the curl test applies. The $\nabla \times F = 0$ and
+                $F$ has no holes in its domain.
+          \item Is $F$ conservative? \\
+                Solution: \\
+                Yes, $F$ is conservative because of the Curl Test.
+          \item Apply Fundamental Theorem of Calculus to evaluate $\int_{C} \vec{F} \cdot d\vec{r}$
+                where $C$ is the curve from $(01, e^{-1})$ to $(1, e)$ along
+                $y = e^{x}$\\
+                Solution:\\
+                We find that if $\nabla f = \vec{F}$, then $f(x,y) = xy + x + c$
+                . The FTC says the answer is $f(1,e) - f(-1, e^{-1})$, which is
+                $e+e^{-1}+2$
+          \item Does the curl test apply to $\vec{G}$?\\
+                Solution: \\
+                No, $\vec{G}$ has a hole at $(0,0)$
+          \item Find the work done by $\vec{G}$ along the circle of radius $2$
+                at the origin going counterclockwise, starting at the point $(2,0)$\\
+                \begin{enumerate}
+                  \item using explicit parametrization of $C$ \\
+                        Solution: \\
+                        let
+                \[r(t) = \langle 2\cos t, 2\sin t \rangle \qquad  0 \le t \le 2\pi\]
+
+                        \begin{align*}
+                          \oint_{C} \vec{G} \cdot d\vec{r} &= \int_{0}^{2\pi} \langle -\sin t, \cos t \rangle \cdot \langle -2 \sin t , 2\cos t \rangle dt\\
+                                                           &= \int_{0}^{2\pi} 2 dt \\
+                          &= 4\pi
+                          \end{align*}
+                  \item using geometric intuition about $\vec{G}$ and $C$ \\
+                        Solution: \\
+                        $\vec{G}$ is always perpendicular to $C$, so it's just
+                        \[\|\vec{G}\| |c| = 1 4\pi = 4\pi\]
+                \end{enumerate}
+          \item is $\vec{G}$ conservative?
+                \\Solution:\\
+                No, because in the integral above, the circulation was not $0$.
+
+        \end{enumerate}
+        \item Let $\vec{F}(x,y) = \langle 2, e^{y^{2023}} +x^{2}+3 \rangle$
+        \begin{enumerate}
+          \item Find the clockwise circulation of $\vec{F}$ around the region bounded
+                by $x=0$, $y=1, y=x$ \\
+                Solution: \\
+                Just use Greens Theorem. Make sure to multiply by $-1$ because we
+                are going clockwise.
+                \begin{align*}
+                  &\oint_{R} \vec{F} \cdot d\vec{r} \\
+                  &= \iint \nabla \times \vec{F} dA \\
+                  &= \int_{x=0}^{x=1}\int_{y=x}^{y=1} 2x dy dx \\
+                  &= -1/3
+                  \end{align*}
+                \item Use Green’s theorem to find the work done by the vector field along a curve $C$, where $C$ is from $(-1, 0)$ to $(1, 0)$ along $y=1-x^{2}$.
+                \\
+                Soltion: \\
+                You need to close the loop by drawing in an extra line. I suggest defining $C_{2}$ to be the line from $(-1, 0)$
+                to $(1, 0)$. Then, let $R$ be the region enclosed by $C_{2}-C$By Green's Theorem
+                \begin{align*}
+                  \oint_{R} \vec{F} \cdot d\vec{r} &= \iint \nabla \times \vec{F} dA \\
+                  \int_{C_{2}} \vec{F} \cdot d\vec{r} - \int_{C} \vec{F} \cdot d\vec{r} &= \int_{-1}^{1} \int_{0}^{1-x^{2}} 2x dy dx \\
+                  \int_{C_{2}} \vec{F} \cdot d\vec{r} &= \int_{C} \vec{F} \cdot d\vec{r} \\
+                  \int_{C} \vec{F} \cdot d\vec{r} = \int_{t=-1}^{t=1} \langle 2, t^{2} + 3 \rangle \cdot \langle 1 , 0 \rangle dt\\
+                  &=4
+                \end{align*}
+                \end{enumerate}
+\end{enumerate}
 \end{document}
