@@ -197,4 +197,47 @@ try:
  _st_.plot(35, format='notprovided', _p_=region_plot(y <= sin(x), (x, 0, pi), (y, 0, 1)))
 except:
  _st_.goboom(942)
+_st_.current_tex_line = 1115
+_st_.blockbegin()
+try:
+     from sage.plot.plot3d.shapes import Cylinder
+     
+except:
+ _st_.goboom(1117)
+_st_.blockend()
+try:
+ _st_.current_tex_line = 1118
+ _st_.plot(36, format='notprovided', _p_=Cylinder(1, 1, closed=False) + arrow((0, 1, 0.5), (0, 2, 0.5)))
+except:
+ _st_.goboom(1118)
+try:
+ _st_.current_tex_line = 1133
+ _st_.plot(37, format='notprovided', _p_=implicit_plot3d(x^2 + z^2 == 4^2, (x, -4, 4), (y, -2, 3), (z, -4, 4)) + plot_vector_field3d((y, x+1, z), (x, -4, 4), (y, -2, 3), (z, -4, 4)))
+except:
+ _st_.goboom(1133)
+try:
+ _st_.current_tex_line = 1148
+ _st_.plot(38, format='notprovided', _p_=implicit_plot3d(x^2 + z^2 + y^2 == 2^2, (x, -2, 2), (y, -2, 2), (z, 0, 2)) + plot_vector_field3d((1, z, y), (x, -2, 2), (y, -2, 2), (z, 0, 2)))
+except:
+ _st_.goboom(1148)
+try:
+ _st_.current_tex_line = 1168
+ _st_.plot(39, format='notprovided', _p_=implicit_plot3d(y==sqrt(x^2+z^2), (x, -3, 3), (y, 0, 2), (z, -3, 3) ) + plot_vector_field3d((1+z, x, y), (x, -3, 3), (y, 0, 3), (z, -3, 3)))
+except:
+ _st_.goboom(1168)
+try:
+ _st_.current_tex_line = 1190
+ _st_.plot(40, format='notprovided', _p_=implicit_plot3d(x^2 + z^2 + y^2 == 2^2, (x, -2, 2), (y, -2, 2), (z, 0, 2)) + plot_vector_field3d((x, y, z), (x, -2, 2), (y, -2, 2), (z, 0, 2)))
+except:
+ _st_.goboom(1190)
+try:
+ _st_.current_tex_line = 1215
+ _st_.plot(41, format='notprovided', _p_=implicit_plot3d(y == 2-x^2-z^2, (x, -3, 3), (y, 0, 2), (z, -3, 3)) + plot_vector_field3d((y, 2*x+1, y+z), (x,-3, 3), (y, 0, 2), (z, -3, 3)))
+except:
+ _st_.goboom(1215)
+try:
+ _st_.current_tex_line = 1295
+ _st_.plot(42, format='notprovided', _p_=list_plot3d([(2,0,0), (0,2,0), (0,0,2)]) + plot_vector_field3d((3*x, 3*y, 3*z), (x,-2, 2), (y, 0, 2), (z, 0, 2)))
+except:
+ _st_.goboom(1295)
 _st_.endofdoc()

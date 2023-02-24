@@ -1091,4 +1091,253 @@ No Class today due to 12 hour meeting.
                 \end{align*}
                 \end{enumerate}
 \end{enumerate}
+\section{Feb 16 2023}
+\subsection{19.2 -- Flux}
+\begin{defn}
+  The \textbf{flux} of a vector field through a surface is the amount of flow of a vector field
+  through the surface.
+  $S$ is the surface, $\vec{F}$ is the vector field, and $\vec{n}$ is the normal vector to the surface.
+  \[\Phi = \iint_{S} \vec{F} \cdot d\vec{S} = \iint_{S} \vec{F} \cdot \vec{n} dS\]
+  In this notation, $d\vec{A} = \vec{n}dA$
+\end{defn}
+
+There are several easy cases if we know the surface.
+You need to memorize these $3$ cases:
+\begin{enumerate}
+  \item cylinder
+  \item sphere
+        \item $z = f(x,y)$
+\end{enumerate}
+\subsubsection{Cylinder}
+\begin{ex}
+  Let $S$ be a cylinder whose axis is the $z$ -axis. There is no top/bottom cap, $S$ is only the
+  sides of the cylinder.
+  \begin{sageblock}
+    from sage.plot.plot3d.shapes import Cylinder
+    \end{sageblock}
+  \sageplot[height=7cm]{Cylinder(1, 1, closed=False) + arrow((0, 1, 0.5), (0, 2, 0.5))}
+  The unit normal vector $\vec{n}$ for the point with cylindrical coordinates $(r, \theta, z)$ is
+  $\langle \cos \theta, \sin \theta , 0 \rangle$.
+
+  We can use the unit normal to calculate the flux.
+  \[\Phi = \int_{\theta = 0}^{\theta = 2\pi} \int_{z=a}^{z=b}   \,dz d\theta\]
+\end{ex}
+
+Here is an example where the vector field is given
+\begin{ex}
+  Let $S$ be the surface which is the sides of a cylinder whose axis is the $y$-axis from
+  $y=-2$ to $y=3$ and whose radius is $4$.
+
+  Let $\vec{F}(x,y) = \langle y, x+1, z \rangle $.
+  find the flux of $\vec{F}$ through $S$.\\
+    \sageplot[scale=0.5]{implicit_plot3d(x^2 + z^2 == 4^2, (x, -4, 4), (y, -2, 3), (z, -4, 4)) + plot_vector_field3d((y, x+1, z), (x, -4, 4), (y, -2, 3), (z, -4, 4))}\\
+  We can find the flux by
+  \begin{align*}
+    \Phi \\
+    &= \int_{y=-2}^{y=3} \int_{\theta = 0}^{\theta = 2\pi} \langle y 4\cos \theta, 4\sin \theta \rangle \cdot \langle -\cos\theta, 0, -\sin\theta \rangle d\theta dy
+  \end{align*}
+\end{ex}
+\subsubsection{Sphere}
+For a sphere, use spherical coordinates.
+
+\[\Phi = \int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 0}^{\phi = 2\pi} \vec{F} \cdot \langle \sin\phi\cos\theta, \sin \phi \cos \theta, \cos \phi \rangle d\phi d\theta\]
+
+Note that a top hemisphere only means the top half of the sphere
+\begin{ex}
+  Let $S$ be the top hemisphere and let $\vec{F} = \langle 1,z, y \rangle$. Find the flux.\\
+    \sageplot[scale=0.7, trim={5cm 4cm 5cm 2cm}]{implicit_plot3d(x^2 + z^2  + y^2 == 2^2, (x, -2, 2), (y, -2, 2), (z, 0, 2)) + plot_vector_field3d((1, z, y), (x, -2, 2), (y, -2, 2), (z, 0, 2))}
+  \begin{align*}
+    \Phi \\
+    &= \int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 0}^{\phi = \pi / 2} \langle 1, 2\cos\phi, 2\sin\phi\cos\theta \rangle \cdot
+ \langle \sin\phi\cos\theta, \sin \phi \cos \theta, \cos \phi \rangle d\phi d\theta\
+  \end{align*}
+\end{ex}
+Note that we often set up integrals, but never evaluate them.
+\subsubsection{Implicit Surfaces}
+If we are given a surface as $S$ defined by $z = f(x,y)$, then
+\[\vec{n} = \langle -f_{x}, -f_{y}, 1 \rangle \]
+
+Where $1$ means that $S$ is oriented upwards and $-1$ means $S$ is oriented downwards.
+
+In general, we project the surface onto a plane.
+
+\begin{ex}
+  Let $S$ be the surface $y = \sqrt{x^{2}+y^{2}}$ for $0 \le y \le 2$ where the normal vector is oriented outwards. Let $\vec{F} = \langle 1+z, x, y \rangle$.
+  Find the flux of $\vec{F}$ through $S$. Note that $S$ is a cone.
+  \\
+  \sageplot[scale=0.5]{implicit_plot3d(y==sqrt(x^2+z^2), (x, -3, 3), (y, 0, 2), (z, -3, 3) ) + plot_vector_field3d((1+z, x, y), (x, -3, 3), (y, 0, 3), (z, -3, 3))}\\
+  We have that $\vec{n} = \langle f_{x}, -1, f_{z} \rangle$. Note that we use $-1$ because when we project onto $x-z$ plane, the normal vector is pointing down.
+  \begin{align*}
+    \Phi
+    &= \int_{-2}^{2} \int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}}\langle 1+z, x , \sqrt{x^{2}+z^{2}} \rangle \cdot \langle f_{x}, -1, f_{z} \rangle dxdz\\
+    &= \int_{} \langle 1+z, x , \sqrt{x^{2}+z^{2}} \rangle \cdot \langle \frac{1}{2\sqrt{x^{2}+z^{2}}}, -1, \frac{1}{2\sqrt{x^{2}+z^{2}}} \rangle dxdz\\
+      &= \int_{\theta= 0}^{\theta = 2\pi}\int_{r=0}^{r=2} \langle 1+r\sin\theta, r\cos\theta, r \rangle \cdot \langle \frac{r\cos\theta}{r},1 \frac{r\sin\theta}{r} \rangle rdrd\theta
+   \end{align*}
+  \end{ex}
+
+
+  Here is a useful theorem to compute flux integral.
+  \begin{thm}
+    \textbf{Geometric Intuition Theorem}: If $\vec{F}$ is always perpendicular to $S$ and $\|\vec{F}\|$ is constant
+    on $S$, then
+    \[\Phi_{S} = \|\vec{F}\|A\]
+
+    \end{thm}
+
+    \begin{ex}
+      Let $\vec{F}(x,y,z) = \langle x,y,z \rangle$ and let $S$ be the surface which is the upper hemisphere of a sphere with radius 2.\\
+
+    \sageplot[scale=0.7, trim={5cm 4cm 5cm 2cm}]{implicit_plot3d(x^2 + z^2  + y^2 == 2^2, (x, -2, 2), (y, -2, 2), (z, 0, 2)) + plot_vector_field3d((x, y, z), (x, -2, 2), (y, -2, 2), (z, 0, 2))}\\
+      By the geometric intuition, the answer is $\|\vec{F}\|A = 2\pi2^{2}2 = 16\pi$
+      \end{ex}
+
+      You can parametrize a surface by a function
+      \[r(s,t) = \langle x(s,t), y(s,t), z(s,t) \rangle \]
+      \section{Feb 20 2023}
+      No class due to holiday.
+      \section{Feb 22 2023}
+      \subsection{Review}
+      First, let's review what we learned about the flux from last time.
+      \begin{enumerate}
+        \item the flux is defined as $\Phi = \oint_{S} \vec{F} \cdot d\vec{A}$
+        \item If $S$ is a surface defined by $z = f(x,y)$, then $d\vec{A} =
+              \langle -f_{x}, -f_{y}, 1 \rangle $
+        \item if the magnitude of $\vec{F}$ is constant, and $\vec{F}$ is
+              always perpendicular to $S$, then $\Phi = \|\vec{F}\||S| $
+              \item depending on the surface, it may be more convient to use cylindrical or spherical coordinates
+              \item pay attention to the orientation of the surface (you may need to multiply by $-1$)
+      \end{enumerate}
+      \begin{ex}
+        Set up flux integral for $\vec{F} = \langle y, 2x+1, y+z \rangle $ and $S$ is the following surfaces. Here are $6$ examples
+        \begin{enumerate}
+               \item $S$ is bounded by
+        $y = 2-(x^{2} + z^{2})$ and $y \ge 0$. $S$ is oriented inwards.\\
+        \sageplot[scale=0.5]{implicit_plot3d(y == 2-x^2-z^2, (x, -3, 3), (y, 0, 2), (z, -3, 3)) + plot_vector_field3d((y, 2*x+1, y+z), (x,-3, 3), (y, 0, 2), (z, -3, 3))}\\
+                Solution: \\
+                \[d\vec{A} = \langle 2x,-1,2z\rangle \]
+                \begin{align*}
+                  \Phi = \int_{x=-\sqrt{2}}^{x=\sqrt{2}} \int_{z=\sqrt{2-x^{2}}}^{z=\sqrt{2-x^{2}}} \langle 2-(x^{2}+z^{2}), 2x+1, 2-(x^{2}+z^{2})+z\rangle\cdot\langle-2x, -1, -2z \rangle dzdx
+                  \end{align*}
+          \item $S: x^{2}+y^{2} = 9$ $-1 \le y \le 2$, oriented outwards \\
+
+                Solution: \\
+                This is just a cylinder
+                \begin{align*}
+                  \Phi  = \int_{\theta= 0}^{\theta=2\pi}\int_{y=-1}^{y=2} \langle y,2(3\cos\theta+1), y + 3\sin\theta \rangle \cdot \langle \cos\theta, 0, \sin\theta \rangle 3 dy d\theta
+                  \end{align*}
+          \item $S: x = \sqrt{9-x^{2}-z^{2}}$, oriented inward\\
+                Solution: \\
+                This is a half-hemisphere of radius $3$.
+                \begin{align*}
+                  \Phi  = \int_{0}^{2\pi}\int_{0}^{\pi} \langle 3\cos\theta\sin\phi, 2(3\sin\phi\cos\theta) + 1, 3\sin\phi\sin\theta + 3\cos\theta \rangle\\ \cdot \langle -\sin\phi\cos\theta, -\sin\phi\cos\theta, -\cos\phi \rangle 9\sin\phi d\phi\theta
+                  \end{align*}
+          \item $S: y=1$ over $[-1, 2] \times [3, 4]$ oriented towards positive $y$.
+
+                \begin{align*}
+                  \Phi  = \int_{x=-1}^{x=2} \int_{z=3}^{z=4} \langle 1,2x+1, 1+z \rangle \cdot \langle 0 , 1, 0 \rangle dz dx
+                  \end{align*}
+                \item $S : $ equilateral triangle with vertices at $(1,0,0), (0,2,0), (0,0,3)$ oriented towards the origin.
+The equation of the surface is $\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1$. The normal vector is constantly $\vec{n} = \langle -6, -3, -2 \rangle$
+                \begin{align*}
+                  \Phi  = \int_{x=0}^{x=1} \int_{y=0}^{y=2-2x}\langle y 2x+1, y + 3 - 2x - 3/2 y \rangle \cdot \langle -3 -3/2, -1 \langle dy dx
+                  \end{align*}
+                \item $S: y^{2} + z^{2} \le 16$ on $x=5$ oriented downward.
+ $S$ is a disk.
+                \begin{align*}
+                  \Phi  = \int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=4}\langle r\cos\theta, 2(5)+1, r\cos\theta + r\sin\theta \rangle \cdot \langle -1, 0, 0 \rangle r dr d\theta
+                  \end{align*}
+                \end{enumerate}
+    \end{ex}
+    \subsection{19.3 -- Divergence}
+
+    \begin{defn}
+      The \textbf{divergence} is the flux density. If the divergence is positive, new fluid springs into existance at that point. If the
+      divergence is negative, then fluid disappears at that point. It can be defined as the flux through a very small surface divided by the volume of the region enclosed which encloses
+      that point. We might write
+      \[div \vec{F} = \lim_{V(W) \to 0} \frac{\oint_{S} \vec{F} \cdot d\vec{A}}{V(W)}\]
+      \end{defn}
+      \begin{ex}
+        Let $\vec{F} = z, 1+2y, x+3 \rangle$ find divergence of $\vec{F}$ at the origin. We can use any surface to find the diverence.
+        $S_{1} : z= \sqrt{x^{2}+y^{2}}$ or $S_{2} :$ cylinder from $ a  < y < b$ or $S_{3} : $
+
+        We will do 2 examples
+      \end{ex}
+      \begin{thm}
+        The divergence does not depend on what surface you choose. It only depends on the point $p$ and field $\vec{F}$
+      \end{thm}
+      \section{Feb 23 2023}
+      \begin{thm}
+        \textbf{Divergence Theorem}
+        If $S$ is a closed surface with interior region $E$, then $\Phi$, the flux through $S$ can be calculated as
+        \[\Phi = \oint_{S} \vec{F} \cdot d\vec{A} = \iiint_{E} \nabla \cdot \vec{F} dV \]
+        \end{thm}
+      Let's start off with some examples to review divergence.
+      \begin{ex}
+        $\vec{F} = \langle e^{\cos (yz^{2023})} + x^{2}, 3y + \sin(e^{x^{2023}}) , xyz \rangle $.  Let $S_{1} : z =x^{2}+y^{2}$ and
+        $S_{2}: z = 4$. Let $S = S_{1} + S_{2}$ where $S$ is oriented inwards. Find the flux. \\
+        Solution: \\
+        By the divergence theorem
+        It's easier in polar coordinates
+        \begin{align*}
+          \Phi
+          &= \iiint_{E} \nabla \cdot \vec{F} dV \\
+          &= -\int_{0}^{2\pi}\int_{r=0}^{r=2}\int_{z=r^{2}}^{z=4}(2r\cos\theta + 3)r dz dr d\theta\\
+          &= -\int_{0}^{2\pi}\int_{0}^{2}(4-r^{2})(2r\cos\theta + 3)r dz dr d\theta\\
+            &= -24\pi
+        \end{align*}
+      \end{ex}
+      Now a simple example
+      \begin{ex}
+        Let $S$ be the equilateral triangle in the 1st octant with veritices at $(2,0,0), (0,2,0), (0,0,2)$
+        oriented outwards. Let $\vec{F} = 3\langle x,y,z\rangle$. Note that the surface is NOT closed, so in order
+        to use the divergence theorem, we must close the surface. \\
+        Solution: \\
+        \sageplot[scale=0.5]{list_plot3d([(2,0,0), (0,2,0), (0,0,2)]) +  plot_vector_field3d((3*x, 3*y, 3*z), (x,-2, 2), (y, 0, 2), (z, 0, 2))}\\
+        We can use either direct computation of the flux, or use the divergence theorem if we close the solid
+        ourselves.
+
+        First, direct computation.
+
+          $\frac{x}{2} + \frac{y}{2} + \frac{z}{2} = 1 \implies z = 2-x-y$
+        \begin{align*}
+          \Phi
+          &= \int_{x=0}^{x=2}\int_{y=0}^{y=2-x} 3\langle x,y, 2-x-y \rangle \cdot \langle 1, 1, 1 \rangle dy dx \\
+          &= \int_{x=0}^{x=2}\int_{y=0}^{y=1-x} 3(x + y + 2 - x - y) dy dx \\
+          &= 12
+        \end{align*}
+        Now, the divergence theorem. Close the solid as a triangular pyramid.
+        \begin{align*}
+          \Phi_{S}
+          &= \int_{x=0}^{x=2} \int_{y=0}^{y=1-x}\int_{z=0}^{z=1-x-y} 9 dz dy dx \\
+          &= 9V\\
+          &= 12
+        \end{align*}
+        Now subtract away the other 3 surfaces (we aren't done yet!)
+        \begin{align*}
+          \Phi_{S_{1}+S_{2}+s_{3}} = 0
+          \end{align*}
+        You could have evaluated this using geometric intuition because $\vec{F} \cdot d\vec{A}$ is constant, but I won't do that.
+      \end{ex}
+      \begin{ex}
+        A greenhouse is in the shape of the graph $z=9-x^{2}-y^{2}$ with the floor at $z=0$. Suppose the temperatutre around
+        the greenhouse is given by $T(x,y,z) = 2x^{2}+2y^{2} + (z-3)^{2}$. Let $\vec{H} = -\nabla T$ be the heat flux density
+        field.
+
+        Use the divergence theorem to calculate the total heat flux outward across the boundary wall of the greenhouse? \\
+
+        Solution: \\
+        $-\nabla T = -\langle 4x, 4y, 2z-6 \rangle $. $\nabla \cdot \vec{H}  = -10$
+        \begin{align*}
+          \Phi
+          &= \int_{\theta= 0}^{\theta = 2\pi}\int_{r=0}^{r=3}\int_{z=0}^{z=9-r^{2}} -10 r dz dr d\theta \\
+          &= -405\pi
+        \end{align*}
+        We now have to subtract the floor (we only want the wall).
+        \begin{align*}
+          \Phi_{floor}
+          &= \int_{0}^{2\pi}\int_{0}^{3} \langle -4r\cos\theta, -4r\sin\theta, -2(0-3) \rangle \cdot \langle 0, 0, -1 \rangle r dr d\theta\\
+          &= -54\pi
+        \end{align*}
+      \end{ex}
+      \subsection{Chapter 20}
 \end{document}
