@@ -1339,5 +1339,267 @@ The equation of the surface is $\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1$. Th
           &= -54\pi
         \end{align*}
       \end{ex}
-      \subsection{Chapter 20}
+      \section{Feb 27 2023}
+      First, a mea culpa from last class. The integral for the half hemisphere really should be
+      \[\int_{0}^{\pi/2}\int_{0}^{2\pi} \langle 3\sin\phi\cos\theta, 2 \cdot 3 \cos\phi + 1, 3\sin\phi\cos\theta + 3\sin\phi\cos\theta \rangle \cdot \langle -\cos\phi, -\sin\phi\cos\theta, -\sin\phi\cos\theta \rangle d\phi d\theta\]
+      \subsection{Chapter 20 -- Curl in $\mathbb{R}^{3}$}
+      This chapter is just the 3D curl. Remember that
+      \begin{defn}
+        \textbf{Geometric Def of Circulation Density}:
+        \[circ_{\vec{n}}\vec{F}(x,y,z) = \lim_{Area \to 0} \frac{\text{circulation around C}}{\text{Area inside C}} = \frac{\int_{C}\vec{F} \cdot d\vec{r}}{A(C)}\]
+        Whatever curve you choose doesn't matter, so choose the simplest one
+      \end{defn}
+      \begin{defn}
+        \textbf{Geometric Definition of Curl}: The curl at a point is a vector whose magnitude is equal to the circulation density at that point and whose
+        direction is the direction of the normal vector $\vec{n}$ that maximizes the circulation density.
+      \end{defn}
+      \begin{defn}
+        \textbf{Algebraic Definintion of 3D Curl}
+      \[\nabla \times \vec{F} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ F_{x} & F_{y} & F_{z}  \end{vmatrix}\]
+      \end{defn}
+      \begin{ex}
+        Let $\vec{F} = \langle x , 1, x \rangle$. Find $circ_{\langle 0, 0, 1\rangle} \vec{F}(0, 0, 2 )$. \\
+        Solution: \\
+        The curve doesn't matter, so let $C$ be a circle with center on the $z$ axis.
+        \[circ_{\langle 0 ,0, 1 \rangle} \vec{F}(0,0,2) = \lim_{r\to 0}\frac{1}{\pi r^{2}}\int_{0}^{2\pi} \langle r\cos t, 1, r\cos t \rangle \cdot \langle -r\sin t,t\cos t, 0 \rangle dt \]
+        \end{ex}
+        Let's do an example using the algebaric defnintion
+        \begin{defn}
+          let $\vec{F} = \langle xyz, xy, y^{2} z \rangle$. Find $\nabla \times \vec{F}$. \\
+          Solution: \\
+          \begin{align*}
+            \nabla \times\vec{F}
+            &= \langle 2yz - 0, xy-0, y-xz\rangle
+          \end{align*}
+        \end{defn}
+        \subsection{Stokes Theorem}
+        Here is an interesting fact
+        \begin{thm}
+          \[curl \vec{F} \cdot \vec{n} = circ_{\vec{n}}\vec{F}\]
+          \end{thm}
+        Stokes Theorem is just the 3d version of Greens Theorem.
+        \begin{thm}
+          \textbf{\emph{Stok}es Theorem}: Let $S$ be an oriented smooth surface bounded by a simple, closed, boundry curve $C$
+          with positive (CCW) orientation. Then,
+          \[\oint_{C} \vec{F} \cdot d\vec{r} = \iint_{S} \nabla \times \vec{F} \cdot d\vec{A}\]
+          it can be interpreted as
+          \[\text{circulation around boundary} = \text{sum of circulation densities inside interior}\]
+          Stokes theorem converts a line integral of $\vec{F}$ to a flux integral of $\nabla \times \vec{F}$.
+        \end{thm}
+        The right hand rule is very important for Stokes Theorem. The direction of the boundry must match
+        the direction of the right hand rule for the normal vector $\vec{n}$. In other words, if you walk along $C$,
+        the surface $S$ must always be on your left.
+        \begin{ex}
+          let $C$ be the CCW circulation on the triangle with verticies at $(0,0,2)$, $(0,2,0)$ , and $(0,0,2)$. Let
+          $\vec{F} = \langle xy, yz, zx \rangle$. Find $\oint_{S} \vec{F} \cdot d\vec{r}$. \\
+          Solution: \\
+          Let $S$ be the triangular region inside $C$. By Stoke's Theorem,
+          \begin{align*}
+            \oint_{S} \vec{F} \cdot d\vec{r}
+            &=
+          \end{align*}
+        \end{ex}
+      \section{Chapter 19 KC Solutions}
+      Let $\vec{F}(x,y,z) = \langle x+1, yz, y \rangle$.
+              For each question find the flux of $\vec{F}$ thru $S$
+      \begin{enumerate}
+        \item let $S : y^{2} + z^{2} = 4, 1 \le x \le 3$, oriented inwards. Find flux of $\vec{F}$ thru $S$. \\
+              Solution: \\
+              This is a cylinder, use cylindrical coordinates
+              \begin{align*}
+                \Phi
+                &= \int_{\theta= 0}^{\theta = 2\pi}\int_{x=1}^{x=3} \langle x + 1, 4\sin\theta\cos\theta, 4\sin\theta \rangle \cdot \langle  0 , -\cos\theta, -\sin\theta \rangle 2 dx d\theta
+              \end{align*}
+        \item Let $S : x^{2}+y^{2}+z^{2} = 4, 1 \le z \le 2$, oriented downwards.\\
+              Solution: \\
+              This is a sphere (or a cut of a sphere). Use spherical coordinates
+              \begin{align*}
+                \Phi_{S}
+                &= \int_{\theta = 0}^{\theta = 2\pi} \int_{\phi = 0}^{\phi = \pi/3 } \langle 2\sin\phi 2\sin\phi\sin\theta, 2\sin\phi\cos\theta \rangle \cdot -\langle \sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi\rangle 4\sin\phi  d\phi d\theta
+              \end{align*}
+        \item Let $S : y =  x^{2} + z^{2}, y \le 4$ oriented outwards \\
+              Solution : \\
+              This is a parabola. Project onto the $y=0$ plane. Use $-1$ because ``outwards'' means down on the $y=0$ plane.
+              \[\Phi_{S} = \int_{x=-2}^{x=2} \int_{z=-\sqrt{4-x^{2}}}^{y=\sqrt{4-x^{2}}} \langle x, x^{2} + z^{2}, z \rangle \cdot \langle 2x, -1, 2z \rangle dzdx\]
+        \item Compute flux density of $\vec{F}$ at $(0,0,0)$\\
+              Solution: \\
+              \[\nabla \cdot \vec{F} = 1 + z + 0  = 1\]
+        \item Compute the flux density of $\vec{F}$ at $(0,0,0)$ using the geometric definition with a closed surface which is composed of 2 surfaces.
+              $S_{1} : x = y^{2} + z^{2}, x \le a^{2}$ and $S_{2} : y^{2} + z^{2} \le a^{2} where x=a^{2}$. \\
+              Solution: \\
+
+              \begin{align*}
+                \Phi
+                &= \int_{y=-a}^{y=a} \int_{z=-\sqrt{a^{2}-y^{2}}}^{z=\sqrt{a^{2}-y^{2}}} \langle y^{2}+z^{1}+1, yz, y \rangle \cdot \langle -1, 2y, 2z \rangle dz dy \\
+                &+ \int_{\theta = 0}^{\theta = 2\pi} \int_{r = 0}^{r=a} \langle a^{2} + 1, r\cos\theta r\sin\theta, r\cos\theta \rangle \cdot \langle 1, 0, 0 \rangle r dr d\theta\\
+                &= \int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=a} \langle r^{2}+1, r\cos\theta r\sin\theta, r\cos\theta  \rangle \cdot \langle -1, 2r\cos\theta, 2r\sin\theta \rangle r dr d\theta \\
+                &+ \int_{\theta = 0}^{\theta = 2\pi} \int_{r = 0}^{r=a} (a^{2}+1)r dr d\theta\\
+                &= \frac{\pi}{2}a^{2}
+              \end{align*}
+              Thus, the divergence is
+              \begin{align*}
+                V(a) = \int_{\theta = 0}^{\theta = 2\pi}\int_{r = 0}^{r = a} (a^{2}-r^{2}) r dr d\theta \\
+                &=\frac{\pi}{2}a^{4}
+              \end{align*}
+              So
+              \begin{align*}
+                \nabla \cdot \vec{F} = \lim_{a \to 0} 1 = 1
+              \end{align*}
+        \item Let $S^{*} $ be the surface defined by $z = \sqrt{x^{2} + y^{2}}$ where $0 \le z \le 2$ oriented outward.
+        \item without using the divergence theorem, set up an integral in polar coordinates to find the flux of $\vec{F}$ thru $S^{*}$.\\
+              Solution: \\
+              $S^{*}$ is just a cone.
+
+              \[\Phi_{S^{*}} = \int_{\theta = 0}^{\theta = 2\pi} \int_{r=0}^{r=2} r\cos\theta + 1, r\sin\theta r, r\sin\theta \rangle \cdot \langle \cos\theta, \sin\theta, -1 \rangle r dr d\theta\]
+        \item Compute the flux of $\vec{F}$ thru $S^{*}$ using the divergence theorem\\
+              Solution : \\
+              note that $S^{*}$ is not closed, so we need to close it ourselves. Define the disk $S_{2} : 0 \le r \le 2, z = 2$ where $S_{2}$ is oriented upwards
+              \begin{align*}
+                \Phi_{S^{*} + S_{2}}
+                &= \iiint_{E} \nabla \cdot \vec{F} d\vec{V} \\
+                &=\int_{\theta = 0}^{\theta = 2\pi}\int_{r= 0}^{r=2}\int_{z = r}^{z=2} (1 + z) r dz dr d\theta \\
+                &= 20\pi  / 3
+              \end{align*}
+              Now subtract $\Phi_{S_{2}}$
+              \begin{align*}
+                \Phi_{S_{2}}
+                &= \int_{0}^{2\pi} \int_{0}^{2} \langle r\cos\theta + 1, r\sin\theta 2 , r\sin\theta \rangle \cdot \langle 0, 0, 1 \rangle r dr d\theta\\
+                &= 0
+                \end{align*}
+              Our answer is $20\pi/3$
+      \end{enumerate}
+      \section{Chapter 20 KC solutios}
+      Let $\vec{F} = \langle 2x, e^{cos y}, yz \rangle$ and let $P = (0,0,1)$.
+      \begin{enumerate}
+        \item Is $\vec{F}$ a curl field? \\
+              Solution: \\
+              $\nabla \cdot \vec{F}  = 2 - \sin y e^{\cos y} + y \neq 0 $. $\vec{F}$ is not a curl field because every
+              curl field has $0$ divergence. (never justify that it is not a curl field using the divergence test).
+        \item What direction has the maximum circulation at $P$? \\
+              Solution : \\
+              This is simply the direction of the curl.
+              \[\nabla \times \vec{F} = \begin{vmatrix}\vec{i} & \vec{j} & \vec{k} \\ \frac{\partial}{\partial x} & \frac{\partial }{\partial y} & \frac{\partial}{\partial z} \\ 2x & e^{\cos y} & yz  \end{vmatrix}\]
+              So $\langle 1, 0, 0 \rangle$
+        \item What is the maximum circulation density at $P$? \\
+              Solution: \\
+              This is just the norm of the curl, which is $1$
+        \item Find the circulation density at $P$ in the direction of $\langle 1,2,3, \rangle$. \\
+              Solution: \\
+              Just take the dot product of the curl with the unit vector in this direction.
+              \[\nabla \times \vec{F} \cdot \langle 1/\sqrt{14}, 2/\sqrt{14}, 3/\sqrt{14} \rangle = \frac{1}{\sqrt{14}}\]
+              Sanity check: this should be less than $1$.
+        \item Let $C$ be a curve which is a triangle with veritcies at $(1,0,0), (0,1,0), (0,0,1)$ oriented counterclockwise.
+              Use Stoke's theorem to find the work done by the vector field around $C$. \\
+              Solution : \\
+              By the right-hand rule, the normal vector should point towards the origin. The equation of the curve is $S: x + y + z  = 1 $, so $z = 1- x - y$.
+              We project the surface onto the $z=0$ plane.
+              \begin{align*}
+                \oint_{C} \vec{F} \cdot d\vec{r} \\
+                &= \iint_{S} \nabla \times \vec{F} \cdot d\vec{A} \\
+                &= \int_{x = 0}^{x=1}\int_{z  =0}^{z=1-x} \langle 1-x-y, 0, 0 \rangle \cdot \langle -1, -1, -1 \rangle dz dx \\
+                &= - \frac{1}{6}
+                \end{align*}
+        \item Assume that $\nabla \cdot \vec{F}(x,y,z) = 0$ and $\nabla \times \vec{F}(x,y,z) \neq 0$ and $D(\vec{F}) = \mathbb{R}^{3} \setminus \{(1,2,3)\}$.
+        \item Does the curl test apply to $\vec{F}$? \\
+              Solution: \\
+              No, the curl of $\vec{F}$ is not 0. The domain condition is valid.
+        \item Does the divergence test apply to $\vec{F}$? \\
+              Solution: \\
+              No, although the divergence is $0$, the domain condition is not satisfied.
+        \item is $\vec{F}$ a gradient vector field?\\
+              No, the curl of every gradient vector field is $0$, and this is not $0$. (do NOT justify this by the curl test).
+        \item is $\vec{F}$ a curl field?\\
+              Solution: \\
+              We have no way of knowing. We cannot apply the divergence test, and $\nabla \cdot \vec{F} =0$ so there is no way of knowing.
+              \end{enumerate}
+      \section{March 1 2023}
+      Let's review that traingle problem from Monday.
+
+      We have the triangle with verticies at $(2,0,0), (0,2,0), (0,0,2)$. Let us choose the surface as the 3 triangluar surfaces on $z=0, x=0, y=0$. Then, we use
+      Stoke's Theorem to get
+      \begin{align*}
+        \oint_{C} \vec{F} \cdot d\vec{r}
+        &= \int_{S_{1}+S_{2}+S_{3}} \nabla \times \vec{F} d\vec{A} \\
+        &=
+          \int_{0}^{2}\int_{0}^{2-x} -\langle y,0,x \rangle \cdot \langle 0,0,1\rangle dy dx\\
+          &+\int_{0}^{2}\int_{0}^{2-y} -\langle y,z,0 \rangle \cdot \langle 1,0,0\rangle dz dy\\
+          &+\int_{0}^{2}\int_{0}^{2-x} -\langle 0,z,x \rangle \cdot \langle 0,1,0\rangle dz dx\\
+        &=
+          \int_{0}^{2}\int_{0}^{2-x} -x dy dx
+          +\int_{0}^{2}\int_{0}^{2-y} - y dz dy
+          +\int_{0}^{2}\int_{0}^{2-x} -z dz dx\\
+        &= \boxed{-4}
+        \end{align*}
+        Remember that due to the right-hand-rule, the surface has to be oriented inward.
+        \subsection{Curl Field}
+        \begin{defn}
+          \textbf{Curl Field}: We say a vector field $\vec{F}$ is a Curl Field iff
+          \[\exists \vec{G}: \mathbb{R}^{n} \to \mathbb{R}^{n} \qquad \nabla \times \vec{G} = \vec{F}\]
+          We call $\vec{G}$ the potential function of $\vec{F}$
+        \end{defn}
+        You should notice that curl field is very similar to a gradient field.
+        Note that the potential function is not unique: there are infinitely many potential functions for
+        each curl field.
+        Note that you should never try to find the potential of a curl field because it will be
+        very painful to solve all the differential equations.
+        \begin{ex}
+          Let $\vec{F} = \langle 0, -1, -x \rangle$. Is $\vec{F}$ a curl field? \\
+          Solution:
+yes
+        \end{ex}
+        Here is a useful theorem for determining if a vector field is a curl field.
+        \begin{thm}
+          \[\vec{F} \text{ is a curl field} \implies \nabla \cdot \vec{F} = 0\]
+        \end{thm}
+        By contrapositive
+         \begin{thm}
+          \[\nabla \cdot \vec{F} \neq 0\implies \vec{F} \text{ is not a curl field}\]
+        \end{thm}
+
+        The converse of this theorem is false, so only use it 1 way. Here is a counter-example
+        to caution against using the theorem in reverse.
+        \begin{ex}
+          Let $\vec{F} = \frac{\vec{r}}{\|\vec{r}\|^{3}}$. $\nabla \times \vec{F} = 0$. But, $\vec{F}$ is not a curl
+          field. This means that $\vec{F}$ is a coutner-example to the inverse of the theorem.
+
+          Use a geometric relation to see that $\vec{F}$ is not a curl field. Let $S$ be the surface of
+          a sphere with center at the origin. $\Phi_{S} = 4\pi \neq 0$
+        \end{ex}
+        Note that the divergene theorem is not applicable in this case because $\vec{F}$ is not defined at $\langle 0, 0, 0 \rangle$
+
+        A common technique if a vector field has a limited domain is to define 2 surfaces and do the calculation
+        in between the 2 surfaces to avoid the undefined area.
+        Here is the updated theorem
+        \begin{thm}
+          \textbf{Divergence Test}:
+          If
+          \begin{enumerate}
+            \item $\nabla \cdot \vec{F} = 0$
+                  \item domain condition: Every closed surface in $D(\vec{F})$ has its interior entirely in $D(\vec{F})$.
+          \end{enumerate}
+          then $\vec{F}$ is a curl field.
+        \end{thm}
+        \begin{ex}
+          Let $D(\vec{F}) = \mathbb{R}^{3} \setminus \{(1,2,3), (5,6,7)\}$. We cannot conclude that $\vec{F}$ is a curl
+          field because it has holes in its domain.
+        \end{ex}
+        \begin{ex}
+          Let $D(\vec{F}) = \mathbb{R}^{3} \setminus \{(0,k,0) | k \in \mathbb{R}\}$. Despite having holes, $\vec{F}$
+          does satisfy the domain condition, so we can apply the divergence test.
+        \end{ex}
+
+        The curl test also works in $\vec{R}^{3}$
+        \begin{thm}
+          \textbf{Curl Test}:
+          If
+          \begin{enumerate}
+            \item $\nabla \times \vec{F} = \vec{0}$
+                  \item domain condition: Every smooth curl in $D(\vec{F})$ can be contracted to a point, staying within $D(\vec{F})$ at all times.
+          \end{enumerate}
+          then $\vec{F}$ is a gradient vector field.
+          \end{thm}
+          \begin{ex}
+            Let $D(\vec{F}) = \mathbb{R}^{2} \setminus \{(x,0) | x \in \mathbb{R}\}$. Here, the domain condition is valid.
+            \end{ex}
+
 \end{document}

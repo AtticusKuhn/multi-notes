@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  23 FEB 2023 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  2 MAR 2023 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -335,42 +335,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `multi.toc'.
 
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3]
-<sage-plots-for-multi.tex/plot-0.png, id=23, 501.875pt x 501.875pt>
+ [2] [3]
+<sage-plots-for-multi.tex/plot-0.png, id=22, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-0.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-0.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-0.png  used on input lin
 e 137.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
-<sage-plots-for-multi.tex/plot-1.png, id=24, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-1.png, id=23, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-1.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-1.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-1.png  used on input lin
 e 138.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
-<sage-plots-for-multi.tex/plot-2.png, id=25, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-2.png, id=24, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-2.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-2.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-2.png  used on input lin
 e 139.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
-<sage-plots-for-multi.tex/plot-3.png, id=26, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-3.png, id=25, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-3.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-3.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-3.png  used on input lin
 e 140.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
-<sage-plots-for-multi.tex/plot-4.png, id=27, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-4.png, id=26, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-4.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-4.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-4.png  used on input lin
 e 141.
 (pdftex.def)             Requested size: 85.3559pt x 85.35826pt.
-<sage-plots-for-multi.tex/plot-5.png, id=28, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-5.png, id=27, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-5.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-5.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-5.png  used on input lin
@@ -381,27 +377,28 @@ e 142.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<sage-plots-for-multi.tex/plot-6.png, id=36, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-6.png, id=37, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-6.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-6.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-6.png  used on input lin
 e 172.
 (pdftex.def)             Requested size: 142.26239pt x 142.26378pt.
- [5 <./sage-plots-for-multi.tex/plot-6.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-7.pdf, id=40, 454.78679pt x 338.37286pt>
+ [5]
+<sage-plots-for-multi.tex/plot-7.pdf, id=41, 454.78679pt x 338.37286pt>
 File: sage-plots-for-multi.tex/plot-7.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-7.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-7.pdf  used on input lin
 e 193.
 (pdftex.def)             Requested size: 191.21039pt x 142.26378pt.
-<sage-plots-for-multi.tex/plot-8.pdf, id=41, 452.72893pt x 338.66216pt>
+ [6 <./sage-plots-for-multi.tex/plot-6.png (PNG copy)> <./sage-plots-for-multi.
+tex/plot-7.pdf>]
+<sage-plots-for-multi.tex/plot-8.pdf, id=57, 452.72893pt x 338.66216pt>
 File: sage-plots-for-multi.tex/plot-8.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-8.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-8.pdf  used on input lin
 e 210.
 (pdftex.def)             Requested size: 190.17938pt x 142.26378pt.
- [6 <./sage-plots-for-multi.tex/plot-7.pdf> <./sage-plots-for-multi.tex/plot-8.
-pdf>] [7]
+ [7 <./sage-plots-for-multi.tex/plot-8.pdf>]
 <sage-plots-for-multi.tex/plot-9.pdf, id=76, 196.0097pt x 338.37286pt>
 File: sage-plots-for-multi.tex/plot-9.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-9.pdf>
@@ -425,15 +422,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--287
 
  []
 
-[8 <./sage-plots-for-multi.tex/plot-9.pdf> <./sage-plots-for-multi.tex/plot-10.
-pdf>]
-<sage-plots-for-multi.tex/plot-11.pdf, id=104, 188.7144pt x 339.25935pt>
+[8 <./sage-plots-for-multi.tex/plot-9.pdf>]
+<sage-plots-for-multi.tex/plot-11.pdf, id=94, 188.7144pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-11.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-11.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-11.pdf  used on input li
 ne 306.
 (pdftex.def)             Requested size: 79.13568pt x 142.26378pt.
- [9 <./sage-plots-for-multi.tex/plot-11.pdf>]
+ [9 <./sage-plots-for-multi.tex/plot-10.pdf> <./sage-plots-for-multi.tex/plot-1
+1.pdf>]
 <sage-plots-for-multi.tex/plot-12.png, id=122, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-12.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-12.png>
@@ -452,15 +449,15 @@ File: sage-plots-for-multi.tex/plot-14.pdf Graphic file (type pdf)
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-14.pdf  used on input li
 ne 333.
 (pdftex.def)             Requested size: 44.56158pt x 142.26378pt.
-<sage-plots-for-multi.tex/plot-15.pdf, id=125, 168.22563pt x 338.6628pt>
+ [10 <./sage-plots-for-multi.tex/plot-12.png (PNG copy)> <./sage-plots-for-mult
+i.tex/plot-13.pdf>]
+<sage-plots-for-multi.tex/plot-15.pdf, id=139, 168.22563pt x 338.6628pt>
 File: sage-plots-for-multi.tex/plot-15.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-15.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-15.pdf  used on input li
 ne 339.
 (pdftex.def)             Requested size: 98.93394pt x 199.16928pt.
- [10 <./sage-plots-for-multi.tex/plot-12.png (PNG copy)> <./sage-plots-for-mult
-i.tex/plot-13.pdf> <./sage-plots-for-multi.tex/plot-14.pdf>]
-<sage-plots-for-multi.tex/plot-16.pdf, id=155, 452.72893pt x 315.24759pt>
+<sage-plots-for-multi.tex/plot-16.pdf, id=140, 452.72893pt x 315.24759pt>
 File: sage-plots-for-multi.tex/plot-16.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-16.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-16.pdf  used on input li
@@ -471,15 +468,15 @@ Overfull \hbox (5.4256pt too wide) in paragraph at lines 347--351
 []\OT1/cmr/m/it/10.95 Consider the re-gion  []   Do
  []
 
-
+[11 <./sage-plots-for-multi.tex/plot-14.pdf> <./sage-plots-for-multi.tex/plot-1
+5.pdf>]
 Overfull \hbox (45.24525pt too wide) detected at line 357
 [][] [][] \OML/cmm/m/it/10.95 r[] [] ^^Rdrd^^R \OT1/cmr/m/n/10.95 + [][] [][] \
 OML/cmm/m/it/10.95 r[] [] ^^Rdrd^^R \OT1/cmr/m/n/10.95 + [][] [][] \OML/cmm/m/i
 t/10.95 r[] [] ^^Rdrd^^R
  []
 
-[11 <./sage-plots-for-multi.tex/plot-15.pdf> <./sage-plots-for-multi.tex/plot-1
-6.pdf>] [12]
+[12 <./sage-plots-for-multi.tex/plot-16.pdf>]
 <sage-plots-for-multi.tex/plot-17.png, id=186, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-17.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-17.png>
@@ -497,14 +494,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 417--421
 
  []
 
-[13 <./sage-plots-for-multi.tex/plot-17.png (PNG copy)>]
+[13]
 <sage-plots-for-multi.tex/plot-18.png, id=191, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-18.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-18.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-18.png  used on input li
 ne 435.
 (pdftex.def)             Requested size: 284.54012pt x 284.52756pt.
-<sage-plots-for-multi.tex/plot-19.pdf, id=192, 335.78433pt x 338.37286pt>
+ [14 <./sage-plots-for-multi.tex/plot-17.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-19.pdf, id=195, 335.78433pt x 338.37286pt>
 File: sage-plots-for-multi.tex/plot-19.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-19.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-19.pdf  used on input li
@@ -521,8 +519,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 444--447
 
  []
 
-[14 <./sage-plots-for-multi.tex/plot-18.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-20.png, id=196, 501.875pt x 501.875pt>
+[15 <./sage-plots-for-multi.tex/plot-18.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-20.png, id=199, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-20.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-20.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-20.png  used on input li
@@ -534,9 +532,9 @@ Overfull \hbox (4.21686pt too wide) in paragraph at lines 449--453
 m/it/10.95 for the re-gion  []
  []
 
-[15 <./sage-plots-for-multi.tex/plot-19.pdf> <./sage-plots-for-multi.tex/plot-2
+[16 <./sage-plots-for-multi.tex/plot-19.pdf> <./sage-plots-for-multi.tex/plot-2
 0.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-21.pdf, id=211, 201.61761pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-21.pdf, id=214, 201.61761pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-21.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-21.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-21.pdf  used on input li
@@ -549,8 +547,8 @@ OML/cmm/m/it/10.95 r[] [] ^^Rdrd^^R \OT1/cmr/m/n/10.95 + [][] [][] \OML/cmm/m/i
 t/10.95 r[] [] ^^Rdrd^^R
  []
 
-[16 <./sage-plots-for-multi.tex/plot-21.pdf>] [17]
-<sage-plots-for-multi.tex/plot-22.pdf, id=234, 452.72893pt x 244.23274pt>
+[17 <./sage-plots-for-multi.tex/plot-21.pdf>] [18]
+<sage-plots-for-multi.tex/plot-22.pdf, id=237, 452.72893pt x 244.23274pt>
 File: sage-plots-for-multi.tex/plot-22.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-22.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-22.pdf  used on input li
@@ -561,20 +559,20 @@ Overfull \hbox (56.13132pt too wide) in paragraph at lines 520--524
 []\OT1/cmr/m/it/10.95 Consider the fol-low-ing graph  []
  []
 
-<sage-plots-for-multi.tex/plot-23.pdf, id=235, 455.27527pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-23.pdf, id=238, 455.27527pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-23.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-23.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-23.pdf  used on input li
 ne 545.
 (pdftex.def)             Requested size: 190.91559pt x 142.26378pt.
-[18 <./sage-plots-for-multi.tex/plot-22.pdf>]
-<sage-plots-for-multi.tex/plot-24.pdf, id=250, 455.27527pt x 339.25935pt>
+[19 <./sage-plots-for-multi.tex/plot-22.pdf>]
+<sage-plots-for-multi.tex/plot-24.pdf, id=254, 455.27527pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-24.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-24.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-24.pdf  used on input li
 ne 551.
 (pdftex.def)             Requested size: 190.91559pt x 142.26378pt.
-<sage-plots-for-multi.tex/plot-25.pdf, id=251, 455.27527pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-25.pdf, id=255, 455.27527pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-25.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-25.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-25.pdf  used on input li
@@ -585,9 +583,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 549--553
 
  []
 
-[19 <./sage-plots-for-multi.tex/plot-23.pdf> <./sage-plots-for-multi.tex/plot-2
+[20 <./sage-plots-for-multi.tex/plot-23.pdf> <./sage-plots-for-multi.tex/plot-2
 4.pdf> <./sage-plots-for-multi.tex/plot-25.pdf>]
-<sage-plots-for-multi.tex/plot-26.pdf, id=287, 455.27527pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-26.pdf, id=290, 455.27527pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-26.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-26.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-26.pdf  used on input li
@@ -603,65 +601,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 602--604
 
  []
 
-[20 <./sage-plots-for-multi.tex/plot-26.pdf>]
-<sage-plots-for-multi.tex/plot-27.pdf, id=301, 455.23953pt x 339.25935pt>
+[21 <./sage-plots-for-multi.tex/plot-26.pdf>]
+<sage-plots-for-multi.tex/plot-27.pdf, id=304, 455.23953pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-27.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-27.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-27.pdf  used on input li
 ne 638.
 (pdftex.def)             Requested size: 267.26224pt x 199.16928pt.
- [21 <./sage-plots-for-multi.tex/plot-27.pdf>]
-<sage-plots-for-multi.tex/plot-28.pdf, id=316, 454.17574pt x 339.25935pt>
+ [22 <./sage-plots-for-multi.tex/plot-27.pdf>]
+<sage-plots-for-multi.tex/plot-28.pdf, id=319, 454.17574pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-28.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-28.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-28.pdf  used on input li
 ne 660.
 (pdftex.def)             Requested size: 190.4545pt x 142.26378pt.
-<sage-plots-for-multi.tex/plot-29.pdf, id=317, 454.17574pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-29.pdf, id=320, 454.17574pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-29.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-29.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-29.pdf  used on input li
 ne 675.
 (pdftex.def)             Requested size: 190.4545pt x 142.26378pt.
- [22 <./sage-plots-for-multi.tex/plot-28.pdf>] [23 <./sage-plots-for-multi.tex/
+ [23 <./sage-plots-for-multi.tex/plot-28.pdf>] [24 <./sage-plots-for-multi.tex/
 plot-29.pdf>]
-<sage-plots-for-multi.tex/plot-30.pdf, id=348, 347.5756pt x 339.25935pt>
+<sage-plots-for-multi.tex/plot-30.pdf, id=351, 347.5756pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-30.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-30.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-30.pdf  used on input li
 ne 750.
 (pdftex.def)             Requested size: 145.75269pt x 142.26378pt.
- [24 <./sage-plots-for-multi.tex/plot-30.pdf>]
-<sage-plots-for-multi.tex/plot-31.pdf, id=365, 455.27527pt x 339.25935pt>
+ [25 <./sage-plots-for-multi.tex/plot-30.pdf>]
+<sage-plots-for-multi.tex/plot-31.pdf, id=369, 455.27527pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-31.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-31.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-31.pdf  used on input li
 ne 807.
 (pdftex.def)             Requested size: 229.09593pt x 170.71652pt.
 
-[25]
-<sage-plots-for-multi.tex/plot-32.pdf, id=370, 344.34084pt x 339.25935pt>
+[26]
+<sage-plots-for-multi.tex/plot-32.pdf, id=373, 344.34084pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-32.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-32.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-32.pdf  used on input li
 ne 839.
 (pdftex.def)             Requested size: 173.27336pt x 170.71652pt.
- [26 <./sage-plots-for-multi.tex/plot-31.pdf>]
-<sage-plots-for-multi.tex/plot-33.pdf, id=383, 344.34084pt x 339.25935pt>
+ [27 <./sage-plots-for-multi.tex/plot-31.pdf>]
+<sage-plots-for-multi.tex/plot-33.pdf, id=386, 344.34084pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-33.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-33.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-33.pdf  used on input li
 ne 876.
 (pdftex.def)             Requested size: 144.39622pt x 142.26378pt.
- [27 <./sage-plots-for-multi.tex/plot-32.pdf>]
-<sage-plots-for-multi.tex/plot-34.pdf, id=397, 246.8601pt x 339.25935pt>
+ [28 <./sage-plots-for-multi.tex/plot-32.pdf>]
+<sage-plots-for-multi.tex/plot-34.pdf, id=400, 246.8601pt x 339.25935pt>
 File: sage-plots-for-multi.tex/plot-34.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-34.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-34.pdf  used on input li
 ne 908.
 (pdftex.def)             Requested size: 144.92674pt x 199.16928pt.
- [28 <./sage-plots-for-multi.tex/plot-33.pdf>]
-<sage-plots-for-multi.tex/plot-35.pdf, id=411, 454.00282pt x 164.99373pt>
+ [29 <./sage-plots-for-multi.tex/plot-33.pdf>]
+<sage-plots-for-multi.tex/plot-35.pdf, id=414, 454.00282pt x 164.99373pt>
 File: sage-plots-for-multi.tex/plot-35.pdf Graphic file (type pdf)
 <use sage-plots-for-multi.tex/plot-35.pdf>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-35.pdf  used on input li
@@ -677,52 +675,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 941--945
 
  []
 
-[29 <./sage-plots-for-multi.tex/plot-34.pdf>] [30 <./sage-plots-for-multi.tex/p
-lot-35.pdf>] [31]
+[30 <./sage-plots-for-multi.tex/plot-34.pdf>] [31 <./sage-plots-for-multi.tex/p
+lot-35.pdf>] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
 
  []
 
-[32] [33]
-<sage-plots-for-multi.tex/plot-36.png, id=453, 501.875pt x 501.875pt>
+[33] [34]
+<sage-plots-for-multi.tex/plot-36.png, id=456, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-36.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-36.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-36.png  used on input li
 ne 1118.
 (pdftex.def)             Requested size: 199.16888pt x 199.16928pt.
-<sage-plots-for-multi.tex/plot-37.png, id=454, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-37.png, id=457, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-37.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-37.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-37.png  used on input li
 ne 1133.
 (pdftex.def)             Requested size: 250.93687pt x 250.93687pt.
- [34 <./sage-plots-for-multi.tex/plot-36.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-38.png, id=458, 501.875pt x 501.875pt>
+ [35 <./sage-plots-for-multi.tex/plot-36.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-38.png, id=461, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-38.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-38.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-38.png  used on input li
 ne 1148.
 (pdftex.def)             Requested size: 152.14217pt x 231.80936pt.
- [35 <./sage-plots-for-multi.tex/plot-37.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-39.png, id=462, 501.875pt x 501.875pt>
+ [36 <./sage-plots-for-multi.tex/plot-37.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-39.png, id=465, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-39.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-39.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-39.png  used on input li
 ne 1168.
 (pdftex.def)             Requested size: 250.93687pt x 250.93687pt.
- [36 <./sage-plots-for-multi.tex/plot-38.png (PNG copy)>]
+ [37 <./sage-plots-for-multi.tex/plot-38.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 1188--1189
 
  []
 
-<sage-plots-for-multi.tex/plot-40.png, id=466, 501.875pt x 501.875pt>
+<sage-plots-for-multi.tex/plot-40.png, id=470, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-40.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-40.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-40.png  used on input li
 ne 1190.
 (pdftex.def)             Requested size: 152.14217pt x 231.80936pt.
-[37 <./sage-plots-for-multi.tex/plot-39.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-41.png, id=471, 501.875pt x 501.875pt>
+[38 <./sage-plots-for-multi.tex/plot-39.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-41.png, id=475, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-41.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-41.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-41.png  used on input li
@@ -733,13 +731,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1213--1217
 
  []
 
-[38 <./sage-plots-for-multi.tex/plot-40.png (PNG copy)>]
+[39 <./sage-plots-for-multi.tex/plot-40.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 1221--1222
 
  []
 
-[39 <./sage-plots-for-multi.tex/plot-41.png (PNG copy)>]
-<sage-plots-for-multi.tex/plot-42.png, id=479, 501.875pt x 501.875pt>
+[40 <./sage-plots-for-multi.tex/plot-41.png (PNG copy)>]
+<sage-plots-for-multi.tex/plot-42.png, id=482, 501.875pt x 501.875pt>
 File: sage-plots-for-multi.tex/plot-42.png Graphic file (type png)
 <use sage-plots-for-multi.tex/plot-42.png>
 Package pdftex.def Info: sage-plots-for-multi.tex/plot-42.png  used on input li
@@ -756,13 +754,46 @@ n/10.95 0)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT1
 10.95 ; \OT1/cmr/m/n/10.95 2)$
  []
 
-[40] [41 <./sage-plots-for-multi.tex/plot-42.png (PNG copy)>]
+[41] [42 <./sage-plots-for-multi.tex/plot-42.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 1326--1327
 
  []
 
+
+Overfull \hbox (5.98042pt too wide) detected at line 1344
+[][] [][]\OMS/cmsy/m/n/10.95 h\OT1/cmr/m/n/10.95 3 [] \OML/cmm/m/it/10.95 ^^^ [
+] ^^R; \OT1/cmr/m/n/10.95 2 \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/10.95 3 [] \OM
+L/cmm/m/it/10.95 ^^^ \OT1/cmr/m/n/10.95 + 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
+0.95 3 [] \OML/cmm/m/it/10.95 ^^^ [] ^^R \OT1/cmr/m/n/10.95 + 3 [] \OML/cmm/m/i
+t/10.95 ^^^ [] ^^R\OMS/cmsy/m/n/10.95 i ^^A h^^@ [] \OML/cmm/m/it/10.95 ^^^; \O
+MS/cmsy/m/n/10.95 ^^@ [] \OML/cmm/m/it/10.95 ^^^ [] ^^R; \OMS/cmsy/m/n/10.95 ^^
+@ [] \OML/cmm/m/it/10.95 ^^^ [] ^^R\OMS/cmsy/m/n/10.95 i\OML/cmm/m/it/10.95 d^^
+^d^^R
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1368--1370
+
+ []
+
+[43]
+Overfull \hbox (3.51842pt too wide) detected at line 1419
+[]
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 1424--1426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1427--1430
+
+ []
+
+[45] [46] [47] [48]
 *********************************************************************
-[42] [43 <./sage-plots-for-multi.tex/plot-0.png (PNG copy)> <./sage-plots-for-m
+[49] [50 <./sage-plots-for-multi.tex/plot-0.png (PNG copy)> <./sage-plots-for-m
 ulti.tex/plot-1.png (PNG copy)> <./sage-plots-for-multi.tex/plot-2.png (PNG cop
 y)> <./sage-plots-for-multi.tex/plot-3.png (PNG copy)> <./sage-plots-for-multi.
 tex/plot-4.png (PNG copy)> <./sage-plots-for-multi.tex/plot-5.png (PNG copy)>]
@@ -774,7 +805,7 @@ Here is how much of TeX's memory you used:
  23588 multiletter control sequences out of 15000+600000
  478545 words of font info for 62 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 70i,12n,76p,296b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,76p,306b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-me
 dium-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></nix/sto
 re/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final/share/te
@@ -806,10 +837,10 @@ ts/cm/cmti10.pfb></nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-
 medium-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb></nix/s
 tore/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final/share/
 texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on multi.pdf (43 pages, 1284373 bytes).
+Output written on multi.pdf (50 pages, 1304037 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
+ 592 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,16 +1,16 @@
-\contentsline {section}{\numberline {1}Jan 11. 2023}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Syllabus}{2}{}%
-\contentsline {subsection}{\numberline {1.2}Overview of 1D}{2}{}%
+\contentsline {section}{\numberline {1}Jan 11. 2023}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Syllabus}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Overview of 1D}{3}{}%
 \contentsline {subsubsection}{\numberline {1.2.1}Topics Covered in 1D}{3}{}%
 \contentsline {subsection}{\numberline {1.3}Review from 1C}{3}{}%
 \contentsline {subsubsection}{\numberline {1.3.1}review of quartic surfaces}{3}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}review of integrals}{3}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}review of integrals}{4}{}%
 \contentsline {subsection}{\numberline {1.4}Multi-Variable integration}{4}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}numerical approximation in multiple variables}{4}{}%
 \contentsline {subsection}{\numberline {1.5}Summary of surfaces}{4}{}%
-\contentsline {section}{\numberline {2}January 12, 2023}{4}{}%
-\contentsline {section}{\numberline {3}January 15, 2023}{4}{}%
-\contentsline {section}{\numberline {4}January 18, 2023}{4}{}%
+\contentsline {section}{\numberline {2}January 12, 2023}{5}{}%
+\contentsline {section}{\numberline {3}January 15, 2023}{5}{}%
+\contentsline {section}{\numberline {4}January 18, 2023}{5}{}%
 \contentsline {subsection}{\numberline {4.1}Integrating non-rectangular regions}{5}{}%
 \contentsline {subsection}{\numberline {4.2}Application of Double Integrals}{5}{}%
 \contentsline {subsection}{\numberline {4.3}Triple Integral}{7}{}%
@@ -20,34 +20,40 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Polar--Rectangular Conversions}{9}{}%
 \contentsline {section}{\numberline {6}Chapter 16 Knowledge Check Practice}{9}{}%
 \contentsline {section}{\numberline {7}January 23, 2023}{11}{}%
-\contentsline {subsection}{\numberline {7.1}16.5 - Cylindrical and Spherical Coordinates}{12}{}%
-\contentsline {subsubsection}{\numberline {7.1.1}Cylindrical Coordinates}{12}{}%
+\contentsline {subsection}{\numberline {7.1}16.5 - Cylindrical and Spherical Coordinates}{13}{}%
+\contentsline {subsubsection}{\numberline {7.1.1}Cylindrical Coordinates}{13}{}%
 \contentsline {subsubsection}{\numberline {7.1.2}Spherical Coordaintes}{13}{}%
-\contentsline {section}{\numberline {8}January 25, 2023}{13}{}%
-\contentsline {section}{\numberline {9}Knowledge Check Solutions}{16}{}%
-\contentsline {section}{\numberline {10}January 30, 2023 - Vector Fields}{17}{}%
-\contentsline {section}{\numberline {11}Februrary 1 2023}{19}{}%
-\contentsline {subsection}{\numberline {11.1}17.3 - Flow Line}{19}{}%
-\contentsline {subsection}{\numberline {11.2}17.4 -- Euler's Method}{20}{}%
-\contentsline {section}{\numberline {12}Chapter 17 Practice Knowledge Check}{21}{}%
-\contentsline {section}{\numberline {13}February 2 2023}{22}{}%
-\contentsline {subsection}{\numberline {13.1}18 -- Line Integral}{22}{}%
-\contentsline {section}{\numberline {14}Februrary 6 2023}{23}{}%
-\contentsline {subsection}{\numberline {14.1}Gradient Field}{23}{}%
-\contentsline {subsection}{\numberline {14.2}Curl}{25}{}%
-\contentsline {section}{\numberline {15}Feb 8 2023}{27}{}%
-\contentsline {section}{\numberline {16}Feb 9 2023}{30}{}%
-\contentsline {section}{\numberline {17}Feb 13 2023}{30}{}%
-\contentsline {subsection}{\numberline {17.1}Chapter 19 - flu}{32}{}%
-\contentsline {section}{\numberline {18}Chapter 18 Knowledge Check Solutions}{32}{}%
-\contentsline {section}{\numberline {19}Feb 16 2023}{33}{}%
-\contentsline {subsection}{\numberline {19.1}19.2 -- Flux}{33}{}%
-\contentsline {subsubsection}{\numberline {19.1.1}Cylinder}{34}{}%
-\contentsline {subsubsection}{\numberline {19.1.2}Sphere}{35}{}%
-\contentsline {subsubsection}{\numberline {19.1.3}Implicit Surfaces}{36}{}%
-\contentsline {section}{\numberline {20}Feb 20 2023}{38}{}%
-\contentsline {section}{\numberline {21}Feb 22 2023}{38}{}%
-\contentsline {subsection}{\numberline {21.1}Review}{38}{}%
-\contentsline {subsection}{\numberline {21.2}19.3 -- Divergence}{40}{}%
-\contentsline {section}{\numberline {22}Feb 23 2023}{40}{}%
-\contentsline {subsection}{\numberline {22.1}Chapter 20}{42}{}%
+\contentsline {section}{\numberline {8}January 25, 2023}{14}{}%
+\contentsline {section}{\numberline {9}Knowledge Check Solutions}{17}{}%
+\contentsline {section}{\numberline {10}January 30, 2023 - Vector Fields}{18}{}%
+\contentsline {section}{\numberline {11}Februrary 1 2023}{20}{}%
+\contentsline {subsection}{\numberline {11.1}17.3 - Flow Line}{20}{}%
+\contentsline {subsection}{\numberline {11.2}17.4 -- Euler's Method}{21}{}%
+\contentsline {section}{\numberline {12}Chapter 17 Practice Knowledge Check}{22}{}%
+\contentsline {section}{\numberline {13}February 2 2023}{23}{}%
+\contentsline {subsection}{\numberline {13.1}18 -- Line Integral}{23}{}%
+\contentsline {section}{\numberline {14}Februrary 6 2023}{24}{}%
+\contentsline {subsection}{\numberline {14.1}Gradient Field}{24}{}%
+\contentsline {subsection}{\numberline {14.2}Curl}{26}{}%
+\contentsline {section}{\numberline {15}Feb 8 2023}{28}{}%
+\contentsline {section}{\numberline {16}Feb 9 2023}{31}{}%
+\contentsline {section}{\numberline {17}Feb 13 2023}{31}{}%
+\contentsline {subsection}{\numberline {17.1}Chapter 19 - flu}{33}{}%
+\contentsline {section}{\numberline {18}Chapter 18 Knowledge Check Solutions}{33}{}%
+\contentsline {section}{\numberline {19}Feb 16 2023}{34}{}%
+\contentsline {subsection}{\numberline {19.1}19.2 -- Flux}{34}{}%
+\contentsline {subsubsection}{\numberline {19.1.1}Cylinder}{35}{}%
+\contentsline {subsubsection}{\numberline {19.1.2}Sphere}{36}{}%
+\contentsline {subsubsection}{\numberline {19.1.3}Implicit Surfaces}{37}{}%
+\contentsline {section}{\numberline {20}Feb 20 2023}{39}{}%
+\contentsline {section}{\numberline {21}Feb 22 2023}{39}{}%
+\contentsline {subsection}{\numberline {21.1}Review}{39}{}%
+\contentsline {subsection}{\numberline {21.2}19.3 -- Divergence}{41}{}%
+\contentsline {section}{\numberline {22}Feb 23 2023}{41}{}%
+\contentsline {section}{\numberline {23}Feb 27 2023}{43}{}%
+\contentsline {subsection}{\numberline {23.1}Chapter 20 -- Curl in $\mathbb {R}^{3}$}{43}{}%
+\contentsline {subsection}{\numberline {23.2}Stokes Theorem}{44}{}%
+\contentsline {section}{\numberline {24}Chapter 19 KC Solutions}{44}{}%
+\contentsline {section}{\numberline {25}Chapter 20 KC solutios}{46}{}%
+\contentsline {section}{\numberline {26}March 1 2023}{47}{}%
+\contentsline {subsection}{\numberline {26.1}Curl Field}{48}{}%
