@@ -1,0 +1,237 @@
+\documentclass[11pt]{article}
+%  \usepackage{evan}
+\usepackage{mathtools}
+\usepackage{sagetex}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+%\usepackage{sectsty}
+% \usepackage{graphicx}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{ex}{Example}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{Linear Algebra Notes}
+\author{Atticus Kuhn}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{March 20}
+\begin{defn}
+  A \textbf{linear equation} of the variables $x_{1}, x_{2}, \ldots x_{n}$ is any equation of the form
+  \[a_{1}x_{1}+a_{2}x_{2} + \cdots + a_{n}x_{n} = b\]
+  where $a_{1}, \ldots a_{n}$ are called the coefficents and $b$ is called the constant.
+  \end{defn}
+  \begin{defn}
+    A \textbf{system of linear equation} is a set of 1 or more linear equations.
+    \end{defn}
+    \begin{ex}
+      \[x + 2y = 3\]
+      is a linear system and
+
+      \begin{align*}
+        x-2y = 1 \\
+        2x + 3y = 4 \\
+        x + y =  5
+        \end{align*}
+        is a linear system.
+        But
+        \[5 \sqrt{x} - y=1\]
+        is not a linear system.
+      \end{ex}
+
+      Given a linear system, we want to find all substitutions which satisfy the linear
+      system.
+      A \textbf{solution set} is a set of n-tuples, all of which are valid solutions to a given system of linear equations.
+      Our central problem is: given a linear system, find its solution set.
+      Big problems
+      \begin{enumerate}
+        \item Existance Question: Do there exist any solutions? If there are, we call the system \textbf{consistent}. If there are no solutions, we call the solution \textbf{inconsistent}.
+              \item Uniqueness Question: How many solutions are there? If there is exactly 1 solution, we call that \textbf{unique}.
+      \end{enumerate}
+      \begin{thm}
+        If a linear system has solutions, it either has 1 solution or infintely many solutions.
+        A linear system cannot have 12 solutions.
+      \end{thm}
+      \begin{ex}
+        \[x + 2y = 5, x + 4y = 6\]
+        has solution
+        \[x = -4, y=9/2\]
+        This linear system corresponds to the matrix multiplication
+        \[\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}\]
+        We can turn this into an \textbf{augmented matrix} to get
+        \[
+          \begin{bmatrix}
+            1 & 2 & 5 \\
+            3 & 4 & 6
+            \end{bmatrix}
+        \]
+        We are allowed to perform row operations on the rows to get
+\[
+          \begin{bmatrix}
+            1 & 2 & 5 \\
+            0 & 1 & 9/2
+          \end{bmatrix}
+          \implies
+          \begin{bmatrix}
+            1 & 0 & -4\\
+            0 & 1 & 9/2
+            \end{bmatrix}
+        \]
+        So $(x,y) = (-4, 9/2)$. The solution is unique.
+      \end{ex}
+
+      \begin{thm}
+        We are allowed to do these elementary row operations
+        \begin{defn}
+          We say two systems of equations are \textbf{equivalent}
+          if their solutions sets are equal.
+          \end{defn}
+        \begin{enumerate}
+          \item replacement: replace one row with the sum of itself and another row
+          \item interchange: swap 2 rows
+                \item scaling: multiply all entries in a  row by a constant
+                \end{enumerate}
+        \end{thm}
+        The reason the elementary operations work is because they
+        give an equivalent system, i.e. they do not change the solution set.
+
+        Convince yourself that each of the elementary operations do not change the solution
+        set.
+        \begin{ex}
+          Let's solve this system
+          \begin{align*}
+            kx + y + 2z &=1 \\
+            x + z &= h \\
+            y-z &= 1
+            \end{align*}
+            The solution is
+            \[x=-3h/(k-3), y=\frac{(h+1)k-3}{k-3}, z = \frac{hk}{k-3}\]
+            The system would have no solutions (inconsistent) iff $k=3$ and $h \neq 0$.
+            The system has infinite solutions if $k=3$ and $h= 0$.
+            The system has 1 solution if $k \neq 3$.
+          \end{ex}
+          \begin{defn}
+            A matrix is in \textbf{echelon form} iff
+            \begin{enumerate}
+              \item All nonzero rows are above any rows of all zeroes
+              \item each leading entry in a row is in a column to the right of the leading
+                    endtry of the row above it
+                \item All entries in a column below a leading entry are zeroes
+            \end{enumerate}
+          \end{defn}
+          \begin{defn}
+            A matrix is in \textbf{reduce row echelon form} iff
+            \begin{enumerate}
+              \item The leading entry in each nonzero row is $1$
+                    \item each leading $1$ is the only nonzero entry in its column
+                    \end{enumerate}
+            \end{defn}
+            \begin{ex}
+              This matrix
+              \[
+                \begin{bmatrix}
+                  * & * & 0 & 0 & 0 & 0 \\
+                  0 & * & 1 & 0 & 0 & 0 \\
+                  0 & 0 & * & 0 & 0 & *
+                  \end{bmatrix}
+                \]
+                is in REF, but not in RREF.
+              \end{ex}
+              \begin{ex}
+                This matrix
+                \[\begin{bmatrix}
+                    0 & 1  & 0 & 0 & 0 \\
+                    0 & 0 & 2 & 0 & 0 \\
+                    0 & 0 & 0 & 0 & 1 \\
+                    0 & 0 & 0 & 0 & 0
+                    \end{bmatrix}\]
+                  is in REF, and it would be in RREF if we changed the $2$ to a $1$.
+                \end{ex}
+
+                \begin{thm}
+                A given matrix has infinitely many equivalent REF, but only 1 RREF.
+                \end{thm}
+                \begin{ex}
+                  Reduce this matrix
+                  \[
+                    \begin{bmatrix}
+                      1 & -1 & -1 \\
+                      0 & 2 & 1 \\
+                      2 & 0 & -1
+                      \end{bmatrix}
+                  \]
+                  Solution:
+                  \[
+\left(\begin{array}{rrr}
+1 & 0 & -\frac{1}{2} \\
+0 & 1 & \frac{1}{2} \\
+0 & 0 & 0
+\end{array}\right)
+                  \]
+   \end{ex}
+ \begin{defn}
+   If a matrix is in REF, the \textbf{pivots}
+   are leading entries. The \textbf{pivot columns} are
+   the columns which contain a pivot.
+\end{defn}
+\begin{defn}
+  A \textbf{basic variable} is a variable which corresponds to a pivot column.
+  A \textbf{free variable} is a variable which does not correspond to a pivot column.
+\end{defn}
+\begin{ex}
+  Given the matrix
+  \[\begin{bmatrix}
+      1 & 0 & 2 & 0 & 4 \\
+      0 & 1 & 3 & 0 & 5 \\
+      0 & 0 & 0 & 1 & 6 \\
+    0 & 0 & 0 & 0 & 0 \end{bmatrix}\]
+This matrix is in RREF. Variables $x_{1}, x_{2}, x_{4}$ are basic variables
+and variable $x_{3}$ is a free variable.
+\end{ex}
+
+If the righmost column of $A$ is a pivot column, then we cannot tell if $\mathbf{A}\vec{x} = \vec{b}$ is consistent or inconsistent.
+\begin{thm}
+  If the rightmost column of
+  $\left[\mathbf{A} \quad \vec{b}\right]$ is a pivot column, then
+  $\mathbf{A}\vec{x} = \vec{b}$ is not consistent.
+\end{thm}
+
+\begin{thm}
+  Even if you have a free variable, that doesn't guarantee infintely many solutions.
+
+  If you have a free variable and the system is consistent, then the system has infinitely many solutions.
+\end{thm}
+
+\begin{ex}
+  Given that the RREF is
+  \[\begin{bmatrix}
+      1 & 2 & 3 & 0 &  0 &  6 \\
+      0 & 0 & 0  & 1 & 0 & 7 \\
+      0 & 0 & 0 & 0 & 1 & 8\end{bmatrix}\]
+  Describe the solution set.
+  It is
+  \[
+    \begin{bmatrix}
+      x_{1} \\ x_{2} \\ x_{3} \\ x_{4} \\ x_{5}
+    \end{bmatrix}
+    =
+    x_{2} \begin{bmatrix} -2  \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+    +
+    x_{3} \begin{bmatrix} -3 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+    +
+    \begin{bmatrix} 6 \\ 0 \\ 0 \\ 7 \\ 8 \end{bmatrix}
+  \]
+  This solution set is infinitely big because it has free varaibles.
+  This is called \textbf{parametric vector form} of the solution set.
+\end{ex}
+\end{document}
