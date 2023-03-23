@@ -234,4 +234,130 @@ If the righmost column of $A$ is a pivot column, then we cannot tell if $\mathbf
   This solution set is infinitely big because it has free varaibles.
   This is called \textbf{parametric vector form} of the solution set.
 \end{ex}
+\section{March 22}
+Let's review what we learned last session about matricies and linear systems.
+\begin{enumerate}
+  \item the RREF form of a matrix is unique (but the REF form is not).
+  \item the elementary row operations do not affect the solution set of a linear system.
+  \item pivot columns correspond to basic variables, non-pivot columns correpond to free variables.
+  \item every linear system has either 0, 1, or $\infty$ solutions.
+  \item an augmented matrix can be used to represent a linear system. It is the coefficent matrix concatenated with the constant vector.
+  \item We can express the solution set of a linear system in parametric vector form.
+  \item If a system is consistent and has a free variable, it has infinitely many variables (but even inconsistent systems may have free variables)
+  \item row operations do not change pivot columns.
+\end{enumerate}
+
+\begin{ex}
+  Let
+  \[p = (0,1) \qquad q = (1,1) \qquad r = (2,2)\]
+  Prove there exists no line with all 3 points.
+
+  Prove there exists exactly one unique parabola with all 3 points
+  \\
+  Solution: \\
+
+  The line has linear system
+  \[1  = 0a + b \qquad 1 = a + b \qquad 2 = 2a + b\]
+  \begin{align*}
+    \begin{bmatrix}
+      0 & 1 & 1 \\
+      1 & 1 & 1 \\
+      2 & 1 & 2 \\
+    \end{bmatrix}
+    \sim
+\left(\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)
+    \end{align*}
+\end{ex}
+So inconsistent.
+
+For the parabola, it has the system
+\[1 = 0a+0b+c \qquad 1 = a + b +c \qquad 2 = 4a + 2b + c\]
+\begin{align*}
+  \begin{bmatrix}
+    0 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 1\\
+    4 & 2 & 1 & 2 \\
+  \end{bmatrix}
+  \sim \\
+\left(\begin{array}{rrrr}
+1 & 0 & 0 & \frac{1}{2} \\
+0 & 1 & 0 & -\frac{1}{2} \\
+0 & 0 & 1 & 1
+\end{array}\right)
+\end{align*}
+i.e.
+\[y=\frac{1}{2}x^{2} - \frac{1}{2}x + 1\]
+solution is unique because no free varaibles.
+\subsection{1.3 -- Vector Equation}
+
+\begin{defn}
+  \textbf{matrix multiplication by vector}: Given
+  \[A = [\vec{a_{1}}, \vec{a_{2}}, \vec{a_{3}}, \ldots, \vec{a_{n}}]\]
+  and
+  \[\vec{v} = \begin{bmatrix} v_{1} \\ v_{2} \\ v_{3} \\ \vdots \\ v_{n} \end{bmatrix}\]
+  then
+  \[A\vec{v} = \vec{a_{1}}v_{1}+\vec{a_{2}}v_{2} + \cdots + \vec{a_{n}}v_{n} = \sum_{i=1}^{n} \vec{a_{i}}v_{i}\]
+  We call this a \textbf{linear combination} of $a_{i}$. A linear combination is a
+  sum of scalings of vectors, i.e. scale the vectors and then add them up.
+\end{defn}
+
+\begin{ex}
+  \[\begin{bmatrix} 1 & 2 & 3 \\ 5 & 4 & 7 \end{bmatrix} \begin{bmatrix} a \\ b \\ c \end{bmatrix} = \begin{bmatrix} a + 2b + 3c \\ 5a + 4b + 7c \end{bmatrix}\]
+\end{ex}
+
+\begin{defn}
+  \textbf{span}: Given a set of vectors $S = \{\vec{v_{1}}, \vec{v_{2}}, \ldots, \vec{v_{n}} \}$, then $span(S)$ is the set of
+  all linear combinations of the vectors. In other words, it is the set of all vectors reachable by using only the vectors in $S$.
+  In equational form,
+  \[span(S) = \left\{ \left .\sum_{i=1}^{n} c_{i} \vec{v}_{i} \;\right |\; \forall c_{i} \in \mathbb{R}\right\}\]
+\end{defn}
+
+
+\begin{ex}
+  In $\mathbb{R}^{3}$,
+  \[span(\{\vec{v}\}) = \{k\vec{v}  \quad | \quad k \in \mathbb{R}\}\]
+  This set is a line going through the origin (unliness $\vec{v} = \vec{0}$, then it's just the origin).
+  The $\vec{0}$ vector is always in the span set.
+
+  \[span(\{\vec{u}, \vec{v}\})\]
+  this is a plane passing through the origin (unless the vectors are linearly dependent, then it's a line). It could be origin, or line thru
+  origin, or plane thru origin.
+
+  \[span(\{\vec{u}, \vec{v}, \vec{w}\})\]
+  is either the origin, or a line thru the origin, or a plane thru the origin, or the entire space.
+\end{ex}
+
+\begin{ex}
+  \[A = \begin{bmatrix} 1  & -1 \\ 2 & 1 \\ 1 & 0 \end{bmatrix}, \qquad v = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}\]
+  Is $Ax = b$ consistent?
+  This is equivalent to asking if $b$ is a linear combination of the columns of $A$ and it is equivalent to asking
+  if $b$ is an element of the spanning set of the columns of $A$.
+
+  This is not consistent because
+  \[\left(\begin{array}{rrr}
+1 & -1 & 0 \\
+2 & 1 & 1 \\
+1 & 0 & 2
+\end{array}\right)\sim \left(\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)\]
+
+Thus, $b \not\in span(A)$
+\end{ex}
+
+\begin{ex}
+  \[x + 2y + 3z = 4 \qquad 5x + 6y + 7z = 8 \]
+  So
+  \[\begin{bmatrix} 1 & 2 & 3 \\ 5 & 6 & 7 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 4 \\ 8 \end{bmatrix}\]
+\end{ex}
+
+\begin{thm}
+  Asking whether the system $Ax = b$ is consistent is the same as asking if $b \in span(A)$
+\end{thm}
 \end{document}

@@ -7,12 +7,12 @@
 \contentsline {subsubsection}{\numberline {1.3.2}review of integrals}{4}{}%
 \contentsline {subsection}{\numberline {1.4}Multi-Variable integration}{4}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}numerical approximation in multiple variables}{4}{}%
-\contentsline {subsection}{\numberline {1.5}Summary of surfaces}{4}{}%
+\contentsline {subsection}{\numberline {1.5}Summary of surfaces}{5}{}%
 \contentsline {section}{\numberline {2}January 12, 2023}{5}{}%
 \contentsline {section}{\numberline {3}January 15, 2023}{5}{}%
 \contentsline {section}{\numberline {4}January 18, 2023}{5}{}%
 \contentsline {subsection}{\numberline {4.1}Integrating non-rectangular regions}{5}{}%
-\contentsline {subsection}{\numberline {4.2}Application of Double Integrals}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Application of Double Integrals}{6}{}%
 \contentsline {subsection}{\numberline {4.3}Triple Integral}{7}{}%
 \contentsline {section}{\numberline {5}January 19, 2023}{7}{}%
 \contentsline {subsection}{\numberline {5.1}Review}{7}{}%
@@ -57,3 +57,9 @@
 \contentsline {section}{\numberline {25}Chapter 20 KC solutios}{46}{}%
 \contentsline {section}{\numberline {26}March 1 2023}{47}{}%
 \contentsline {subsection}{\numberline {26.1}Curl Field}{48}{}%
+\contentsline {section}{\numberline {27}March 8 2023}{49}{}%
+\contentsline {subsection}{\numberline {27.1}Chapter 21}{49}{}%
+\contentsline {subsubsection}{\numberline {27.1.1}Jacobian}{49}{}%
+\contentsline {subsubsection}{\numberline {27.1.2}21.2 -- Parametrization}{50}{}%
+\contentsline {subsubsection}{\numberline {27.1.3}21.3 -- Flux Thru Parametrized Surface}{50}{}%
+\contentsline {subsection}{\numberline {27.2}TNB frame}{50}{}%

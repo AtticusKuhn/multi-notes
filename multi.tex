@@ -1602,4 +1602,64 @@ yes
             Let $D(\vec{F}) = \mathbb{R}^{2} \setminus \{(x,0) | x \in \mathbb{R}\}$. Here, the domain condition is valid.
             \end{ex}
 
+            \section{March 8 2023}
+            \subsection{Chapter 21}
+            There's not a lot to learn in 21 because all the material was included in earlier chapters.
+            \subsubsection{Jacobian}
+            The Jacobian tells us about change of coordinates.
+            \begin{defn}
+              If $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$, then the Jacobian is
+              \[J =\begin{bmatrix}
+                     \frac{\partial f_{1}}{\partial x_{1}} & \cdots & \frac{\partial f_{1}}{\partial x_{n}} \\
+                     \vdots & \ddots & \vdots \\
+
+                     \frac{\partial f_{m}}{\partial x_{1}} & \cdots & \frac{\partial f_{m}}{\partial x_{n}} \\
+                   \end{bmatrix}\]
+            \end{defn}
+            The Jacobian allows us to change coordinates.
+            \begin{ex}
+              Let $f(r,\theta) = \langle r\cos\theta, r\sin\theta \rangle $,
+              then
+              \[J = \begin{bmatrix} \cos\theta  & -r\sin\theta \\ \sin\theta & r\cos\theta \end{bmatrix}\]
+              The determinant is $Det(J) = r$ which explains why we have to do $dydx = r drd\theta$
+              \end{ex}
+              \begin{ex}
+                We can do this for cartesian coordinates to spherical coordinates
+                Let $f(\rho, \phi, \theta) = \langle \rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\theta\rangle$.
+                By computation, you get $Det(J) = \rho^{2}\sin\phi$
+                \end{ex}
+
+              \subsubsection{21.2 -- Parametrization}
+              Parametrization of a curve requires 1 parameter $r(t) : \mathbb{R} \to \mathbb{R}^{3}$.
+              Parametrization of a surface requires 2 parameters $S(u,v) : \mathbb{R}^{2} \to \mathbb{R}^{3}$. Any
+              parametrization of a surface must have exactly $2$ variables.
+              \begin{ex}
+                Parametrize the cone with vertex at $(0,0,b)$ and bottom radius $a$. \\
+                Solution: \\
+
+                %$ 0 \le r \le a$ and $0 \le \theta \le 2\pi$ and $z = b-r$
+                \[S(r, \theta) = \langle r\cos\theta, r\sin\theta,  \frac{b}{a}(a-r)\rangle\]
+                \end{ex}
+                \begin{ex}
+                  parametrizing the surface of a torus (donut). \\
+                  Solution: \\
+                  $S(\theta, \phi) = \langle (R + r\cos\theta)\cos\phi , (R + r \cos\theta)\sin\phi, r\sin\theta\rangle$
+                  \end{ex}
+
+                  \subsubsection{21.3 -- Flux Thru Parametrized Surface}
+                  Given a surface parametrized by 2 variables $r(s,t)$  (see previous section), we
+                  can calculate the flux.
+                  \begin{thm}
+                    The flux thru a parametrized surface is
+                    \[\Phi = \iint_{S} F(r(s,t)  \cdot (\frac{\partial r}{\partial s} \times \frac{\partial r}{\partial t}))\]
+                    \end{thm}
+                    \subsection{TNB frame}
+                    TNB stands for \\
+                    t - tangent vector \\
+                    n - normal vector \\
+                    b - binormal vector \\
+                    Any point on $r(s)$ can be given 3 vectors.
+                    \[t(s) = \frac{dr}{ds} \qquad n(s) = \frac{dt}{ds} \qquad b = t \times n\]
+
+                    I am pretty sure this is all useless because it won't be on the final.
 \end{document}
