@@ -9,6 +9,7 @@
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}{Definition}
 \newtheorem{ex}{Example}
+\newcommand{\Bold}[1]{#1}
 % Margins
 \topmargin=-0.45in
 \evensidemargin=0in
@@ -360,4 +361,61 @@ Thus, $b \not\in span(A)$
 \begin{thm}
   Asking whether the system $Ax = b$ is consistent is the same as asking if $b \in span(A)$
 \end{thm}
+\section{March 23}
+\subsection{1.4 -- Matrix Equation}
+
+\begin{ex}
+  Let
+  \[A =\begin{bmatrix} 1 & 4 & 5 \\ -3 & -1 & -14 \\ 2 & 8 & 10 \end{bmatrix}\]
+  Let $b \in \mathbb{R}^{m}$. Is $Ax=b$ consistent for any $b$? \\
+  Solution: \\
+  Not consistent because if you rref
+  \[
+\left(\begin{array}{rrrr}
+1 & 4 & 5 & b_{1} \\
+-3 & -11 & -14 & b_{2} \\
+2 & 8 & 10 & b_{3}
+\end{array}\right) \]
+you get the $-2b_{1} + b_{3} = 0$.
+
+Now, find the set spanned by the column vectors of $A$. \\
+
+(note that the spanning set is NOT $\mathbb{R}^{3}$, because the columns have a
+rank of 2).
+This is
+\[span(A) = \left \{\left . \begin{bmatrix} b_{1} \\ b_{2} \\ b_{3} \end{bmatrix} \; \right\vert -2b_{1} + b_{3} = 0\right\} = \left\{ b_{2} \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + b_{3} \begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} \vert \forall b_{2}, b_{3} \in \mathbb{R}\right\} = span\left(\left\{\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\2\end{bmatrix}\right\}\right)\]
+You can do this is Sage with
+\begin{sageblock}
+ A =  span(column_matrix([[1,4,5],[3,-11,-14], [2,8,10]]))
+\end{sageblock}
+\end{ex}
+\[A = \sage{A}\]
+\begin{thm}
+  The following statements are logically equivalent:
+  Let $A$ be an $m \times n$ matrix and let $b$ be an $m \times 1$ vector.
+  \begin{enumerate}
+      \item for all $b \in \mathbb{R}^{m}$, $Ax = b$ has a solution.
+      \item $span(A) = \mathbb{R}^{m}$
+    \item The columns of $A$ span $\mathbb{R}^{m}$
+      \item $A$ has 1 pivot position in every row.
+      \item $b$ can be written as a linear combination of the columns of $A$.
+      \item $Ax = b$ is consistent for all $b \in \mathbb{R}^{m}$.
+  \end{enumerate}
+\end{thm}
+
+Make sure you don't mess up the details. We want a pivot in every ROW of $A$, not every column of $A$.
+\begin{ex}
+  Let's apply theorem 7.
+  \[span\left(\left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}\right) \neq \mathbb{R}^{2}\]
+  because it doesn't have a pivot in the second row.
+\end{ex}
+
+\begin{ex}
+  \[span\left(\left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix},\begin{bmatrix} 1 \\ 0 \end{bmatrix},\begin{bmatrix} 2 \\ 1 \end{bmatrix}\right\}\right) = \mathbb{R}^{2}\]
+  because there's a pivot in every row.
+  Note that there is not a pivot in every column, but the theorem requires a pivot in every row.
+\end{ex}
+
+Another mistake people make is thinking that the theorem applies if there is a pivot in every row of $\left [ A \quad b\right ]$. We are only concerned
+about a pivot in every row of $A$.
 \end{document}
