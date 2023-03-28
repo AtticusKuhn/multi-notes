@@ -418,4 +418,114 @@ Make sure you don't mess up the details. We want a pivot in every ROW of $A$, no
 
 Another mistake people make is thinking that the theorem applies if there is a pivot in every row of $\left [ A \quad b\right ]$. We are only concerned
 about a pivot in every row of $A$.
+\section{March 27}
+\subsection{Homogenous System}
+\begin{defn}
+  The linear system $Ax=b$ is called \textbf{homogenous} iff $b=\vec{0}$. A homogenous linear system is any system of the form $Ax = \vec{0}$.
+\end{defn}
+\begin{thm}
+  A homogenous linear system is always consistent because \[\mathbf{A}\vec{0} = \vec{0}\]
+\end{thm}
+\begin{defn}
+  We call $x = \vec{0}$ the \textbf{trivial solution} to the linear system $Ax = \vec{0}$.
+\end{defn}
+\begin{thm}
+  A homogenous linear system has infinite nontrivial solutions if and only if it contains free variables.
+\end{thm}
+\begin{ex}
+  consider this homogenous linear system
+  \[\begin{bmatrix} 1 & 2 \\ 3  & 6 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\]
+  The solution set is
+  \[span\left\{\begin{bmatrix} -2 \\ 1 \end{bmatrix}\right\}\]
+\end{ex}
+
+\begin{ex}
+  consider this homogenous linear system
+  \[\begin{bmatrix} 1 & 2 \\ 3  & 6 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 4 \\ 12 \end{bmatrix}\]
+  Then
+  \[\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} -2y + 4 \\ y \end{bmatrix}\]
+  This solution set cannot be written as a span because it doesn't contain $\vec{0}$.
+\end{ex}
+
+The solution set of a homogenous system can always be expressed as the span of some vectors.
+
+\begin{ex}
+  Here are 2 systems to consider.
+  \[S_{1} : x + 2y + 3z = 0\]
+  \[S_{2} : x + 2y + 3z = 4 \]
+  Compare and contrast the solution sets. \\
+  Solution: \\
+  The solution set for $S_{1}$ is $span \left\{\begin{bmatrix}-3 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}\right\}$.
+  The solution set for $S_{2}$ is
+  \[\left \{\left.\begin{bmatrix} -2y-3z + 4 \\ y \\ z \end{bmatrix} \right| \forall y,z \in \mathbb{R}\right\}\]
+\end{ex}
+
+\begin{thm}
+  The solution set to $Ax = b$ is parallel to the solution set of $Ax = 0$. You can think of the solution set of $Ax=b$ as being
+  a constant vector translation from the solution set of $Ax=0$.
+
+  Suppose $p$ is any solution to the system $\mathbf{A}\vec{x} = \vec{b}$. Then, any other solution to $\mathbf{A}\vec{x} = \vec{b}$ can
+  be written as $\vec{p} + \vec{v}_{h}$, where $\vec{v}_{h}$ is any solution to $\mathbf{A}\vec{x} = \vec{0}$.
+\end{thm}
+Warning: you can only think of the solution set of $\mathbf{A}\vec{x} = \vec{b}$ as a translation of the solution set of $\mathbb{A}\vec{x} = \vec{0}$ is the linear system is consistent. Otherwise, it's solution set is the
+empty set.
+\subsection{1.6 -- Applications}
+There are a bunch of applications of matricies in the textbook.
+\begin{ex}
+  Find the general traffic pattern in the freeway network shown in the figure \\
+  Describe the general traffic pattern when the road $x_{1}$ is closed. \\
+  When $x_{4} = 0$ what is the minimum value of $x_{1}$? \\
+  Solution:\\
+  For the solution, we use the general principle that (flow in) - (flow out) = 0.
+  \[A = \begin{bmatrix} 1 & 0 & -1 & -1 & 0 & 40 \\
+          -1 & -1 & 0 & 0 & 0 & -200 \\
+          0 & 1 & 1 & 0 & -1 & 100 \\
+          0 & 0 & 0 & 1 & 1 & 60\end{bmatrix}\]
+\begin{align*}
+  A &: x_{1} &= x_{3} + x_{4} + 40\\
+  B &: 200 &= x_{1} + x_{2} \\
+  C &: x_{2} + x_{3} &= 100 + x_{5} \\
+  D &: x_{4} + x_{5} &= 60 \\
+\end{align*}
+This reduces to
+\[\left(\begin{array}{rrrrrr}
+1 & 0 & -1 & 0 & 1 & 100 \\
+0 & 1 & 1 & 0 & -1 & 100 \\
+0 & 0 & 0 & 1 & 1 & 60 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right)\]
+So $x_{1}, x_{2}, x_{4}$ are basic variables and $x_{3}, x_{5}$ are free variables. The solution set is
+\[\left\{\begin{bmatrix} x_{3} - x_{5} + 100 \\ -x_{3} + x_{5} + 100 \\ x_{3} \\-x_{5} + 60 \\ x_{5}\end{bmatrix} | \forall x_{3}, x_{5} \in \mathbb{R}\right\}\]
+
+If $x_{4} = 0$, then $x_{5} = 60$, so we get the solution set
+
+\[\left\{\begin{bmatrix} x_{3} +40 \\ -x_{3} +   160 \\ x_{3} \\ 0  \\ 60\end{bmatrix} | \forall x_{3} \in [0, 160]\right\}\]
+
+The minimum value of $x_{1}$ is $40$.
+\subsection{1.7 -- Linear Independence}
+\end{ex}
+\begin{defn}
+  Given a set of vectors $\vec{v}_{1}, \vec{v}_{2}, \vec{v}_{3}, \ldots$, we say that the set is \textbf{linearly independent}
+  if and only if the only solution to
+  \[c_{1}\vec{v}_{1} + c_{2}\vec{v}_{2} + c_{3}\vec{v}_{3} + \cdots = \vec{0} \qquad c_{i} \in \mathbb{R}\]
+  is the trivial solution.
+
+  We say the set is \textbf{linearly dependent} if and only if there is a solution to the equation
+  \[c_{1}\vec{v}_{1} + c_{2}\vec{v}_{2} + c_{3}\vec{v}_{3} + \cdots = \vec{0}\qquad c_{i} \in \mathbb{R}\]
+  which is not the trivial solution.
+\end{defn}
+
+\begin{thm}
+  The columns of $\mathbb{A}$ are linearly independent if and only if the only solution to
+  \[\mathbf{A}\vec{x} = \vec{0}\]
+  is the trivial solution $\vec{x} = \vec{0}$.
+\end{thm}
+If one vector lies in the plane spanned by the other two, then the vectors are linearly dependent.
+\begin{thm}
+  To find out if a set of vectors is linearly dependent, RREF their matrix.
+\end{thm}
+\section{March 29}
+No class due to doctor's appointment
+\section{March 30}
+
 \end{document}
