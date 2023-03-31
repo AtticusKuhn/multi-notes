@@ -527,5 +527,77 @@ If one vector lies in the plane spanned by the other two, then the vectors are l
 \section{March 29}
 No class due to doctor's appointment
 \section{March 30}
+\subsection{1.7 -- Linearly Indepedence}
+\begin{defn}
+  A \textbf{linearly independent set} is a set of vectors $\left\{\vec{v}_{1}, \vec{v}_{2}, \ldots \vec{v}_{n}\right\}$ such that
+  \[c_{1}\vec{v}_{1} + c_{2}\vec{v}_{2} + \cdots c_{3}\vec{v}_{3} = 0 \iff c_{1} = c_{2} = c_{3} = \cdots = 0 \]
+  In other words, we say the columns of $\mathbf{A}$ are linearly independent iff
+  \[\mathbf{A}\vec{x} = \vec{0} \iff \vec{x} = \vec{0}\]
+\end{defn}
 
+There are some special cases to easily determine if a set is linearly independent or dependent.
+\begin{enumerate}
+  \item The empty set $\{\}$ is linearly independent.
+  \item The singleton set $\{\vec{v}\}$ is linearly independent if and only if $\vec{v} \neq \vec{0}$
+  \item The two-element set $\{\vec{v}_{1}, \vec{v}_{2}\}$ is linearly independent iff $\not\exists k \in \mathbb{R}, \vec{v}_{1} = k\vec{v}_{2}$.
+  \item Given a set of $p$ vectors $\{\vec{v}_{1}, \vec{v}_{2}, \ldots, \vec{v}_{p}\}$ in $\mathbb{R}^{n}$ and $p > n$, then the set is linearly dependent.
+  \item If a set contains the $\vec{0}$ vector, then it is linearly dependent.
+\end{enumerate}
+
+Practically, to find out if vectors are linearly independent, RREF the matrix. If the RREF has a pivot in every row, then the vectors are linearly independent. Otherwise, the vectors
+are linearly dependent.
+
+\begin{ex}
+  Are the column vectors in this matrix linearly independent? Just RREF it.
+\end{ex}
+\subsection{1.8 -- Linear Transformations}
+\begin{defn}
+  A \textbf{transformation} is a function $T : \mathbb{R}^{n} \to \mathbb{R}^{m}$. We call $\mathbb{R}^{n}$ the domain
+  and we call $\mathbb{R}^{m}$ the codomain.
+\end{defn}
+
+\begin{defn}
+  Given an $m \times n$ matrix $\mathbf{A}$, a \textbf{Matrix Transformation} is a linear transformation
+  \[T: \mathbb{R}^{n} \to \mathbb{R}^{m}\]
+  \[T(\vec{x}) = \mathbf{A}\vec{x}\]
+  We call $\mathbf{A}$ the \textbf{standard matrix} of $T$.
+\end{defn}
+
+\begin{ex}
+  For example, given the matrix
+  \[\mathbf{A} = \begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}\]
+  The matrix transformation of $\mathbf{A}$ is
+  \[T : \mathbb{R}^{2} \to \mathbb{R}^{3}\]
+  \[T\left(\begin{bmatrix} x_{1} \\ x_{2} \end{bmatrix}\right) = \begin{bmatrix} x_{1} - 3x_{2} \\ 3x_{1} + 5x_{2} \\ -x_{1} + 7x_{2} \end{bmatrix}\]
+\end{ex}
+
+\begin{defn}
+  Given a transformation $T: \mathbb{R}^{n} \to \mathbb{R}^{m}$,
+  we say a transformation is a \textbf{linear transformation} iff it satisfies 2 axioms:
+  \begin{enumerate}
+    \item Vector addition: \[T(\vec{u} + \vec{v}) = T(\vec{u}) + T(\vec{v}) \qquad \forall \vec{u}, \vec{v} \in \mathbb{R}^{n} \]
+    \item Scaling: \[T(c\vec{v}) = c T(\vec{v}) \qquad \forall c \in \mathbb{R} \quad \forall \vec{v} \in \mathbb{R}^{n}\]
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}
+  If $T: \mathbb{R}^{n} \to \mathbb{R}^{m}$  is a linear transformation, then
+  \[T(\vec{0}_{n}) = \vec{0}_{m}\]
+  because of the scaling rule.
+\end{thm}
+
+By the contrapositive, if $T(\vec{0}) \neq \vec{0}$, then $T$ is not a linear transformation.
+
+\begin{thm}
+  All matrix transformations are also linear transformations. Given a linear transformation and a basis, there is a unique matrix transformation corresponding to
+  the linear transformation.
+
+  In other words, a matrix transformation is basically the same thing as a linear transformation
+\end{thm}
+
+\begin{thm}
+  The derivative $\frac{d}{dx}$ from the set of differentiable functions to functions. To see why, it satisfies the axioms
+  \[\frac{d}{dx}(f(x) + g(x)) = \frac{d}{dx}(f(x)) + \frac{d}{dx}(g(x))\]
+  \[\frac{d}{dx}(c f(x)) = c \frac{d}{dx}(f(x))\]
+\end{thm}
 \end{document}

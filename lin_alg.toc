@@ -9,3 +9,5 @@
 \contentsline {subsection}{\numberline {4.3}1.7 -- Linear Independence}{10}{}%
 \contentsline {section}{\numberline {5}March 29}{11}{}%
 \contentsline {section}{\numberline {6}March 30}{11}{}%
+\contentsline {subsection}{\numberline {6.1}1.7 -- Linearly Indepedence}{11}{}%
+\contentsline {subsection}{\numberline {6.2}1.8 -- Linear Transformations}{11}{}%
