@@ -600,4 +600,227 @@ By the contrapositive, if $T(\vec{0}) \neq \vec{0}$, then $T$ is not a linear tr
   \[\frac{d}{dx}(f(x) + g(x)) = \frac{d}{dx}(f(x)) + \frac{d}{dx}(g(x))\]
   \[\frac{d}{dx}(c f(x)) = c \frac{d}{dx}(f(x))\]
 \end{thm}
+\section{April 12}
+
+\begin{thm}
+  If $ T : \mathbb{R}^{n} \to \mathbb{R}^{p}$ is a linear transformation, then there exists a matrix $A$ called the
+  \textbf{standard matrix} defined by
+  \[A = [T(e_{1}), T(e_{2}), T(e_{3}), T(e_{4}), \ldots, T(e_{n})]\]
+  Where $e_{1}, e_{2}, \ldots, e_{n}$ are the \textbf{basis vectors}.
+\end{thm}
+
+
+The way to see this is that any arbitrary vector $\vec{v} \in \mathbb{R}^{n}$ can be written as a linear combination of the basis vectors as
+$\vec{v} = c_{1}\vec{e}_{1} + \cdots c_{n}\vec{e}_{n}$.
+
+
+\begin{ex}
+
+  The matrix of a  vertical reflection in $\mathbb{R}^{2}$ is
+  \[A = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}\]
+
+  The matrix of a horizontal contraction (or expansion) by a factor of $k$ is
+  \[A = \begin{bmatrix} k & 0 \\ 0 & 1 \end{bmatrix}\]
+
+
+  The matrix of the projection onto the $y$ axis is
+  \[A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}\]
+
+
+  The matrix of the horizonal shear by a factor of $k$ is
+  \[A = \begin{bmatrix} 1 & k \\ 0 & 1 \end{bmatrix}\]
+
+
+  The matrix of a $\theta$ counter-clockwise about the origin is
+  \[A = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \]
+\end{ex}
+
+\begin{defn}
+  Let $f : X \to Y$.
+  $f$ is called \textbf{surjective} iff every element of $Y$ is hit.
+
+  $f$ is called \textbf{injective} iff $f(x_{1}) = f(x_{2}) \implies x_{1} = x_{2}$.
+
+  Surjective functions are also called ``onto functions''.
+  Injective functions are also called ``one-to-one functions''
+\end{defn}
+
+\begin{defn}
+  We say $f: X \to Y$ is \textbf{bijective} iff it is both surjective and injective.
+\end{defn}
+
+
+\begin{thm}
+  Let $T : \mathbb{R}^{n} \to \mathbb{R}^{p}$ be a linear transformation, and let $T$ have standard matrix $A$.
+
+  $T$ is injective/one-to-one iff
+  the equation $\textbf{A}\vec{x} = \vec{0}$ only has the solution $\vec{x} = \vec{0}$.
+  This means that $A$ has a pivot in every column.
+
+
+  In other words, $T(\vec{x}) = \vec{0} \implies \vec{x} = 0$.
+
+  The following are equivalent
+  \begin{enumerate}
+    \item $T$ is an injective/one-to-one function
+    \item $A$ has a pivot in every column
+    \item $A$ has no free variables
+    \item $T(\vec{x}) = \vec{0} \implies \vec{x} = \vec{0}$
+    \item The columns of $\mathbf{A}$ are linearly independent.
+  \end{enumerate}
+\end{thm}
+
+
+\begin{thm}
+  Let $T : \mathbb{R}^{n} \to \mathbb{R}^{p}$ be a linear transformation with matrix $\mathbf{A}$. The follow are equivalent
+
+  \begin{enumerate}
+    \item $T$ is a surjection / onto function
+    \item $A$ has a pivot in every row
+    \item The system $\mathbf{A} \vec{x} = \vec{b}$ is consistent for every $\vec{b} \in \mathbb{R}^{p}$
+    \item $span(A) = \mathbb{R}^{p}$.
+  \end{enumerate}
+\end{thm}
+
+
+\begin{ex}
+  Let $T: \mathbb{R}^{3} \to \mathbb{R}^{2}$ defined by
+  \[T(\vec{x}) = \begin{bmatrix} 1  & -1 & 3 \\ -2 & 2 & -6 \end{bmatrix}\vec{x}\]
+
+  Find $Range(T)$? \\
+  Solution: \\
+  $Range(T) = span(\begin{bmatrix} 1 \\ -2 \end{bmatrix})$\\
+  Find the set of all pre-images of $\begin{bmatrix} 2 \\ -4 \end{bmatrix}$?\\
+  Solution: \\
+  \[S = \left\{ k\begin{bmatrix}1 \\ 1 \\ 0 \end{bmatrix} + l \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}  + \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix} | \forall k,l \in \mathbb{R}^{3}\right\} = span\left(\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right) + \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix}\]\\
+  Is $T$ onto/surjective? \\
+  Solution: \\
+  no.\\
+  Is $T$ one-to-one/injective? \\
+  Solution: \\
+  no.
+
+\end{ex}
+\section{April 13}
+
+
+\begin{defn}
+  Given a matrix $A$, we call $A^{-1}$ the \textbf{inverse} of $A$ iff
+  $AA^{-1} = I$
+  If $A$ has an inverse, then $A$ is called \textbf{invertable}.
+
+\end{defn}
+
+If $A$ is invertiable, then $A^{-1}$ is its unique inverse.
+
+
+We only talk about inverses in the context of square matricies.
+
+For a $1 \times 1$ matrix, the inverse is
+\[a^{-1} = \frac{1}{a}\]
+
+For a $2 \times 2$ matrix, the inverse is
+
+\[\begin{bmatrix} a & b \\ c & d \end{bmatrix} ^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}\]
+
+
+\begin{thm}
+  If $A$ is invertable, then the system
+  \[\mathbf{A}\vec{x} = \vec{b}\]
+  has the unique solution
+  \[\vec{x} = \mathbf{A}^{-1}\vec{b}\]
+\end{thm}
+
+\begin{ex}
+  Solve this system
+  \[\begin{bmatrix} 1 & 2 \\ 3 & 4\end{bmatrix}\begin{bmatrix} x \\ y\end{bmatrix} = \begin{bmatrix} 5 \\ 6 \end{bmatrix} \]
+
+\end{ex}
+
+
+\begin{thm}
+  \[(A^{-1})^{-1} = A\]
+  \[(AB)^{-1} = B^{-1}A^{-1}\]
+  \[(A^{T})^{-1} = (A^{-1})^{T}\]
+\end{thm}
+
+\begin{thm}
+  A matrix $A$ is invertible if and only if it is row-equivalent (by elementary row operatins) to
+  the identity matrix $I$.
+\end{thm}
+
+
+\begin{thm}
+  \textbf{Finding Inverse}: To find the inverse on the $n\times n$ matrix $A$, perform row operations $[A \quad I_{n}]$
+  to get to $[I_{n} \quad A]$
+  In other words
+  \[[A \quad I_{n}] \sim [I_{n} \quad A]\]
+\end{thm}
+
+\begin{ex}
+
+  \begin{align*}
+    \begin{bmatrix} 2 & 0 & 0 & 1 & 0 & 0 \\ -3 & 0 & 1 & 0 & 1 & 0 \\ 0 & 1  & 0 & 0 & 0 & 1 \end{bmatrix} \\
+    &\sim
+\left(\begin{array}{rrrrrr}
+1 & 0 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 \\
+0 & 0 & 1 & \frac{3}{2} & 1 & 0
+\end{array}\right)
+  \end{align*}
+\end{ex}
+
+
+
+\begin{thm}
+  \textbf{Invertible Matrix Theorem}:
+  The following statements are all logically equivalent
+  \begin{enumerate}
+    \item $A$ is an invertiable $n \times n$ matrix
+    \item $A \sim I_{n}$
+    \item $A$ has $n$ pivot positions
+    \item The only solution $\mathbf{A}\vec{x} = \vec{0}$ is the trivial solution $\vec{x} = \vec{0}$
+    \item The columns of $A$ form a linearly inpendent set/basis of $\mathbb{R}^{n}$
+    \item The linear transformation $T(\vec{x}) = \mathbf{A}\vec{x}$ is one-to-one/injective
+    \item The linear transformation $T(\vec{x}) = \mathbf{A}\vec{x}$ is onto/surjective
+    \item The equation $\mathbf{A}\vec{x} = \vec{b}$ has exactly one solution $\vec{x} = \mathbf{A}^{-1}\vec{b}$ for all $\vec{b}\in \mathbb{R}^{n}$
+
+  \end{enumerate}
+\end{thm}
+\subsection{Chapter 3 -- Determinants}
+
+\begin{defn}
+  Given a matrix $A$, the \textbf{sub-matrix} $A_{ij}$ is the matrix obtained by deleting row $i$ and column $j$
+\end{defn}
+
+\begin{thm}
+  \textbf{Laplace Expansion}: The determinant can be calculated by
+  \[|A| = \sum_{i=1}^{n} (-1)^{i+j} a_{ij}|A_{ij}|= \sum_{j=1}^{n} (-1)^{i+j} a_{ij}|A_{ij}|\]
+
+  Some people call $(-1)^{i+j}|A_{ij}| = c_{ij}$ the \textbf{co-factor}.
+\end{thm}
+
+Note that Laplace expansion is very slow, it has time complexity $O(n!)$. If you want to calculate the determinant quickly, elementary row operations can
+calculate the determinant in $O(n^{3})$.
+
+\begin{thm}
+  If $A$ is a triangular matrix, then $|A|$ is just the product of the diagonal entries.
+  \[|A| = \prod_{i=1}^{n}a_{ii}\]
+\end{thm}
+
+It is a common mistake that $A \sim B \implies |A| =  |B|$, but this is false.
+
+\begin{thm}
+  Each of the elementary row operations has an effect on the determinant\\
+  \textbf{scaling}: multiplying a row by $k$ multiplies the determinant by $k$ \\
+  \textbf{interchange}: swapping two rows multiplies the determinant by $-1$ \\
+  \textbf{replacement}: adding a row to another row doesn't change the determinant \\
+\end{thm}
+
+\begin{thm}
+  \textbf{Properties of determinant}
+  \[|AB|=|A||B|\]
+  \[|A^{-1}|=|A|^{-1}\]
+  \[|A^{T}|=|A|\]
+\end{thm}
 \end{document}
