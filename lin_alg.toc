@@ -14,3 +14,5 @@
 \contentsline {section}{\numberline {7}April 12}{12}{}%
 \contentsline {section}{\numberline {8}April 13}{14}{}%
 \contentsline {subsection}{\numberline {8.1}Chapter 3 -- Determinants}{16}{}%
+\contentsline {section}{\numberline {9}April 17}{16}{}%
+\contentsline {subsection}{\numberline {9.1}Practice Knowledge Check Chapter 1}{17}{}%

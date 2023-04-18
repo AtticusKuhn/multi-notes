@@ -823,4 +823,77 @@ It is a common mistake that $A \sim B \implies |A| =  |B|$, but this is false.
   \[|A^{-1}|=|A|^{-1}\]
   \[|A^{T}|=|A|\]
 \end{thm}
+
+\section{April 17}
+
+Let's review determinant.
+\begin{align*}
+  \begin{vmatrix} d-2g & e-2 & g-2i \\
+    3a  & 3b & 3c \\
+    -a  + 4g & -b + 4h & -c + 4i \end{vmatrix} \\
+  &= -3 \cdot 4 \cdot \begin{vmatrix} a & b & c \\ d & e & f \\ g & h & i \end{vmatrix}
+\end{align*}
+\begin{thm}
+  \textbf{Cramers Rule}: If $A$ is an invertiable $n \times n$ matrix, then the solution to the linear system
+  \[\mathbf{A}\vec{x} = \vec{b}\]
+  has entries
+  \[\vec{x}_{i} = \frac{\det \mathbf{A}_{i}(\vec{b})}{\det \mathbf{A}}\qquad \forall i \in \{1,2,\ldots , n\} \]
+  Where
+  \[\mathbf{A}_{i}(\vec{b}) := [\vec{a}_{1} \ldots \vec{b} \ldots \vec{a}_{n}]\]
+\end{thm}
+
+\begin{thm}
+The determinant is the (signed) volume or area of the parallepiped or parallelogram with edges given by the columns of $\mathbf{A}$.
+\end{thm}
+
+\subsection{Practice Knowledge Check Chapter 1}
+\begin{enumerate}
+  \item Consider the following System \[x + y + z = 2 \quad x - y + z = h \quad x - y + kz = 3 \]
+        \begin{enumerate}
+          \item apply elementary row oeprations to write in echelon form.
+                \[\begin{bmatrix} 1 & 1 & 1 & 2 \\ 0 & -2 & 0 & h-2 \\ 0 & 0 & 0 & 3-h \end{bmatrix}\]
+          \item Determine the values of $k, h$ such that the system has 0, 1, or $\infty$ solutions?
+                $0$ solutions iff $k=1 \land h \neq 3$. $1$ solution iff $k \neq 1$, $\infty$ solutions
+                iff $k=1 \land k=3$
+          \item When the system has $\infty$ solutions, find the general solution in parametric vector form
+                \[\begin{bmatrix} 5/2 \\ -1/2 \\ 0 \end{bmatrix} + span \begin{bmatrix} -1 \\ 0 \\1 \end{bmatrix}\]
+          \item describe the above set geometrically?
+                A line passing through $\begin{bmatrix} 5/2 \\ -1/2 \\ 0 \end{bmatrix}$ and parallel to $\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$
+                in $\mathbb{R}^{3}$
+        \end{enumerate}
+         \item Let $\mathbf{A} = \begin{bmatrix} 1 & -1 & -1 \\ 0 & 2 & 1 \\ 2 & - & -1 \end{bmatrix}$
+        \begin{enumerate}
+          \item Do the columns of $A$ span $\mathbb{R}^{3}$?
+                No
+          \item Find the span of the columns of $A$?
+                \[span \left\{\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} , \begin{bmatrix} -1  \\ 2 \\ 0 \end{bmatrix}\right\}\]
+          \item Are the columns of $A$ linearly independent?
+                No
+          \item Write a dependence relation among the columns of $A$?
+                \[\vec{a}_{3} = -\frac{1}{2}\vec{a}_{1} + \frac{1}{2}\vec{a}_{2}\]
+          \item Geometrically describe $span \left\{a_{1}, a_{2}, a_{3}\right\}$?
+                A place in $\mathbb{R}^{3}$ passing through the origin $\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}$, and
+                $\begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix}$.
+        \end{enumerate}
+        \item Let $T : \mathbb{R}^{3} \to \mathbb{R}^{2}$ be a linear transformation that maps $(1,1,1) \mapsto (0,1)$, $(0,1,1) \mapsto (1,1)$, and $(0,1,1) \mapsto (1,-1)$
+        \begin{enumerate}
+          \item Is $T$ a matrix transformation?\\
+                Yes
+          \item Find the matrix of $T$?\\
+                \[T(\vec{x}) = \begin{bmatrix} -1 & 1 & 0 \\ 2 & 1 & -2 \end{bmatrix} \vec{x}\]
+          \item Find the image of $(x,y,z)$?\\
+                \[\begin{bmatrix} -x+y \\ 2x+y-2z \end{bmatrix}\]
+          \item Prove that $T$ is a linear transformation?\\
+                \[T(\vec{a} + \vec{b}) = T(\vec{a} + \vec{b})\]
+                \[T(c\vec{a}) = cT(\vec{a})\]
+          \item Find the pre-image of $(1, 4)$ \\
+                \[S = \left\{\left. \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}  + \begin{bmatrix} 2/3 \\ 2/3 \\ 1 \end{bmatrix} z \right | \forall z \in \mathbb{R}\right\}\]
+          \item Is $T$ one-to-one/injective?\\
+                no\\
+          \item Is $T$ onto/surjective? \\
+          yes
+        \end{enumerate}
+
+\end{enumerate}
+
 \end{document}
