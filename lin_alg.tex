@@ -896,4 +896,36 @@ The determinant is the (signed) volume or area of the parallepiped or parallelog
 
 \end{enumerate}
 
+\section{April 20}
+\begin{defn}
+  A set $V$ is called a \textbf{vector space} iff it satisfies the following axioms
+  \begin{align*}
+    \vec{u} + \vec{v} &= \vec{v} + \vec{u} \\
+    (\vec{u} + \vec{v}) + \vec{w} &= \vec{u} + (\vec{v} + \vec{w})\\
+    \vec{v} + \vec{0} &= \vec{v} \\
+    \vec{u} + (-\vec{u}) &=0 \\
+    c(\vec{u} + \vec{v}) &= c\vec{u} + c\vec{v} \\
+    (c+d)\vec{u} &= c\vec{u}+d\vec{u}\\
+    c(d\vec{u}) &= (cd)\vec{u} \\
+    1\vec{u} &= \vec{u}
+  \end{align*}
+\end{defn}
+
+Note that the empty set is \emph{not} a vector space because it does not contain $\vec{0}$.
+
+
+The \textbf{zero space} $\{\vec{0}\}$ is a vector space.
+
+\begin{ex}
+  Examples of vector spaces
+  \begin{enumerate}
+    \item the zero space $\{\vec{0}\}$.
+    \item $\mathbb{R}^{n}$ for any integer $n$.
+    \item $\mathbb{P}$, the set of polynomials with real coefficients
+    \item $\mathbb{P}_{n}$, the set of polynomials with real coefficients with degree at most $n$.
+    \item signlas: $\mathbb{S}$ the set of lists of real numbers that extend infinitely in both directions $(\ldots, x_{-1}, x_{0}, x_{1}, \ldots)$
+    \item function space: real valued functions from any set $X$ to the real numbers $\mathbb{R}^{n}$
+    \item Any plane passing through the origin.
+  \end{enumerate}
+\end{ex}
 \end{document}
