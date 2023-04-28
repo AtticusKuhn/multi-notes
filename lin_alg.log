@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  20 APR 2023 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  27 APR 2023 17:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,18 +382,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--893
 
 [18]
 Overfull \hbox (23.78003pt too wide) in paragraph at lines 926--927
-[]\OT1/cmr/m/it/10.95 signlas: $\U/msb/m/n/10.95 S$ \OT1/cmr/m/it/10.95 the set
+[]\OT1/cmr/m/it/10.95 signals: $\U/msb/m/n/10.95 S$ \OT1/cmr/m/it/10.95 the set
  of lists of real num-bers that ex-tend in-finitely in both di-rec-tions $\OT1/
 cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 ; x[]; x[]; x[]; []\OT1/cmr/m/n/10.95 )$ 
 
  []
 
+
+Overfull \hbox (3.20732pt too wide) in paragraph at lines 939--940
+[]\OT1/cmr/m/n/10.95 For a fixed $\OML/cmm/m/it/10.95 m \OMS/cmsy/m/n/10.95 ^^B
+ \OML/cmm/m/it/10.95 n$ \OT1/cmr/m/n/10.95 ma-trix $\OML/cmm/m/it/10.95 B$\OT1/
+cmr/m/n/10.95 , the set $[]$ (be-cause it is the ker-nel/nullspace
+ []
+
+[19] [20]
 *********************************************************************
-[19] (./lin_alg.aux) ) 
+[21] (./lin_alg.aux) ) 
 Here is how much of TeX's memory you used:
  5331 strings out of 479392
  87637 string characters out of 5849273
- 397854 words of memory out of 5000000
+ 399854 words of memory out of 5000000
  23300 multiletter control sequences out of 15000+600000
  479884 words of font info for 66 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
@@ -424,10 +432,10 @@ sfonts/cm/cmti10.pfb></nix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combi
 ned-medium-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb></n
 ix/store/75adgcxqamh0v7cvfax3ivy0hj4f8g8q-texlive-combined-medium-2021-final/sh
 are/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lin_alg.pdf (19 pages, 246243 bytes).
+Output written on lin_alg.pdf (21 pages, 255212 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

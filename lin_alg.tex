@@ -923,9 +923,129 @@ The \textbf{zero space} $\{\vec{0}\}$ is a vector space.
     \item $\mathbb{R}^{n}$ for any integer $n$.
     \item $\mathbb{P}$, the set of polynomials with real coefficients
     \item $\mathbb{P}_{n}$, the set of polynomials with real coefficients with degree at most $n$.
-    \item signlas: $\mathbb{S}$ the set of lists of real numbers that extend infinitely in both directions $(\ldots, x_{-1}, x_{0}, x_{1}, \ldots)$
+    \item signals: $\mathbb{S}$ the set of lists of real numbers that extend infinitely in both directions $(\ldots, x_{-1}, x_{0}, x_{1}, \ldots)$
     \item function space: real valued functions from any set $X$ to the real numbers $\mathbb{R}^{n}$
     \item Any plane passing through the origin.
   \end{enumerate}
 \end{ex}
+
+\section{April 24}
+Nothing happend.
+\section{April 26}
+Here are some more examples of vector spaces
+\begin{enumerate}
+  \item The set of $m \times n$ matricies
+  \item The set of integrable functions from a set $X$ to $\mathbb{R}$.
+  \item For a fixed $m \times n$ matrix $B$, the set $\left\{ \mathbf{A} | \forall \mathbf{A} \in \mathbb{R}^{p \times m} ,  \mathbf{A}\mathbf{B} = \mathbf{0}\right\}$ (because it is the kernel/nullspace of $\mathbf{B}$).
+  \item For a fixed $m \times n$ matrix $B$, the set $\left\{\mathbf{A} | \forall \mathbf{A} \in \mathbb{R}^{p \times m} , \mathbf{AB} = \mathbf{A}\right\}$ (because it is an invariant subspace)
+\end{enumerate}
+
+\begin{defn}
+  Given a vector space $V$, we say that a set $W$ is called a \textbf{vector subspace} of $V$ if and only if
+  \begin{enumerate}
+    \item $W \subseteq V$
+    \item $\vec{0} \in W$
+    \item addition is closed under $W$, meaning that $\forall \vec{u},\vec{v} \in W \implies (\vec{u} + \vec{v}) \in W$
+    \item $W$ is closed under scalar multiplication, meaning that $\forall c \in \mathbb{R} \quad \forall \vec{u} \in W \implies k\vec{u} \in W$.
+  \end{enumerate}
+\end{defn}
+
+
+\begin{ex}
+  Here is a list of examples of vector subspaces
+  \begin{enumerate}
+    \item For any vector space $V$, the zero subspace $\{\vec{0}\}$ is a subspace of $V$
+    \item $\left \{ \begin{bmatrix} a \\ b \\ 0 \end{bmatrix} | \forall a , b \in \mathbb{R} \right\}$ is a vector subspace of $\mathbb{R}^{3}$
+    \item $\left\{ \begin{bmatrix} x \\ y \\ x + y \end{bmatrix} | \forall x , y \in \mathbb{R} \right\}$ is a vector subspace of $\mathbb{R}^{3}$
+\end{enumerate}
+\end{ex}
+\begin{thm}
+  If $W$ is a vector subspace of $V$, then $W$ is automatically a vector space (you don't need to check the axioms).
+\end{thm}
+
+\begin{thm}
+  If $V$ is a vector space and $S \subseteq V$, then $span(S)$ is a vector subspace of $V$.
+\end{thm}
+
+
+\begin{defn}
+  Given a linear transformation $T : V \to W$, we define the \textbf{null space} as
+  \[Nul(T) := \left\{ \vec{x} | \vec{x} \in V , T(\vec{x}) = \vec{0} \right\} = T^{-1}(\vec{0})\]
+
+  It is a theorem that $Nul(T)$ is a vector subspace of $V$. The null space is sometimes called the kernel of $T$.
+\end{defn}
+
+\begin{defn}
+  Given a matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$, we define the \textbf{column space} as
+  \[Col(A) := span(A) = \left\{\mathbf{A}\vec{x} | \forall \vec{x} \in \mathbb{R}^{n}\right\}=  \left\{\vec{b} | \quad  \exists \vec{x} \in \mathbb{R}^{m \times n}, \mathbf{A}\vec{x} = \vec{b}\right \}\]
+  The column space is also called the \textbf{range} of the linear transformation $\vec{x} \mapsto \mathbf{A} \vec{x}$.
+
+  It is a theorem that $Col(\mathbf{A})$ is a vector subspace of $\mathbb{R}^{m}$.
+\end{defn}
+
+\begin{ex}
+  Let \[A := \begin{bmatrix} 1 & 1 & 1  \\ 1 & 2 & -1 \\ 2 & 4 & -2 \end{bmatrix}\]
+  Find the column space and the null space.
+  \[Col(A) = span(\{\begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix} , \begin{bmatrix} 1 \\ 2 \\ 4 \end{bmatrix}\})\]
+  \[Nul(A) = span(\{\begin{bmatrix} -3 \\ 2 \\ 1 \end{bmatrix}\})\]
+\end{ex}
+\section{April 27}
+
+\begin{ex}
+  Consider $T : \mathbb{P}_{2}  \to \mathbb{R}^{2 \times 3}$
+  \[T(p(t) = \begin{bmatrix} p(0) & p(0) & p(1) \\ p(1) & p(1) & p(0) \end{bmatrix}\]
+
+  Prove that $T$ is a linear transformation. \\
+  $T$ satisfies the linear transformation axioms. $T$ preserves vector addition and preserves scalar multiplication.
+
+  Find $Ker(T)$.
+
+  \[Ker(T) = span \{ \lambda x. x^{2} - x \}\]
+
+  Is $T$ a matrix transformation? According to YHPL, no.
+
+  Find $Range(T)$.
+  \[Range(T) = span \left\{ \begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}, \begin{bmatrix} 0 & 0 & 1 \\ 1 & -1 & 0 \end{bmatrix}, \right\}\]
+
+  Find all pre-images of $\begin{bmatrix} 2 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix}$?
+  \[T^{-1}(\begin{bmatrix} 2 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix}) = \left\{ \lambda x. ax^{2}- (1 + a) x + 2 | \forall a \in \mathbb{R}\right\}\]
+
+
+  Is $T$ injective/one-to-one? No because nullspace is not trivial.
+
+
+  Is $T$ surjective/onto? Impossible because the codomain is larger than the domain.
+
+\end{ex}
+\subsection{4.3 -- Basis}
+
+\begin{defn}
+  Let $V$ be a vector space. We say that $B \subseteq V$ is called a \textbf{basis} of $V$ if and only if
+  \begin{enumerate}
+    \item $span(B) = V$
+    \item $B$ is linearly independent
+  \end{enumerate}
+  In other words, a basis is a smallest spanning set.
+\end{defn}
+
+Note that a basis of $V$ is not unique: $V$ usually has infinitely many different bases.
+For example, $\{1,x,x^{2}\}$ is a basis of $\mathbb{P}_{2}$, but $\{1 + x, x^{2}, x + x^{2}\}$ is also a basis of $\mathbb{P}_{2}$.
+\begin{ex}
+  Here are some examples of a basis
+  \begin{enumerate}
+    \item $\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}$ is a basis of $\mathbb{R}^{3}$
+    \item $\{1, x, x^{2}\}$ is a basis of $\mathbb{P}_{2}$
+
+  \end{enumerate}
+\end{ex}
+
+\begin{thm}
+  If $S$ spans $V$, then any superset of $S$ also spans $V$.
+
+  If $S$ is a linearly independent set, then any subset of $S$ is also linearly indepenent.
+
+  If $S$ is a linearly dependent set, then any superset of $S$ is also linearly depenent.
+
+  If $B$ is a basis of $V$, then you cannot add or remove any vector from $B$ and still have it be a basis of $V$.
+\end{thm}
 \end{document}
