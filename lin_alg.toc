@@ -1,23 +1,34 @@
 \contentsline {section}{\numberline {1}March 20}{2}{}%
 \contentsline {section}{\numberline {2}March 22}{5}{}%
 \contentsline {subsection}{\numberline {2.1}1.3 -- Vector Equation}{6}{}%
-\contentsline {section}{\numberline {3}March 23}{7}{}%
-\contentsline {subsection}{\numberline {3.1}1.4 -- Matrix Equation}{7}{}%
-\contentsline {section}{\numberline {4}March 27}{8}{}%
-\contentsline {subsection}{\numberline {4.1}Homogenous System}{8}{}%
-\contentsline {subsection}{\numberline {4.2}1.6 -- Applications}{9}{}%
-\contentsline {subsection}{\numberline {4.3}1.7 -- Linear Independence}{10}{}%
+\contentsline {section}{\numberline {3}March 23}{8}{}%
+\contentsline {subsection}{\numberline {3.1}1.4 -- Matrix Equation}{8}{}%
+\contentsline {section}{\numberline {4}March 27}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Homogenous System}{9}{}%
+\contentsline {subsection}{\numberline {4.2}1.6 -- Applications}{10}{}%
+\contentsline {subsection}{\numberline {4.3}1.7 -- Linear Independence}{11}{}%
 \contentsline {section}{\numberline {5}March 29}{11}{}%
 \contentsline {section}{\numberline {6}March 30}{11}{}%
 \contentsline {subsection}{\numberline {6.1}1.7 -- Linearly Indepedence}{11}{}%
-\contentsline {subsection}{\numberline {6.2}1.8 -- Linear Transformations}{11}{}%
-\contentsline {section}{\numberline {7}April 12}{12}{}%
-\contentsline {section}{\numberline {8}April 13}{14}{}%
+\contentsline {subsection}{\numberline {6.2}1.8 -- Linear Transformations}{12}{}%
+\contentsline {section}{\numberline {7}April 12}{13}{}%
+\contentsline {section}{\numberline {8}April 13}{15}{}%
 \contentsline {subsection}{\numberline {8.1}Chapter 3 -- Determinants}{16}{}%
-\contentsline {section}{\numberline {9}April 17}{16}{}%
+\contentsline {section}{\numberline {9}April 17}{17}{}%
 \contentsline {subsection}{\numberline {9.1}Practice Knowledge Check Chapter 1}{17}{}%
 \contentsline {section}{\numberline {10}April 20}{19}{}%
 \contentsline {section}{\numberline {11}April 24}{19}{}%
 \contentsline {section}{\numberline {12}April 26}{19}{}%
 \contentsline {section}{\numberline {13}April 27}{21}{}%
 \contentsline {subsection}{\numberline {13.1}4.3 -- Basis}{21}{}%
+\contentsline {section}{\numberline {14}May 1}{22}{}%
+\contentsline {subsection}{\numberline {14.1}4.4 -- Coordinate Systems}{22}{}%
+\contentsline {subsection}{\numberline {14.2}4.6 -- Rank}{24}{}%
+\contentsline {section}{\numberline {15}May 3}{24}{}%
+\contentsline {section}{\numberline {16}May 4}{25}{}%
+\contentsline {section}{\numberline {17}May 8}{26}{}%
+\contentsline {subsection}{\numberline {17.1}Chapter 6 -- Least Squares}{26}{}%
+\contentsline {section}{\numberline {18}May 10}{28}{}%
+\contentsline {subsection}{\numberline {18.1}6.4 -- Geometric Interpretation of Orthogonal Projection}{28}{}%
+\contentsline {section}{\numberline {19}May 11}{29}{}%
+\contentsline {subsection}{\numberline {19.1}6.5 -- Least Squares}{29}{}%

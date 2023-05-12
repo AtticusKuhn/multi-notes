@@ -1048,4 +1048,470 @@ For example, $\{1,x,x^{2}\}$ is a basis of $\mathbb{P}_{2}$, but $\{1 + x, x^{2}
 
   If $B$ is a basis of $V$, then you cannot add or remove any vector from $B$ and still have it be a basis of $V$.
 \end{thm}
+\section{May 1}
+\begin{ex}
+  Does the set $\{1+x, x^{2},x+x^{2}\}$ span $\mathbb{P}_{2}$? Yes.
+
+  To see why, we need to show that an abitrary vector, call it $a + bx + cx^{2}$ can be written as a linear combination of the basis.
+  We want to show that $\exists k,l,m \in \mathbb{R}$
+  \[k(1+x) + lx^{2} + m(x + x^{2}) = a + bx + cx^{2} \implies a + bx  + cx^{2} = k + (k + m) x + (l + m)x^{2}\]
+  So we get the linear system
+  \begin{align*}
+    l + m &=a \\
+    k + m &= b \\
+    k &= c
+  \end{align*}
+  \[\begin{bmatrix} 0 & 1 & 1  & a\\ 1 & 0 & 1 & b \\ 1 & 0 & 0 & c \end{bmatrix} \]
+\end{ex}
+
+Be warned that the pivot columns of $A$ form a basis of $Col(A)$, not the pivots in the reduced matrix.
+
+\subsection{4.4 -- Coordinate Systems}
+
+\begin{thm}
+  \textbf{Unique representation theorem}: If $B$ is a basis of $V$, then every vector $v \in V$ can be uniquely
+  represented as a linear combination of $B$. In other words, there exist unique scalars $c_{1}, c_{2}, \ldots c_{n}$ such that
+  \[v = c_{1}\vec{b}_{1}+c_{2}\vec{b}_{2}+\cdots+c_{n}\vec{b}_{n}\]
+  There is one and only one set of scalars $c_{1}, \ldots, c_{n}$ to satisfy the equation.
+\end{thm}
+
+
+\begin{defn}
+  With respect to a given basis $B$, we define the \textbf{coordinates} relative to $B$ to a notation as
+  \[[\vec{x}]_{B}=\begin{bmatrix}c_{1}\\c_{2}\\\vdots\\c_{n}\end{bmatrix}_{B} = c_{1}\vec{b}_{1}+c_{2}\vec{b}_{2}+\cdots+c_{n}\vec{b}_{n}\]
+  This notation is well-defined because of the unique representation theorem.
+\end{defn}
+
+A vector space may have many different bases.
+
+
+To change a coordinate vector from $B_{1}$ to $B_{2}$ there exists a matrix called the \textbf{change of basis} matrix which changes the basis.
+
+\begin{ex}
+  Let $a = \langle 6,5 \rangle$ in  $\begin{bmatrix} 6 \\ 5 \end{bmatrix}$ is the coordinate vector in the elementary basis. If we set our basis
+  to $\{\langle 3,1 \rangle, \langle 0, 1\rangle\}$, then the coordinate vector is $\begin{bmatrix} 2 \\ 3 \end{bmatrix}_{B}$ because
+  $\begin{bmatrix} 2 \\ 3 \end{bmatrix}_{B} = 2\langle 3,1 \rangle + 3 \langle 0,1\rangle = \langle 6,5\rangle$
+
+  In this case, the change-of-basis matrix $\begin{bmatrix} 3 & 0 \\ 1 & 1 \end{bmatrix}$.
+  \[\begin{bmatrix} 3 & 0 \\ 1 & 1\end{bmatrix}\begin{bmatrix} e_{1} \\ e_{2} \end{bmatrix} =\begin{bmatrix} b_{1}\\b_{2}\end{bmatrix}\]
+\end{ex}
+
+\begin{ex}
+  Let $v = \mathbb{P}_{2}$ and let $B = \{1+t, t^{2}, t+t^{2}\}$.
+  \[[1+2t+3t^{2}]_{B} = \begin{bmatrix} 1 \\2 \\ 1\end{bmatrix}\]
+  because
+  \[1+2t+3t^{2} = 1(1+t) + 2(t^{2})+1(t+t^{2})\]
+\end{ex}
+\begin{thm}
+  \[\mathbb{P}_{n} \cong \mathbb{R}^{n+1}\]
+  Because we haev the bijective linear mapping (called a vector-space isomorphism)
+  one example is
+  \[T(a +bx + cx^{2}) \mapsto \begin{bmatrix} a \\ b \\ c \end{bmatrix}\]
+\end{thm}
+
+\begin{ex}
+  Let $B = \left\{ \begin{bmatrix} 3 \\ 3 \\ 1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 3 \end{bmatrix}\right\}$.
+  Find the coordinate vector of $\begin{bmatrix} 9 \\ 13 \\ 15\end{bmatrix}$ in $span(B)$.
+  \[\begin{bmatrix} 9 \\ 13 \\ 15 \end{bmatrix}_{B} = \begin{bmatrix} 3 \\ 4\end{bmatrix}\]
+  Becuase
+  \[3\begin{bmatrix} 3 \\ 3 \\ 1 \end{bmatrix} + 4 \begin{bmatrix} 0 \\ 1 \\ 3 \end{bmatrix} = \begin{bmatrix} 9 \\ 13 \\ 15 \end{bmatrix}\]
+\end{ex}
+
+
+\begin{defn}
+  If $B$ is a basis of $V$, then the \textbf{dimension} of $V$ is the length/cardinality of $B$.
+
+  No matter which basis we choose, each basis of $V$ will have the same length, which is the basis of $V$.
+\end{defn}
+
+\begin{ex}
+  The vector space $\mathbb{R}^{n}$ is $n$-dimensional because any basis of $\mathbb{R}^{n}$ has $n$ elements.
+\end{ex}
+
+\begin{ex}
+  The trivial vector space $\{\vec{0}\}$ is $0$-dimensional because the empty list $\{\}$ spans the vector space.
+  ${\vec{0}}$ is the only $0$-dimensional vector space.
+\end{ex}
+
+
+\begin{thm}
+  If $V$ is a vector space of dimension $p$, then any linearly independent set of size $p$ is automatically a basis of $V$.
+\end{thm}
+
+\begin{thm}
+  \[dim(\vec{0})=0\]
+  \[dim(\mathbb{R}^{n})=n\]
+  \[dim(\mathbb{P}_{n})=n+1\]
+\end{thm}
+
+\subsection{4.6 -- Rank}
+\begin{defn}
+  Given a linear transformation $T : V \to W$ we define the \textbf{rank} as
+  \[rank(T) := dim(Range(T))\]
+\end{defn}
+
+\begin{thm}
+  To calculate the rank of a matrix, the rank is the number of pivot columns,
+  which is equal to the number of pivot rows.
+\end{thm}
+
+\begin{defn}
+  Given a linear transformation $T: V \to W$, we define the \textbf{nullity} as
+  \[dim(ker(T))\]
+\end{defn}
+
+
+\begin{thm}
+  \textbf{rank-nullity theorem}: If $T : V \to W$ is a linear transformation, then the rank and the nullity
+  are related by the following equation
+  \[dim(range(T)) + dim(ker(T)) = dim(V)\]
+
+  To prove this, the rank is the number of pivot columns, and the nullity is the number of nonpivot columns,
+  and $dim(V)$ is the total number of columns.
+\end{thm}
+\section{May 3}
+
+\begin{defn}
+  If $A \in \mathbb{R}^{n \times n}$ is a matrix and $\vec{x} \in \mathbb{R}^{n}$ is a vector with $\vec{x} \neq \vec{0}$ and $\lambda \in \mathbb{R}$ is a scalar and
+  \[\mathbf{A}\vec{x}=\lambda\vec{x}\]
+  then we say $\vec{x}$ is an \textbf{eigenvector} of $\mathbf{A}$ and
+  we say that $\lambda$ is the \textbf{eigenvalue} of $\vec{x}$.
+\end{defn}
+
+Note that only square matricies have eigenvalues.
+
+\begin{thm}
+  The folllowing are logically equivalent
+  \begin{align*}
+    &\mathbf{A}\vec{x} = \lambda \vec{x} \\
+    \iff& (\mathbf{A}-\lambda I) \vec{x} = 0 \\
+    \iff& det(\mathbf{A} - \lambda I) = 0
+  \end{align*}
+\end{thm}
+
+\begin{defn}
+  Given $\mathbf{A} \in \mathbb{R}^{n \times n}$, we define the \textbf{characteristic polynomial} of $\mathbf{A}$ as
+  \[p(\lambda) = \det(\mathbf{A}-\lambda I) = (\lambda_{1}-\lambda)(\lambda_{2}-\lambda)\cdots(\lambda_{n}-\lambda)\]
+  where $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}$ are the $n$ eigenvalues of $\mathbf{A}$.
+  The characteristic polynomial is an $n$-degree polynomial of $\lambda$.
+\end{defn}
+
+\begin{thm}
+If $\mathbf{A} \in \mathbb{R}^{n \times n}$, then $\mathbf{A}$ has exactly $n$ eigenvalues (counting with multiplicity).
+\end{thm}
+\begin{defn}
+  Given a fixed eigenvalue $\lambda\in \mathbb{R}$ of $\mathbf{A} \in \mathbb{R}^{n \times n}$, we define the \textbf{eigenspace} of $\lambda$ as
+  \[\left\{\vec{x} : \mathbf{A}\vec{x} = \lambda\vec{x}\right\}\]
+  Note that the eigenspace is a vector subspace of $\mathbb{R}^{n}$ because it is the nullspace of $(\mathbf{A}-\lambda I) \vec{x} = \vec{0}$. To find
+  the eigenspace of $\lambda$, solve the homogenous linear equation $(\mathbf{A} - \lambda I)\vec{x} = \vec{0}$
+\end{defn}
+
+\section{May 4}
+\begin{defn}
+  If $A \in \mathbb{R}^{n \times n}$ and
+  $B \in \mathbb{R}^{n \times n}$, we say A and B are \textbf{similar} if and only if there
+  exists a matrix $P \in \mathbb{R}^{n \times n}$ such that
+  \[PB = AP\]
+  $P $ is called the change-of-basis matrix
+\end{defn}
+
+\begin{defn}
+  We say a matrix
+  $A \in \mathbb{R}^{n \times n}$
+  is \textbf{diagonalizable}
+  if it is similar to a diagonal matrix, i.e
+  \[AP = PD\]
+  equivalently
+  \[A = PDP^{-1}\]
+  for some diagonal matrix $D$
+  the diagonal entries of $D$ are the eigenvalues of $A$.
+
+  The diagonal matrix is the \textbf{eigenvector basis}.
+
+\end{defn}
+\begin{thm}
+  $A$ is diagonalizable iff it has $n$ linearly independent eigenvectors.
+\end{thm}
+\begin{thm}
+  two matricies are similar if and only if they have the same eigenvalues with the same multiplicties.
+\end{thm}
+% \begin{thm}
+\begin{thm}
+  If $A$ has $n$ distinct eigenvalues, then $A$ is diagonalizable.
+  (warning: the converse does not always hold.)
+\end{thm}
+
+
+\begin{defn}
+  A \textbf{stochastic matrix} represents a markov chain with a matrix.
+  Please note that the COLUMN vectors represent the probability vectors.
+  The sum of the column vectors must be 1.
+  $a_{rc}$ represents the probability that we will go from state $r$ to state $c$.
+  The top represents now, the right represents next.
+
+  The \textbf{state vector} is a column vector which represnets the current probabilities.
+\end{defn}
+
+\begin{thm}
+  $\lambda=1$ is an eigenvalue of all stochastic matricies. Use this fact to easily factor the characteristic polynomial of
+  a stochastic matrix. This corresponds to the steady-state vector.
+\end{thm}
+\begin{ex}
+  Here is an example of a stochastic matrix
+  \[A = \begin{bmatrix} .9 & .2 \\ .1 & .8 \end{bmatrix}\]
+
+  The steady state vector is
+  \[\vec{x} = \begin{bmatrix} 2/3 \\ 1/3 \end{bmatrix}\]
+
+  The eigenvalues are
+  \[\lambda=1, \lambda = 0.7\]
+
+  The diagonalization is
+  \[\begin{bmatrix} .9 & .2 \\ .1 & .8 \end{bmatrix} = \begin{bmatrix} 2 & -1 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & .7 \end{bmatrix}(1/3\begin{bmatrix} 1 & 1 \\ -1 & 2 \end{bmatrix})\]
+
+  \[A^{\infty} = \begin{bmatrix} 2/3 & 2/3 \\ 1/3 & 1/3 \end{bmatrix}\]
+\end{ex}
+
+\begin{thm}
+  It doesn't matter the inital state vector after a long time, all the columns of $M^{\infty}$ are the same.
+\end{thm}
+\begin{defn}
+  The \textbf{steady state} vector is the fixedpoint of the markov chain, i.e. the probabilities don't change.
+  If $\mathbf{A}\vec{x} = \vec{x}$
+  then $\vec{x}$ is called the steady-state vector of $\mathbf{A}$.
+
+  In other words, a steady state vector is an eigenvector for $\lambda =1$.
+
+  To find the steady-state vector, solve the homogenous system
+  \[(\mathbf{M}-\mathbf{I})\vec{x} = 0\]
+\end{defn}
+\section{May 8}
+
+
+\subsection{Chapter 6 -- Least Squares}
+
+Even if the equation $\mathbf{A}\vec{x} = \vec{b}$ is inconsistent, we can still project $\vec{b}$ onto $span(\mathbf{A})$. We have
+that $\hat{b} = proj_{\mathbf{A}}(\vec{b})$.
+
+\begin{defn}
+  Given $\vec{u}, \vec{v} \in W$, the \textbf{inner product} is any function that satisfies the following axioms
+  \begin{enumerate}
+    \item $\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$
+    \item $(\vec{u} + \vec{v}) \cdot \vec{w} = \vec{u}\cdot \vec{w} + \vec{v}\cdot\vec{w} $
+    \item $(c \vec{u}) \cdot \vec{v} = c(\vec{u} \cdot) = \vec{u} \cdot (c \vec{v})$
+    \item $\vec{u} \cdot \vec{u} \ge 0$
+  \end{enumerate}
+\end{defn}
+
+The most important inner product is called the \textbf{dot product} and is defined as
+\[\vec{u} \cdot \vec{v} = \sum_{i=1}^{n} u_{i}v_{i}\]
+
+\begin{defn}
+  The \textbf{norm} of a vector is
+  \[\|\cdot \| : \mathbb{R}^{n} \to \mathbb{R}\]
+  \[\|\vec{u}\| := \sqrt{\vec{u} \cdot \vec{u}}\]
+\end{defn}
+
+\begin{defn}
+  The \textbf{distance} between $\vec{u}$ and $\vec{v}$ is
+  \[dist(\vec{u}, \vec{v}) := \| \vec{u} - \vec{v} \|\]
+\end{defn}
+
+\begin{thm}
+  \textbf{orthogonality}: Two vectors are said to be orthogonal if and only if their dot products are $0$
+  \[\vec{u} \bot \vec{v} \iff \vec{u} \cdot \vec{v} = 0\]
+\end{thm}
+
+\begin{thm}
+  \textbf{pythagorean theorem}:
+  \[\vec{u} \bot \vec{v}  \iff \|\vec{u}\|^{2} + \|\vec{v}\|^{2} = \|\vec{u}+\vec{v}\|^{2}\]
+\end{thm}
+\begin{thm}
+  $\vec{0}$ is orthogonal to every vector.
+\end{thm}
+
+\begin{defn}
+  \textbf{perpendicular to vector space}
+  Let $W$ be a vector subspace of $V$ and let $\vec{u} \in V$. We say $\vec{u}$ is perpendicular to $W$ iff
+  \[\vec{u} \bot W \iff \vec{u} \in W^{\bot} \iff \forall \vec{v} \in W, \vec{u} \bot \vec{v}\]
+\end{defn}
+
+\begin{defn}
+  \textbf{orthogonal complement}: Let $W$ be a vector subspace of $V$. The orthogonal complement of $W$ is
+  \[W^{\bot} := \left\{\vec{u} : \forall \vec{v} \in W, \vec{u} \bot \vec{v}\right\}\]
+\end{defn}
+
+
+\begin{defn}
+  If $S \subseteq \mathbb{R}^{n}$, then $S$ is called an \textbf{orthogonal subset} of $\mathbf{R}^{n}$ iff
+  \[\forall i,j \in [n] \qquad S_{i} \cdot S_{j} = \delta_{ij}\]
+\end{defn}
+
+\begin{thm}
+  An orthogonal subset $S$ is linearly independent iff $\vec{0} \notin S$
+\end{thm}
+
+\begin{thm}
+  If $\left\{\vec{v}_{1}, \ldots \vec{v}_{n}\right\}$ is an orthogonal basis of $V$, and $y \in V$, then
+  \[\vec{y} =\sum_{i=1}^{n} c_{i}\vec{v}_{i}\]
+  where
+  \[c_{i} = \frac{\vec{y} \cdot \vec{v}_{i}}{\vec{v}_{i} \cdot \vec{v}_{i}}\]
+\end{thm}
+\begin{defn}
+  A set $S \subset V$ is called an \textbf{orthogonal basis} of $V$ iff $S$ is a basis of $V$ and $S$ is an orthogonal subspace of $V$.
+\end{defn}
+
+\begin{thm}
+  \[\forall \mathbf{A} \in \mathbb{R}^{r \times c} \qquad (Row(A))^{\bot} = Null(A)\]
+  \[\forall \mathbf{A} \in \mathbb{R}^{r \times c} \qquad Col(A)^{\bot} = Null(A^{\top})\]
+\end{thm}
+\begin{thm}
+  \textbf{orthogonal decomposition}:
+  If $W$ is a vector subspace of $\mathbb{R}^{n}$, then every $y \in \mathbb{R}^{n}$ can be uniquely written as
+  \[\vec{y} = \hat{y} + \vec{z}\]
+  Where $\hat{y} \in W$ and $Z \in W^{\bot}$
+\end{thm}
+
+\section{May 10}
+\begin{ex}
+  Here is an application of orthogonal projection in math.
+
+  Find the shortest possible distance from $(2,1)$ to the line passing through $(0,0)$ and $(1,-3)$?
+
+  Let $\vec{p} = \langle 2,1 \rangle, \vec{q} = \langle 1, -3\rangle$.
+  \[\hat{p} = proj_{q}(p) = \frac{p\cdot q}{q \cdot q} q = -\frac{1}{10}\langle 1 , -3\rangle\]
+  The orthogonal decomposition is
+  \[\vec{p} = \hat{p} + \vec{z}\]
+  so
+  \[\langle 2 , 1 \rangle = -\frac{1}{10}\langle 1, -3 \rangle + \frac{7}{10}\langle 3 , 1 \rangle\]
+  So the distance is
+  \[d = \|\vec{z} \| = \|\frac{7}{10}\langle 3, 1 \rangle\| = \frac{7}{\sqrt{10}}\]
+\end{ex}
+
+\begin{defn}
+  We say $B$ is an \textbf{orthonormal basis} if
+  \[\forall i,j \qquad b_{i}\cdot b_{j} = \delta_{ij}\]
+  Basically all the vectors are unit vectors and all the vectors are pairwise orthogonal.
+
+\end{defn}
+
+\begin{defn}
+  We say that $M$ is an \textbf{orthogonal matrix} iff
+  \[M^{T}=M^{-1}\]
+  Another way of saying this is
+  \[M^{T}M=MM^{T}=I\]
+\end{defn}
+\begin{thm}
+  If $M$ is an orthogonal matrix, then $M$ is always invertible.
+\end{thm}
+\subsection{6.4 -- Geometric Interpretation of Orthogonal Projection}
+\begin{thm}
+  \textbf{orthogonal decomposition}:
+  If $W$ is a vector subspace of $\mathbb{R}^{n}$, then every $y \in \mathbb{R}^{n}$ can be uniquely written as
+  \[\vec{y} = \hat{y} + \vec{z}\]
+  Where $\hat{y} \in W$ and $z \in W^{\bot}$
+
+  And if $W$ has an orthogonal basis $B = \left\{\vec{u}_{1}, \ldots, \vec{u}_{p}\right\}$, the coordinates of $\hat{y}$
+  are given by
+  \[\hat{y} = proj_{W}(\vec{y}) = proj_{\vec{u}_{1}}(\vec{y}) + \cdots + proj_{\vec{u}_{p}}(\vec{y}) = \sum_{i=1}^{p}proj_{\vec{u}_{i}}(\vec{y})\]
+
+  Warning: this only works for an orthogonal basis.
+\end{thm}
+
+\begin{thm}
+  \textbf{closest approximation theorem}: Basically, an orthogonal projection is the closest vector to the vector.
+
+  Let $W$ be a vector subspace of $\mathbb{R}^{n}$ and let $\vec{y} \in \mathbb{R}^{n}$ then
+  \[\forall \vec{v} \in W \qquad \| \vec{y} - proj_{W}(\vec{y}) \| \le \| \vec{y} - \vec{v} \|\]
+\end{thm}
+
+
+\begin{ex}
+  Let $B = \left\{\begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 0 \\ 2 \\ 0 \end{bmatrix} \right\}$ be an orthogonal basis of some subspace.
+  Find the orthogonal decomposition of $\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$.\\
+  Solution: \\
+
+  \[\hat{y} = \frac{6}{10}\begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix} + \begin{bmatrix} 0 \\ 2 \\ 0 \end{bmatrix} = \begin{bmatrix} 9/5 \\ 2 \\ 3/5 \end{bmatrix}\]
+
+  \[\begin{bmatrix} 1 \\ 2\\ 3 \end{bmatrix} = \begin{bmatrix} 9/5 \\ 2 \\ 3/5 \end{bmatrix} + \begin{bmatrix} -4/5 \\ 0 \\ 12/5 \end{bmatrix}\]
+\end{ex}
+
+\begin{thm}
+  \textbf{Gram-Schmidt Procedure}:
+  Given a vector subspace $W$ of $V$ and Given a basis $B = \left\{\vec{x}_{1}, \ldots, \vec{x}_{n}\right\}$ of $W$, then the set
+    \begin{align*}
+      \vec{v}_{1} &= \vec{x}_{1}\\
+      \vec{v}_{2} &= \vec{x}_{2} - proj_{\{\vec{v}_{1}\}}(\vec{x}_{2}) \\
+      \vec{v}_{3} &= \vec{x}_{3} - proj_{\{\vec{v}_{1}, \vec{v}_{2}\}}(\vec{x}_{3}) \\
+      \vdots \\
+      \vec{v}_{p} &= \vec{x}_{p} - proj_{\{\vec{v}_{1}, \vec{v}_{2}, \ldots, \vec{v}_{p-1}\}}(\vec{x}_{p})
+    \end{align*}
+    The set $V = \left\{\vec{v}_{1}, \vec{v}_{2}, \ldots, \vec{v}_{p}\right\}$ spans $W$ and is orthogonal.
+\end{thm}
+\section{May 11}
+\subsection{6.5 -- Least Squares}
+
+Here is a problem: If the system
+\[\mathbf{A}\vec{x} = \vec{b}\]
+has no solution, does it at least have a close solution
+\[\mathbf{A}\hat{x} = \vec{b}\]
+
+
+By projection,
+\[\hat{b} = proj_{Col(\mathbf{A})}(\vec{x})\]
+
+\begin{defn}
+  If $\mathbf{A} \in \mathbb{R}^{m \times n}$ and $\vec{b} \in \mathbb{R}^{m}$, the \textbf{least squares solution} of the linear system
+  \[\mathbf{A}\vec{x} = \vec{b}\]
+  is the vector $\hat{b} \in \mathbb{R}^{n}$ such that
+  \[\forall \vec{y} \in \mathbb{R}^{n} \qquad \| \vec{b} - \mathbf{A}\hat{x} \| \le \| \vec{b} - \mathbf{A} \vec{x}\]
+
+  Basically, even if the linear system is inconsitent, $\hat{x}$ is the closest possible solution.
+
+\end{defn}
+
+\begin{thm}
+  By the closest approximation theorem from yesterday, the least squares solutions are all the solutions to
+  \[\mathbf{A}\hat{x} = proj_{Col(\mathbf{A})}(\vec{b})\]
+
+  This method of calculating is very bad because you need an orthogonal basis.
+\end{thm}
+
+\begin{defn}
+  For $\mathbf{A} \in \mathbb{R}^{m \times n}$,
+  \[\mathbf{A}^{T}\mathbf{A}\]
+  is called the \textbf{normal matrix} of $\mathbf{A}$.
+
+  If $\mathbf{A}\vec{x} = \vec{b}$ is a linear system, then
+  \[\mathbf{A}^{T}\mathbf{A} \vec{x} = \mathbf{A}^{T}\vec{x}\]
+  is called the \textbf{normal equation}.
+\end{defn}
+\begin{thm}
+  \textbf{calculating least-squares}: The least squares solutions of
+  \[\mathbf{A}\vec{x} = \vec{b}\]
+  are the same as the set of solutions to
+  \[\mathbf{A}^{T}\mathbf{A} \vec{x} = \mathbf{A}^{T}\vec{b}\]
+\end{thm}
+\begin{ex}
+  Find the least squares solution to the linear system
+  \[\begin{bmatrix} 2 & 0 \\ 0 & 1 \\ 2 & 2 \end{bmatrix} \vec{x} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\]
+
+  The normal equation is
+  \[
+\left(\begin{array}{rr}
+8 & 4 \\
+4 & 5
+\end{array}\right)\hat{x} = \begin{bmatrix} 8 \\ 8 \end{bmatrix} \]
+\end{ex}
+
+\begin{ex}
+  Given the points
+  \[(1,1), (2,1), (3,2)\]
+  find the least-squares regression line.
+
+  We want the least-squares solution to
+\[\begin{bmatrix} 1  & 1 \\ 2 & 1 \\ 3 & 1\end{bmatrix} \vec{x} = \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}\]
+So
+\[y = \frac{1}{2}x + \frac{1}{3}\]
+\end{ex}
 \end{document}
