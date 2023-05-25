@@ -32,3 +32,5 @@
 \contentsline {subsection}{\numberline {18.1}6.4 -- Geometric Interpretation of Orthogonal Projection}{28}{}%
 \contentsline {section}{\numberline {19}May 11}{29}{}%
 \contentsline {subsection}{\numberline {19.1}6.5 -- Least Squares}{29}{}%
+\contentsline {section}{\numberline {20}May 15}{31}{}%
+\contentsline {section}{\numberline {21}May 18}{31}{}%

@@ -1514,4 +1514,47 @@ By projection,
 So
 \[y = \frac{1}{2}x + \frac{1}{3}\]
 \end{ex}
+\section{May 15}
+Here are some facts to remember:
+\begin{enumerate}
+  \item If the eigenvalues are distinct, the matrix is diagonalizable. (The converse is not necessarily true)
+  \item If all the entries in a markov chain are positive, there is always a steady state (this is called the Perron-Frobenius Theorem)
+\end{enumerate}
+
+\begin{defn}
+  If $V$ is a vector space, we say $V$ is an \textbf{inner product space} iff $V$ has an inner product defined
+  \[\langle \cdot,\cdot \rangle : V \times V \to \mathbb{R}\]
+  Such that $\langle \cdot ,\cdot \rangle$ satisfies 4 axioms:
+  \begin{enumerate}
+          \item \[\forall \vec{u}, \vec{v} \in V \qquad \langle \vec{u}, \vec{v} \rangle = \langle \vec{v}, \vec{u} \rangle\]
+          \item \[\forall \vec{u}, \vec{v}, \vec{w} \in V \qquad \langle \vec{u} + \vec{v}, \vec{w} \rangle = \langle \vec{u} , \vec{w} \rangle + \langle \vec{v} , \vec{w} \rangle\]
+          \item \[\forall c\in \mathbb{R} \vec{u}, \vec{v} \in V \qquad \langle c\vec{u} , \vec{v}\rangle = c\langle \vec{u}, \vec{v} \rangle\]
+    \item \[\forall \vec{u}, \vec{v} \in V \qquad \langle \vec{u}, \vec{v} \rangle \ge 0\]
+        \item \[\forall \vec{u } \in V \qquad \langle \vec{u}, \vec{u} \rangle = 0 \iff \vec{u} = \vec{0}\]
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  Here is an inner product on $\mathbb{P}_{n}$: Let $t_{0}, t_{1}, \ldots, t_{n}$  be $n$ distinct numbers.
+  \[\forall p,q \in \mathbb{P}_{n} \qquad \langle p , q \rangle := p(t_{0})q(t_{0})+\cdots +p(t_{n})q(t_{n}) = \sum_{i=1}^{n}p(t_{i})q(t_{i})\]
+\end{ex}
+\section{May 18}
+
+\begin{ex}
+  Let
+  \[M_{A} := \left\{ \mathbf{B}  : \forall \mathbf{B} \in \mathbb{R}^{q \times r}  \quad AB = 0\right\}\]
+  \[M := \left\{\mathbf{A} : \forall \mathbf{A} \in \mathbb{R}^{n \times n} , \quad \det(\mathbf{A}) = 0\right\}\]
+  \[S_{1} := \left\{ f : \forall f \in \mathbb{R} \to \mathbb{R}, \quad f(1) + f(2) = 0\right\}\]
+  \[S_{2} := \{p : \forall p \in \mathbb{P}_{2} , \quad p(1) + 2p(3) = 0\}\]
+  \[S_{3} := \{\mathbf{A} : \forall \mathbf{A} \in \mathbb{R}^{n \times n} , \det(\mathbf{A}) \neq 0\}\]
+
+  \[S_{4} := \{(x,y,z) : \forall x,y,z \in \mathbb{R} , z = xy\}\]
+  Determine which of these are vector spaces?
+  $M_{A}$ is a vector space because it is a vector subspace of $\mathbb{R}^{q \times r}$.
+  $M$ is not a vector space because it is not closed under addition.
+  $S_{1}$ is a vector space because it is a vector subspace of $\mathbb{R} \to \mathbb{R}$.
+  $S_{2}$ is a vector space because it a vector subspace of $\mathbb{P}_{2}$.
+  $S_{3}$ is not closed under addition.
+  $S_{4}$ is not closed under addition.
+\end{ex}
 \end{document}
